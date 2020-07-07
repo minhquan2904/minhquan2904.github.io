@@ -11,6 +11,15 @@
         function detech()
         {
             var uagent = navigator.userAgent.toLowerCase();
+            if ( (uagent.search("iphone") > -1) || (uagent.search("ipod") > -1) || (uagent.search("ipad") > -1))
+            {
+                alert('ios device');
+            }
+            else
+            {
+                alert('android device');
+            }
+            /*
             if (uagent.search("android") > -1)
                 alert('Android device');
             if (uagent.search("iphone") > -1)
@@ -35,7 +44,7 @@
             if (uagent.search("Silk") > -1)
                 alert('Silk device');
             if (uagent.search("Opera Mini") > -1)
-                alert('Opera Mini device');
+                alert('Opera Mini device');*/
         }
     </script>
 </body>
