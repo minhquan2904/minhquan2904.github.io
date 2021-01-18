@@ -1,0 +1,11 @@
+<svg id="ic_nav1_active" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path id="Path_9" data-name="Path 9" d="M0,0H16V16H0Z" fill="none"/>
+  <line id="Line_1" data-name="Line 1" x2="12" transform="translate(2 14)" fill="none" stroke="#005ba9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_2" data-name="Line 2" x2="12" transform="translate(2 6.667)" fill="none" stroke="#005ba9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <path id="Path_10" data-name="Path 10" d="M5,5,9.667,3l4.667,2" transform="translate(-1.667 -1)" fill="none" stroke="#005ba9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_3" data-name="Line 3" y2="7.333" transform="translate(2.667 6.667)" fill="none" stroke="#005ba9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_4" data-name="Line 4" y2="7.333" transform="translate(13.333 6.667)" fill="none" stroke="#005ba9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_5" data-name="Line 5" y2="2" transform="translate(5.333 9.333)" fill="none" stroke="#005ba9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_6" data-name="Line 6" y2="2" transform="translate(8 9.333)" fill="none" stroke="#005ba9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <line id="Line_7" data-name="Line 7" y2="2" transform="translate(10.667 9.333)" fill="none" stroke="#005ba9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+</svg>
