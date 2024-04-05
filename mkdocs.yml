@@ -3,6 +3,7 @@ site_url: https://minhquan2904.github.io
 repo_url: https://github.com/minhquan2904/minhquan2904.github.io
 theme:
   name: material
+  custom_dir: overrides
   logo: assets/logo.jpg
   favicon: assets/favicon.jpg
   features:
