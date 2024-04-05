@@ -1,12 +1,19 @@
 site_name: quanbm
+site_url: https://minhquan2904.github.io
 theme:
   name: material
+  features:
+    - search.suggest
 plugins:
-  - blog
-  - rss:
+ - search
+ - blog:
+      enabled: false
+ - rss:
+      enabled: true
       match_path: blog/posts/.* 
       date_from_meta:
         as_creation: date
       categories:
         - categories
         - tags 
+      comments_path: "#__comments"
