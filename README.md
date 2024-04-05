@@ -1,6 +1,6 @@
 # Documentation
 
-Web cá nhân
+Web cá nhân.
 
 ## Các lệnh khi chạy
 
