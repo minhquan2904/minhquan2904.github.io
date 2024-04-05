@@ -17,3 +17,6 @@ plugins:
         - categories
         - tags 
       comments_path: "#__comments"
+extra:
+  version:
+    provider: mike
