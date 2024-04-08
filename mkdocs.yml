@@ -1,9 +1,6 @@
 site_name: quanbm
 site_url: http://localhost:8000/
 repo_url: https://github.com/minhquan2904/minhquan2904.github.io
-nav:
-  - abc: 'index.md'
-  - Docker: docker_index
 
 theme:
   name: material
@@ -12,8 +9,8 @@ theme:
   favicon: assets/favicon.jpg
   features:
     - search.suggest
-    - navigation.indexes
-    - navigation.sections
+    - navigation.tabs
+    - navigation.insants
     - navigation.footer
     - announce.dismiss
 
