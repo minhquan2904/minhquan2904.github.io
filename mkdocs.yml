@@ -1,6 +1,10 @@
 site_name: quanbm
-site_url: https://minhquan2904.github.io
+site_url: http://localhost:8000/
 repo_url: https://github.com/minhquan2904/minhquan2904.github.io
+nav:
+  - abc: 'index.md'
+  - Docker: docker_index
+
 theme:
   name: material
   custom_dir: overrides
@@ -8,10 +12,11 @@ theme:
   favicon: assets/favicon.jpg
   features:
     - search.suggest
-    - navigation.instant
-    - navigation.instant.progress
+    - navigation.indexes
+    - navigation.sections
     - navigation.footer
     - announce.dismiss
+
 plugins:
  - search
  - blog:
