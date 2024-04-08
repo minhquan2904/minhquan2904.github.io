@@ -11,7 +11,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://localhost:8000/blog/posts/hello-word/</loc>
+         <loc>http://localhost:8000/posts/hello-world/</loc>
+         <lastmod>2024-04-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/Docker/</loc>
+         <lastmod>2024-04-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/Docker/docker-start/</loc>
          <lastmod>2024-04-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
