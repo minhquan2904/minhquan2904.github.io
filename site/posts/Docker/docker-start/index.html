@@ -11,7 +11,7 @@
         <link rel="canonical" href="http://localhost:8000/posts/Docker/docker-start/">
       
       
-        <link rel="prev" href="../../hello-world/">
+        <link rel="prev" href="../summary/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Start - quanbm</title>
+        <title>Bài 1: Giới thiệu về Docker - quanbm</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Start
+              Bài 1: Giới thiệu về Docker
             
           </span>
         </div>
@@ -265,6 +265,8 @@
       
         
       
+        
+      
     
     
     
@@ -297,6 +299,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -313,7 +336,7 @@
           
   
   <span class="md-ellipsis">
-    Start
+    Bài 1: Giới thiệu về Docker
   </span>
   
 
@@ -324,7 +347,7 @@
         
   
   <span class="md-ellipsis">
-    Start
+    Bài 1: Giới thiệu về Docker
   </span>
   
 
@@ -349,6 +372,72 @@
   <a href="#tai-sao-docker-quan-trong-trong-phat-trien-phan-mem-hien-ai" class="md-nav__link">
     <span class="md-ellipsis">
       Tại sao Docker quan trọng trong phát triển phần mềm hiện đại?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tại sao Docker quan trọng trong phát triển phần mềm hiện đại?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-so-voi-may-ao-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker so với Máy ảo (VMs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cach-docker-hoat-ong-images-containers-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cách Docker hoạt động: images, containers, Dockerfile, ...
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách Docker hoạt động: images, containers, Dockerfile, ...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Containers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
     </span>
   </a>
   
@@ -403,6 +492,72 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Tại sao Docker quan trọng trong phát triển phần mềm hiện đại?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-so-voi-may-ao-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker so với Máy ảo (VMs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cach-docker-hoat-ong-images-containers-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cách Docker hoạt động: images, containers, Dockerfile, ...
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách Docker hoạt động: images, containers, Dockerfile, ...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Containers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -447,6 +602,58 @@
 <blockquote>
 <p>Trong tổng thể, Docker đã trở thành một công nghệ chìa khóa trong việc xây dựng và triển khai ứng dụng hiện đại, giúp tăng cường hiệu suất, tính di động và tích hợp của quy trình phát triển phần mềm.</p>
 </blockquote>
+<h3 id="docker-so-voi-may-ao-vms"><em>Docker so với Máy ảo (VMs)</em></h3>
+<ul>
+<li><strong>Hiệu suất và tiết kiệm tài nguyên</strong>: Docker containers chia sẻ kernel của hệ điều hành host và chỉ chạy các ứng dụng cần thiết. Điều này giúp giảm bớt việc sử dụng tài nguyên so với VMs, nơi mỗi VM chạy một hệ điều hành đầy đủ và tất cả các ứng dụng liên quan.</li>
+<li><strong>Khởi động nhanh</strong>: Docker containers có thể khởi động và dừng lại gần như tức thì, trong khi VMs thường mất một thời gian dài để khởi động.</li>
+<li><strong>Di động</strong>: Docker containers có thể chạy trên bất kỳ máy nào có Docker được cài đặt, giúp dễ dàng chuyển giao giữa các môi trường.</li>
+</ul>
+<p>Hy vọng rằng những so sánh này sẽ giúp bạn hiểu rõ hơn về lợi ích của Docker so với các công nghệ khác. 😊</p>
+<h2 id="cach-docker-hoat-ong-images-containers-dockerfile">Cách Docker hoạt động: images, containers, Dockerfile, ...</h2>
+<h3 id="docker-images">Docker Images</h3>
+<ul>
+<li>Docker image là một template chỉ đọc, giống như một snapshot của một container. Image cung cấp các hướng dẫn để Docker tạo ra một container.</li>
+<li>Docker images được xây dựng từ một file cấu hình gọi là Dockerfile. Dockerfile chứa một loạt các lệnh mà Docker sử dụng để tạo ra một image.</li>
+<li>Docker images có thể được lưu trữ và chia sẻ trên Docker Hub, một dịch vụ cloud cho phép người dùng tải lên, tải xuống và sử dụng các Docker images.</li>
+</ul>
+<h3 id="docker-containers">Docker Containers</h3>
+<ul>
+<li>Docker container là một phiên bản chạy của một Docker image.</li>
+<li>Mỗi container chạy độc lập và cô lập với các container khác, giúp đảm bảo rằng mỗi ứng dụng chỉ sử dụng các tài nguyên mà nó cần.</li>
+<li>Docker container có thể được tạo, chạy, dừng lại, di chuyển hoặc xóa bằng cách sử dụng Docker CLI hoặc API.</li>
+</ul>
+<h3 id="dockerfile">Dockerfile</h3>
+<ul>
+<li>Dockerfile là một file văn bản chứa tất cả các lệnh mà người dùng sẽ gọi trên dòng lệnh để tạo một image.</li>
+<li>Dockerfile bao gồm một loạt các lệnh và cú pháp để tạo ra một Docker image. Các lệnh này bao gồm thiết lập môi trường, sao chép mã nguồn, cài đặt các gói phụ thuộc, v.v.</li>
+<li>Dockerfile giúp tự động hóa quá trình tạo Docker image, giúp đảm bảo tính nhất quán và tái sử dụng.</li>
+</ul>
+<p><em>Dưới đây là một số ví dụ thực tế về cách sử dụng Docker trong các dự án phát triển phần mềm:</em></p>
+<ul>
+<li><strong>Docker trong môi trường phát triển</strong>: Docker giúp tạo ra môi trường phát triển đồng nhất giữa các thành viên trong đội ngũ. Ví dụ, một ứng dụng web có thể cần một máy chủ web, một cơ sở dữ liệu, và một máy chủ Redis. Thay vì cài đặt và cấu hình tất cả những thành phần này trên máy tính cá nhân, một Dockerfile và Docker Compose file có thể được tạo ra để định nghĩa và chạy toàn bộ môi trường với một lệnh duy nhất:</li>
+</ul>
+<pre><code class="language-sh"> docker-compose up
+</code></pre>
+<ul>
+<li>
+<p><strong>Docker trong CI/CD</strong>: Docker giúp đơn giản hóa quá trình CI/CD bằng cách đảm bảo rằng ứng dụng sẽ hoạt động giống nhau ở mọi môi trường. Ví dụ, một pipeline CI/CD có thể được cấu hình để tự động xây dựng một Docker image, chạy các bài kiểm tra, và sau đó đẩy image đó lên một registry nếu tất cả các bài kiểm tra đều thành công.</p>
+</li>
+<li>
+<p><strong>Docker trong Microservices</strong>: Docker là công nghệ lý tưởng cho kiến trúc microservices, nơi mỗi dịch vụ chạy trong một container riêng biệt và giao tiếp với nhau qua API. Ví dụ, một ứng dụng e-commerce có thể có một dịch vụ cho việc quản lý sản phẩm, một dịch vụ cho việc xử lý đơn hàng, và một dịch vụ cho việc quản lý người dùng. Mỗi dịch vụ này có thể được đóng gói vào một Docker container và chạy độc lập.</p>
+</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<ol>
+<li><strong>Docker là gì?</strong> Docker là một nền tảng mạnh mẽ cho việc xây dựng, triển khai và chạy các ứng dụng trong một môi trường container hóa.</li>
+<li><strong>Tại sao nên sử dụng Docker?</strong> Docker giúp tạo ra môi trường phát triển đồng nhất, giúp đơn giản hóa quá trình triển khai và giảm bớt các vấn đề liên quan đến việc “chạy được trên máy tôi nhưng không chạy được trên máy bạn”.</li>
+<li><strong>Docker image và Docker container khác nhau như thế nào?</strong> Docker image là một template chỉ đọc, giống như một snapshot của một container. Docker container là một phiên bản chạy của một Docker image.</li>
+<li><strong>Làm thế nào để cài đặt Docker?</strong> Docker có thể được cài đặt trên nhiều hệ điều hành khác nhau. Bạn có thể tìm thấy hướng dẫn cài đặt chi tiết trên trang web chính thức của Docker.</li>
+<li><strong>Docker có an toàn không?</strong> Docker có nhiều tính năng bảo mật như cô lập tài nguyên, mạng riêng và quản lý quyền truy cập. Tuy nhiên, như bất kỳ công nghệ nào khác, việc sử dụng Docker một cách an toàn phụ thuộc vào cách bạn cấu hình và sử dụng nó.</li>
+<li><strong>Docker có thể sử dụng với các công nghệ khác như Kubernetes không?</strong> Có, Docker có thể được sử dụng cùng với Kubernetes, một công nghệ quản lý container phổ biến, để quản lý và mở rộng các ứng dụng.</li>
+</ol>
+<blockquote>
+<p><strong>Tip vui</strong>: Bạn có biết rằng tên “Docker” bắt nguồn từ từ “dockworker”, người làm việc tại bến cảng, để phản ánh việc Docker giúp “xếp dỡ” các ứng dụng vào “container” giống như cách một người làm việc tại bến cảng xếp dỡ hàng hóa vào container trên tàu? Đó là một cách thú vị để nhớ về công nghệ này! 😄</p>
+</blockquote>
 
 
 
@@ -479,7 +686,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../hello-world/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hello-word">
+          <a href="../summary/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tổng quan">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -489,7 +696,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Hello-word
+                Tổng quan
               </div>
             </div>
           </a>
