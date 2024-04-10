@@ -7,6 +7,8 @@ nav:
   - Docker: 
     - 'Tổng quan': posts/Docker/summary.md
     - 'Bài 1: Giới thiệu về Docker': posts/Docker/docker-start.md
+  - Kafka:
+    - 'So sánh Kafka và RabbitMQ': posts/Kafka/compare.md
 theme:
   name: material
   custom_dir: overrides

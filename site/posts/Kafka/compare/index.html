@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="http://localhost:8000/posts/Docker/summary/">
+        <link rel="canonical" href="http://localhost:8000/posts/Kafka/compare/">
       
       
-        <link rel="prev" href="../../hello-world/">
+        <link rel="prev" href="../../Docker/docker-start/">
       
-      
-        <link rel="next" href="../docker-start/">
       
       
       <link rel="icon" href="../../../assets/favicon.jpg">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Tổng quan - quanbm</title>
+        <title>Kafka vs RabbitMQ - quanbm</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tong-quan" class="md-skip">
+        <a href="#phan-tich-rabbitmq-vs-kafka-chon-he-thong-tin-nhan-phu-hop-cho-nhu-cau-cua-ban" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tổng quan
+              Kafka vs RabbitMQ
             
           </span>
         </div>
@@ -258,10 +256,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -272,11 +268,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -290,7 +286,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Docker
@@ -301,30 +297,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Tổng quan
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Docker/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,116 +309,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bai-1-gioi-thieu-ve-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 1: Giới thiệu về Docker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-2-cai-at-va-cau-hinh-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 2: Cài đặt và cấu hình Docker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-3-docker-images-va-docker-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 3: Docker Images và Docker Containers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-4-dockerfile-va-docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 4: Dockerfile và Docker Compose
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-5-mang-trong-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 5: Mạng trong Docker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-6-luu-tru-du-lieu-trong-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 6: Lưu trữ dữ liệu trong Docker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-7-best-practices-khi-su-dung-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 7: Best Practices khi sử dụng Docker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-8-su-dung-docker-trong-cicd" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 8: Sử dụng Docker trong CI/CD
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-9-docker-swarm-va-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 9: Docker Swarm và Kubernetes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-10-tong-ket-va-tai-nguyen-hoc-them" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 10: Tổng kết và tài nguyên học thêm
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -455,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker-start/" class="md-nav__link">
+      <a href="../../Docker/docker-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -480,8 +346,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -490,11 +358,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -508,7 +376,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Kafka
@@ -519,10 +387,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Kafka/compare/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    So sánh Kafka và RabbitMQ
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -531,6 +419,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#giai-thich-cac-khai-niem-ve-he-thong-tin-nhan-publishsubscribe-pubsub-va-message-broker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inh-nghia-ve-message-broker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định nghĩa về Message Broker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inh-nghia-ve-he-thong-tin-nhan-pubsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định nghĩa về Hệ thống tin nhắn Pub/Sub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-sanh-message-brokers-va-he-thong-tin-nhan-pubsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      So sánh Message Brokers và Hệ thống tin nhắn Pub/Sub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kafka-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kafka là gì?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kafka là gì?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nguon-goc-va-lich-su-cua-kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nguồn gốc và lịch sử của Kafka
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kien-truc-cua-kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kiến trúc của Kafka
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -570,90 +553,75 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bai-1-gioi-thieu-ve-docker" class="md-nav__link">
+  <a href="#giai-thich-cac-khai-niem-ve-he-thong-tin-nhan-publishsubscribe-pubsub-va-message-broker" class="md-nav__link">
     <span class="md-ellipsis">
-      Bài 1: Giới thiệu về Docker
+      Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inh-nghia-ve-message-broker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định nghĩa về Message Broker
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-2-cai-at-va-cau-hinh-docker" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#inh-nghia-ve-he-thong-tin-nhan-pubsub" class="md-nav__link">
     <span class="md-ellipsis">
-      Bài 2: Cài đặt và cấu hình Docker
+      Định nghĩa về Hệ thống tin nhắn Pub/Sub
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-3-docker-images-va-docker-containers" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#so-sanh-message-brokers-va-he-thong-tin-nhan-pubsub" class="md-nav__link">
     <span class="md-ellipsis">
-      Bài 3: Docker Images và Docker Containers
+      So sánh Message Brokers và Hệ thống tin nhắn Pub/Sub
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-4-dockerfile-va-docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 4: Dockerfile và Docker Compose
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bai-5-mang-trong-docker" class="md-nav__link">
+  <a href="#kafka-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      Bài 5: Mạng trong Docker
+      Kafka là gì?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kafka là gì?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nguon-goc-va-lich-su-cua-kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nguồn gốc và lịch sử của Kafka
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-6-luu-tru-du-lieu-trong-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 6: Lưu trữ dữ liệu trong Docker
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bai-7-best-practices-khi-su-dung-docker" class="md-nav__link">
+  <a href="#kien-truc-cua-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Bài 7: Best Practices khi sử dụng Docker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-8-su-dung-docker-trong-cicd" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 8: Sử dụng Docker trong CI/CD
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-9-docker-swarm-va-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 9: Docker Swarm và Kubernetes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-10-tong-ket-va-tai-nguyen-hoc-them" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài 10: Tổng kết và tài nguyên học thêm
+      Kiến trúc của Kafka
     </span>
   </a>
   
@@ -677,60 +645,69 @@
   
 
 
-<h1 id="tong-quan">Tổng quan</h1>
-<h2 id="bai-1-gioi-thieu-ve-docker">Bài 1: Giới thiệu về Docker</h2>
+<h1 id="phan-tich-rabbitmq-vs-kafka-chon-he-thong-tin-nhan-phu-hop-cho-nhu-cau-cua-ban">Phân tích RabbitMQ vs Kafka - Chọn hệ thống tin nhắn phù hợp cho nhu cầu của bạn</h1>
+<p><img alt="Apache Kafka" src="https://img.shields.io/badge/Apache%20Kafka-000?style=for-the-badge&amp;logo=apachekafka" /> <img alt="RabbitMQ" src="https://img.shields.io/badge/Rabbitmq-FF6600?style=for-the-badge&amp;logo=rabbitmq&amp;logoColor=white" /></p>
+<blockquote>
+<p>Bài viết được dịch từ <a href="https://intellisoft.io/rabbitmq-vs-kafka-choosing-the-right-messaging-system-for-your-needs/">intellisoft.io</a></p>
+</blockquote>
+<p>Hãy tưởng tượng một không gian trò chuyện sôi động, nơi hàng ngàn người dùng trao đổi thông tin, chia sẻ tin tức và tương tác với sự kiện. Trong môi trường năng động này, hệ thống tin nhắn đóng vai trò như một người điều hành vô hình, đảm bảo mỗi tin nhắn đều đến được người nhận dự định mà không bị trễ hoặc gián đoạn. Tương tự, các ứng dụng phần mềm hiện đại cần có hệ thống tin nhắn mạnh mẽ để xử lý sự giao tiếp phức tạp giữa các thành phần của chúng</p>
+<p>RabbitMQ và Apache Kafka là các hệ thống tin nhắn hàng đầu giúp tạo ra sự trao đổi dữ liệu và sự kiện quan trọng trong ngành công nghiệp phát triển phần mềm. Chúng đóng một vai trò quan trọng trong việc phát triển các ứng dụng có khả năng mở rộng và hiệu quả bằng cách cho phép giao tiếp mượt mà giữa các thành phần phần mềm và giúp quản lý các luồng dữ liệu phức tạp. Vậy làm thế nào để bạn quyết định “người chỉ huy” nào phù hợp với ứng dụng của bạn?</p>
+<p>Đội ngũ intellisoft có kinh nghiệm rộng lớn trong việc tích hợp các hệ thống tin nhắn vào các kiến trúc ứng dụng phức tạp, chẳng hạn như dự án ZyLAB. Bài viết này sẽ khám phá sự khác biệt giữa Kafka và RabbitMQ, cấu trúc của chúng, các trường hợp sử dụng, và điểm mạnh và yếu. Chúng tôi cũng sẽ cung cấp hướng dẫn về việc chọn hệ thống tin nhắn Kafka hay RabbitMQ dựa trên yêu cầu của ứng dụng của bạn.</p>
+<h2 id="giai-thich-cac-khai-niem-ve-he-thong-tin-nhan-publishsubscribe-pubsub-va-message-broker">Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker</h2>
+<p>Trước khi đi sâu vào các chi tiết cụ thể của RabbitMQ và Kafka, điều quan trọng là phải hiểu rõ sự khác biệt cơ bản giữa một hệ thống tin nhắn publish/subscribe (pub/sub) và một message broker.</p>
+<h3 id="inh-nghia-ve-message-broker">Định nghĩa về Message Broker</h3>
+<p>Message broker là một trung gian giữa các thành phần ứng dụng, tạo điều kiện cho việc giao tiếp bằng cách chuyển dữ liệu. Chức năng chính của message broker là định tuyến thông tin từ các nhà sản xuất (người gửi tin nhắn) đến các người tiêu dùng (người nhận tin nhắn) dựa trên các quy tắc và logic được định trước. Bằng cách sử dụng một message broker, các ứng dụng có thể tập trung vào các chức năng cốt lõi của chúng trong khi broker xử lý việc giao hàng và định tuyến tin nhắn.</p>
+<h3 id="inh-nghia-ve-he-thong-tin-nhan-pubsub">Định nghĩa về Hệ thống tin nhắn Pub/Sub</h3>
+<p>Mặt khác, một hệ thống tin nhắn publish/subscribe là một mô hình tin nhắn nơi các producers (publishers) gửi tin nhắn mà không chỉ định người nhận. Thay vào đó, họ phân loại tin nhắn vào các topics hoặc channels. Sau đó, consumers (subscribers) biểu thị sự quan tâm đối với các vấn đề cụ thể và nhận thông báo phù hợp với đăng ký của họ. Mô hình tin nhắn này cho phép tách rời giữa producers và consumers, tạo ra sự linh hoạt và khả năng mở rộng hơn trong kiến trúc ứng dụng.</p>
+<p><img alt="producers-and-topics" src="https://intellisoft.io/wp-content/uploads/2023/04/1-producers-and-topics.png.webp" /></p>
+<h3 id="so-sanh-message-brokers-va-he-thong-tin-nhan-pubsub">So sánh Message Brokers và Hệ thống tin nhắn Pub/Sub</h3>
+<p>Cả message brokers và hệ thống tin nhắn pub/sub đều quan trọng trong việc tạo điều kiện cho việc giao tiếp giữa các thành phần ứng dụng. Tuy nhiên, chúng khác nhau về cách định tuyến tin nhắn và xử lý mối quan hệ giữa producers và consumers.</p>
+<p>Một message broker tập trung vào việc định tuyến tin nhắn dựa trên các quy tắc được định trước, đảm bảo rằng thông tin đến được consumers phù hợp. Nó có thể hỗ trợ nhiều kiểu nhắn tin khác nhau, chẳng hạn như:
+- Request/Reply
+- Point-to-Point
+- Pub/Sub</p>
+<p>Mặt khác, hệ thống tin nhắn “pub/sub” nhấn mạnh việc tách rời giữa các producers và consumers. Nó cho phép nhiều consumers nhận tin nhắn từ một producers duy nhất bằng cách đăng ký cùng một chủ đề hoặc kênh.</p>
+<p>Các message broker cung cấp việc giao hàng thông tin đáng tin cậy và đảm bảo các tin nhắn đến được người nhận dự định. Họ cũng có thể cung cấp các tùy chọn duy trì tin nhắn, biến đổi và định tuyến. Tuy nhiên, chúng có thể tạo ra một điểm hỏng duy nhất và có thể trở thành nút thắt hiệu suất nếu không được quản lý đúng cách.</p>
+<p>Hệ thống tin nhắn pub/sub cho phép linh hoạt và khả năng mở rộng lớn hơn, cho phép các ứng dụng phát triển mà không ảnh hưởng đến việc giao tiếp giữa các producers và consumers. Tuy nhiên, chúng có thể không cung cấp việc chuyển tiếp tin nhắn đảm bảo hoặc các tính năng định tuyến nâng cao.</p>
+<p>Bây giờ chúng ta đã tìm hiểu về sự khác biệt giữa các message broker và hệ thống tin nhắn pub/sub, hãy khám phá RabbitMQ và Kafka một cách chi tiết hơn. </p>
+<h2 id="kafka-la-gi">Kafka là gì?</h2>
+<p><img alt="Apache Kafka" src="https://img.shields.io/badge/Apache%20Kafka-000?style=for-the-badge&amp;logo=apachekafka" /></p>
+<p><a href="https://kafka.apache.org/">Apache Kafka</a> là một nền tảng streaming với kiến trúc phân tán được thiết kế cho các ứng dụng streaming dữ liệu có khả năng xử lý lớn, chịu lỗi và mở rộng. Ban đầu, nó được phát triển tại <a href="https://www.linkedin.com/pulse/kafkas-origin-story-linkedin-tanvir-ahmed">LinkedIn</a> và sau đó được mở mã nguồn vào năm 2011. Nhiều tổ chức đã áp dụng rộng rãi Kafka để xây dựng các pipeline dữ liệu thời gian thực, các ứng dụng streaming và kiến trúc dựa trên sự kiện.</p>
+<h3 id="nguon-goc-va-lich-su-cua-kafka">Nguồn gốc và lịch sử của Kafka</h3>
+<p>Jay Kreps, Neha Narkhede và Jun Rao đã tạo ra Kafka để đáp ứng nhu cầu ngày càng tăng về một hệ thống tin nhắn phân tán hiệu suất cao để xử lý lượng dữ liệu lớn được tạo ra bởi cơ sở hạ tầng của LinkedIn. Các phương pháp tin nhắn truyền thống không thể quản lý hiệu quả các luồng dữ liệu thời gian thực, vì vậy họ đã bắt đầu dự án Kafka để cung cấp một nền tảng thống nhất, có khả năng xử lý lớn và độ trễ thấp</p>
+<h2 id="kien-truc-cua-kafka">Kiến trúc của Kafka</h2>
+<p>Các nhà phát triển đã xây dựng kiến trúc của Kafka xung quanh một dịch vụ log commit phân tán và được sao chép, đây là lõi của chức năng tin nhắn của nó. Các thành phần cơ bản của kiến trúc Kafka bao gồm:</p>
 <ul>
-<li>Định nghĩa Docker và công nghệ containerization.</li>
-<li>Lợi ích của việc sử dụng Docker trong phát triển và triển khai phần mềm.</li>
-<li>Cách Docker hoạt động: images, containers, Dockerfile, etc.</li>
-</ul>
-<h2 id="bai-2-cai-at-va-cau-hinh-docker">Bài 2: Cài đặt và cấu hình Docker</h2>
-<ul>
-<li>Hướng dẫn cài đặt Docker trên các hệ điều hành phổ biến (Windows, MacOS, Linux).</li>
-<li>Giới thiệu về Docker CLI.</li>
-</ul>
-<h2 id="bai-3-docker-images-va-docker-containers">Bài 3: Docker Images và Docker Containers</h2>
-<ul>
-<li>Tạo và quản lý Docker images.</li>
-<li>Tạo, chạy, dừng và xóa Docker containers.</li>
-<li>Làm việc với Docker Hub.</li>
-</ul>
-<h2 id="bai-4-dockerfile-va-docker-compose">Bài 4: Dockerfile và Docker Compose</h2>
-<ul>
-<li>Tạo Dockerfile: cú pháp, lệnh và best practices.</li>
-<li>Sử dụng Docker Compose để quản lý ứng dụng multi-container.</li>
-</ul>
-<h2 id="bai-5-mang-trong-docker">Bài 5: Mạng trong Docker</h2>
-<ul>
-<li>Các loại mạng trong Docker: bridge, host, none, và overlay.</li>
-<li>Cách kết nối các containers với nhau và với mạng bên ngoài.</li>
-</ul>
-<h2 id="bai-6-luu-tru-du-lieu-trong-docker">Bài 6: Lưu trữ dữ liệu trong Docker</h2>
-<ul>
-<li>Docker Volumes và Bind Mounts.</li>
-<li>Backup, restore, và migrate dữ liệu Docker.</li>
-</ul>
-<h2 id="bai-7-best-practices-khi-su-dung-docker">Bài 7: Best Practices khi sử dụng Docker</h2>
-<ul>
-<li>Tối ưu hóa Docker images.</li>
-<li>Bảo mật trong Docker.</li>
-<li>Debugging và monitoring Docker containers.</li>
-</ul>
-<h2 id="bai-8-su-dung-docker-trong-cicd">Bài 8: Sử dụng Docker trong CI/CD</h2>
-<ul>
-<li>Tích hợp Docker vào quy trình CI/CD.</li>
-<li>Ví dụ về việc sử dụng Docker với Jenkins, Travis CI, etc.</li>
-</ul>
-<h2 id="bai-9-docker-swarm-va-kubernetes">Bài 9: Docker Swarm và Kubernetes</h2>
-<ul>
-<li>Giới thiệu về Docker Swarm và Kubernetes.</li>
-<li>So sánh Docker Swarm và Kubernetes.</li>
-<li>Hướng dẫn cơ bản về việc sử dụng Docker Swarm hoặc Kubernetes.</li>
-</ul>
-<h2 id="bai-10-tong-ket-va-tai-nguyen-hoc-them">Bài 10: Tổng kết và tài nguyên học thêm</h2>
-<ul>
-<li>Tổng kết series bài viết.</li>
-<li>Giới thiệu các tài nguyên học thêm về Docker.</li>
+<li>
+<p><strong>Producers</strong>: Các thực thể gửi tin nhắn đến Kafka.</p>
+</li>
+<li>
+<p><strong>Máy chủ (Brokers)</strong>: Đây là các nút Kafka lưu trữ và quản lý các tin nhắn đã được xuất bản.</p>
+</li>
+<li>
+<p><strong>Chủ đề (Topics)</strong>: Các danh mục hoặc kênh mà nhà sản xuất xuất bản tin nhắn.</p>
+</li>
+<li>
+<p><strong>Phân vùng (Partitions)</strong>: Kafka chia các Topics thành nhiều chuỗi hồ sơ có thứ tự và không thể thay đổi được biết đến là các phân vùng, cho phép song song hóa và tăng khả năng xử lý.</p>
+</li>
+<li>
+<p><strong>Consumers</strong>: Các thực thể đọc và xử lý tin nhắn từ Kafka.</p>
+</li>
+<li>
+<p><strong>Cụm (Clusters)</strong>: Các tập hợp của các máy chủ Kafka làm việc cùng nhau để quản lý và phân phối dữ liệu trên nhiều nút.</p>
+</li>
+<li>
+<p><strong>Consumer Groups</strong>: Các tập hợp của Consumer trong Kafka hợp tác để tiêu thụ dữ liệu từ một hoặc nhiều chủ đề.</p>
+</li>
+<li>
+<p><strong>Replicas</strong>: Các bản sao của một phân vùng Kafka được phân phối trên nhiều máy chủ.</p>
+</li>
+<li>
+<p><strong>Leaders</strong>: Các máy chủ được chỉ định trong một cụm Kafka chịu trách nhiệm xử lý tất cả các yêu cầu đọc và ghi cho một phân vùng cụ thể.</p>
+</li>
+<li>
+<p><strong>Followers</strong>: Các máy chủ trong một cụm Kafka sao chép một cách thụ động dữ liệu của người dẫn đầu cho một phân vùng nhất định, sẵn sàng thay thế làm người dẫn đầu mới nếu người dẫn đầu hiện tại gặp sự cố. </p>
+</li>
 </ul>
 
 
@@ -764,7 +741,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../hello-world/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hello-word">
+          <a href="../../Docker/docker-start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bài 1: Giới thiệu về Docker">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -774,27 +751,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Hello-word
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../docker-start/" class="md-footer__link md-footer__link--next" aria-label="Next: Bài 1: Giới thiệu về Docker">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
                 Bài 1: Giới thiệu về Docker
               </div>
             </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     
