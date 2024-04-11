@@ -62,7 +62,7 @@ Bây giờ chúng ta đã tìm hiểu về sự khác biệt giữa các message
 Jay Kreps, Neha Narkhede và Jun Rao đã tạo ra Kafka để đáp ứng nhu cầu ngày càng tăng về một hệ thống tin nhắn phân tán hiệu suất cao để xử lý lượng dữ liệu lớn được tạo ra bởi cơ sở hạ tầng của LinkedIn. Các phương pháp tin nhắn truyền thống không thể quản lý hiệu quả các luồng dữ liệu thời gian thực, vì vậy họ đã bắt đầu dự án Kafka để cung cấp một nền tảng thống nhất, có khả năng xử lý lớn và độ trễ thấp
 
 
-## Kiến trúc của Kafka
+### Kiến trúc của Kafka
 
 Các nhà phát triển đã xây dựng kiến trúc của Kafka xung quanh một dịch vụ log commit phân tán và được sao chép, đây là lõi của chức năng tin nhắn của nó. Các thành phần cơ bản của kiến trúc Kafka bao gồm:
 
@@ -85,3 +85,49 @@ Các nhà phát triển đã xây dựng kiến trúc của Kafka xung quanh m�
 - **Leaders**: Các máy chủ được chỉ định trong một cụm Kafka chịu trách nhiệm xử lý tất cả các yêu cầu đọc và ghi cho một phân vùng cụ thể.
 
 - **Followers**: Các máy chủ trong một cụm Kafka sao chép một cách thụ động dữ liệu của người dẫn đầu cho một phân vùng nhất định, sẵn sàng thay thế làm người dẫn đầu mới nếu người dẫn đầu hiện tại gặp sự cố. 
+
+![kafka-architecture](https://intellisoft.io/wp-content/uploads/2023/04/2-kafka-architecture-4.png.webp)
+
+*Kafka cung cấp một sự cam kết về độ bền mạnh mẽ vì các tin nhắn được lưu trữ trên đĩa và được sao chép trên nhiều brokers. Cách tiếp cận này đảm bảo khả năng chịu lỗi cao và giảm thiểu việc mất mát dũ liệu khi 1 node chết.*
+
+## RabbitMQ là gì?
+
+![RabbitMQ](https://img.shields.io/badge/Rabbitmq-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
+
+[RabbitMQ](https://www.rabbitmq.com/) là một message broker mã nguồn mở, sử dụng [Advance Message Queue Tool Protocol](https://www.amqp.org/) (AMQP). Được phát hành vào năm 2007, RabbitMQ đã được phổ biến rộng rãi nhờ sự linh hoạt, độ tin cậy và dễ sử dụng. Bằng cách hoạt động như một message broker and queueing server, RabbitMQ cho phép các ứng dụng đa dạng trao đổi dữ liệu thông qua giao thức chuẩn hoặc các tác vụ xếp hàng để xử lý bởi người tiêu dùng phân tán. Hàng chờ của RabbitMQ có thể lưu trữ task, cho phép broker có thể cân bằng tải và phân phối task.
+
+### Nguồn gốc và lịch sử của RabbitMQ
+
+Rabbit Technologies Ltd, một công ty được thành lập bởi Alexis Richardson và Matthias Radestock, đã phát triển RabbitMQ để tạo ra 1 broker hiệu năng cao, có thể mở rộng và dễ sử dụng, đồng thời có thể hỗ trợ nhiều kiểu tin nhắn khác nhau, và tích hợp đa nền tảng, đa ngôn ngữ.
+
+### Kiến trúc của RabbitMQ
+
+Kiến trúc của RabbitMQ bao gồm một số thành phần chính hỗ trợ việc gửi và định tuyến tin nhắn:
+
+- **Producers**: các đối tượng gửi tin nhắn đến RabbitMQ.
+- **Exchanges**: Các thành phần này chịu trách nhiệm nhận tin nhắn từ Producers và định tuyến chúng đến hàng đợi thích hợp dựa trên các quy tắc được xác định trước.
+- **Queues**: Bộ đệm lưu trữ tin nhắn cho đến khi người tiêu dùng sử dụng chúng.
+- **Bindings**: Các quy tắc xác định mối quan hệ giữa các trao đổi và hàng đợi, xác định việc định tuyến các tin nhắn.
+- **Consumers**: Các đối tượng nhận và xử lý tin nhắn từ RabbitMQ
+
+![RabbitMQ](https://intellisoft.io/wp-content/uploads/2023/04/3-rabbitmq-architecture.png.webp)
+
+>RabbitMQ được biết đến với khả năng định tuyến linh hoạt, dễ sử dụng và hỗ trợ nhiều giao thức như: AMQP, MQTT, và STOMP.
+
+## Kafka được sử dụng để làm gì?
+
+Kafka có nhiều trường hợp sử dụng khác nhau, khiến nó trở thành lựa chọn phổ biến cho nhiều loại ứng dụng khác nhau. Một số trường hợp sử dụng Kafka phổ biến bao gồm:
+
+- Data Streaming
+
+- Phân tích dữ liệu thời gian thực
+
+- Hệ thống phân tán
+
+### Kafka trong Data Streaming và phân tích thời gian thực
+
+**Data Streaming** là một trong những trường hợp sử dụng chính của Kafka, trong đó nó hoạt động như một hệ thống nhắn tin có khả năng mở rộng cao và có khả năng chịu lỗi cho phép xử lý dữ liệu theo thời gian thực. Khả năng xử lý các luồng dữ liệu thông lượng cao của Kafka khiến nó trở nên lý tưởng cho việc nhập và xử lý khối lượng dữ liệu lớn theo thời gian thực. Do tính năng này, Kafka rất phù hợp cho các ứng dụng tổng hợp nhật ký, phân tích thời gian thực và lưu trữ dữ liệu.
+
+### Kafka trong hệ thống phân tán
+
+Bạn cũng có thể sử dụng Kafka trong các hệ thống phân tán làm backbone để liên lạc giữa các dịch vụ và thành phần. Kafka đảm bảo rằng các hệ thống phân tán có thể hoạt động hiệu quả và đáng tin cậy bằng cách cung cấp nền tảng nhắn tin có tính sẵn sàng cao, có khả năng chịu lỗi và có khả năng mở rộng. Nó hoạt động để xây dựng kiến trúc microservices, phương pháp tiếp cận hướng sự kiện và các ứng dụng phân tán quy mô lớn khác.
