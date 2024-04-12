@@ -131,3 +131,99 @@ Kafka có nhiều trường hợp sử dụng khác nhau, khiến nó trở thà
 ### Kafka trong hệ thống phân tán
 
 Bạn cũng có thể sử dụng Kafka trong các hệ thống phân tán làm backbone để liên lạc giữa các dịch vụ và thành phần. Kafka đảm bảo rằng các hệ thống phân tán có thể hoạt động hiệu quả và đáng tin cậy bằng cách cung cấp nền tảng nhắn tin có tính sẵn sàng cao, có khả năng chịu lỗi và có khả năng mở rộng. Nó hoạt động để xây dựng kiến trúc microservices, phương pháp tiếp cận hướng sự kiện và các ứng dụng phân tán quy mô lớn khác.
+
+### Lợi ích của việc sử dụng Kafka
+
+Kafka cung cấp một số lợi ích khiến nó trở thành sự lựa chọn hấp dẫn cho nhiều ứng dụng khác nhau:
+
+- **Lưu lượng cao**: Kafka có thể xử lý hàng triệu sự kiện mỗi giây, khiến nó phù hợp với các ứng dụng phân tích thời gian thực và truyền dữ liệu quy mô lớn.
+
+- **Khả năng mở rộng**: Kafka có thể nhanh chóng mở rộng quy mô theo chiều ngang bằng cách thêm nhiều brokers hơn vào một cluster, cho phép nó đáp ứng khối lượng công việc ngày càng tăng.
+
+- **Độ bền**: Kafka lưu trữ tin nhắn trên đĩa và sao chép chúng trên nhiều brokers, đảm bảo khả năng chịu lỗi cao và độ bền dữ liệu.
+
+- **Độ trễ thấp**: Kafka cung cấp khả năng gửi tin nhắn có độ trễ thấp, phù hợp với các ứng dụng thời gian thực yêu cầu thời gian phản hồi nhanh.
+
+- **Khả năng chịu lỗi**: Kafka cung cấp một khả năng quan trọng để chống lại việc các node hoặc server trong cụm bị lỗi. Nó đảm bảo hiệu suất ổn định, không bị gián đoạn, bảo vệ tính toàn vẹn của hệ thống và ngăn ngừa sự gián đoạn có thể xảy ra.
+
+- **Xử lý hàng loạt**: Khả năng của Kafka mở rộng sang các kịch bản xử lý hàng loạt, cạnh tranh với các giải pháp ETL truyền thống. Khả năng lưu giữ các thông báo của nó cho phép nó thích ứng với các trường hợp sử dụng đa dạng, thể hiện tính linh hoạt và tiện ích vượt trội trong các bối cảnh xử lý dữ liệu khác nhau.
+
+## RabbitMQ được sử dụng để làm gì?
+
+RabbitMQ, giống như Kafka, có nhiều trường hợp sử dụng nhờ tính linh hoạt và hỗ trợ cho nhiều mẫu tin nhắn khác nhau. Một số trường hợp sử dụng RabbitMQ phổ biến bao gồm:
+
+- Tích hợp ứng dụng
+
+- Messaging
+
+- Microservices Architecture
+
+- Critical APIs
+
+- Xử lý PDF
+
+- Xử lý sao lưu cơ sở dữ liệu
+
+### RabbitMQ trong tích hợp ứng dụng và Messaging
+
+Các nhà phát triển thường sử dụng RabbitMQ để tích hợp ứng dụng và nhắn tin, nơi nó hoạt động như một nhà môi giới tin nhắn linh hoạt và đáng tin cậy, tạo điều kiện giao tiếp giữa các thành phần ứng dụng khác nhau.Nó hỗ trợ cho nhiều mẫu và giao thức nhắn tin giúp nó phù hợp để tích hợp các hệ thống khác nhau, cho phép các ứng dụng trao đổi dữ liệu và sự kiện theo cách tách rời.
+
+### RabbitMQ trong kiến trúc Microservices
+
+Bạn cũng có thể sử dụng RabbitMQ trong các kiến ​​trúc microservice. Nó hoạt động như lớp giao tiếp giữa các microservice khác nhau. Bằng cách cung cấp nền tảng nhắn tin đáng tin cậy và có thể mở rộng, RabbitMQ cho phép các microservice trao đổi dữ liệu và sự kiện một cách hiệu quả, đảm bảo hoạt động trơn tru trong các hệ thống phức tạp.
+
+### Lợi ích của việc sử dụng RabbitMQ
+
+RabbitMQ cung cấp một số lợi ích khiến nó trở thành lựa chọn phổ biến cho các ứng dụng khác nhau:
+
+- **Linh hoạt**: RabbitMQ hỗ trợ nhiều mẫu và giao thức nhắn tin, giúp nó có thể thích ứng với nhiều tình huống ứng dụng khác nhau.
+
+- **Dễ sử dụng**: RabbitMQ được biết đến với thiết kế thân thiện với người dùng và tài liệu toàn diện, giúp bạn dễ dàng tìm hiểu và triển khai.
+
+- **Độ tin cậy**: RabbitMQ cung cấp khả năng gửi tin nhắn đáng tin cậy, đảm bảo tin nhắn đến được với người nhận dự định ngay cả khi có lỗi.
+
+- **Khả năng định tuyến phong phú**: Cơ chế trao đổi và ràng buộc của RabbitMQ cho phép định tuyến tin nhắn nâng cao, cho phép tạo ra các kiến ​​trúc ứng dụng phức tạp.
+
+- **Tách rời**: Hệ thống của bên thứ ba có thể dễ dàng truy cập và tương tác với tin nhắn, bất kể người gửi ban đầu là ai. Ưu điểm này cho phép tái sử dụng hiệu quả các thông báo này trong nhiều dự án.
+
+- **Redundancy**: Một trong những điểm mạnh chính của RabbitMQ nằm ở khả năng lưu trữ tin nhắn một cách an toàn trong hàng đợi. Điều này đảm bảo rằng mỗi tin nhắn vẫn được bảo quản an toàn cho đến khi nó được xử lý và xác nhận đầy đủ, nhờ đó nâng cao độ tin cậy và ngăn ngừa mất dữ liệu.
+
+## Kafka vs RabbitMQ: Sự khác biệt
+
+Sự khác biệt giữa Kafka và RabbitMQ là gì? Mặc dù cả RabbitMQ và Kafka đều là những hệ thống nhắn tin phổ biến nhưng chúng có những đặc điểm khác nhau khiến chúng phù hợp với nhiều ứng dụng khác nhau. Hãy so sánh Apache Kafka và RabbitMQ dựa trên các khía cạnh như:
+
+- Hiệu năng
+
+- Khả năng mở rộng
+
+- Độ bền của tin nhắn
+
+- Độ tin cậy
+
+- Dễ sử dụng và thiết lập
+
+- Cộng đồng hỗ trợ và hệ sinh thái
+
+- Các mẫu định tuyến và nhắn tin
+
+- Giao thức, thư viện và các ngôn ngữ hỗ trợ
+
+- Độ trễ
+
+| Tính năng | RabbitMQ | Apache Kafka |
+| ------ | ------ | ------ |
+| Mô tả | Một broker tin nhắn an toàn, đáng tin cậy để sử dụng chung | Bus tin nhắn được thiết kế riêng cho luồng dữ liệu khối lượng lớn và phát lại tin nhắn |
+| Mục đích chính | Tạo điều kiện giao tiếp và tích hợp trong và giữa các ứng dụng; lý tưởng cho các nhiệm vụ lâu dài và các công việc nền đáng tin cậy | Cung cấp nền tảng để lưu trữ, truy cập và phân tích dữ liệu truyền phát |
+| Giấy phép | Open Source: Mozilla Public License | Open Source: Apache License 2.0 |
+| Implementation | Erlang | Scala (JVM) |
+| Phát hành lần đầu | 2007 | 2011 |
+| Vòng đời của message | Lưu trữ tin nhắn cho đến khi được người nhận xác nhận | Giữ lại tin nhắn với tùy chọn xóa sau một khoảng thời gian nhất định |
+| Gửi lại message | Không hỗ trợ | Có hỗ trợ |
+| Định tuyến message | Cho phép định tuyến linh hoạt với thông tin được trả về consumer nodes | Việc định tuyến phải được xử lý thông qua các topic riêng biệt; định tuyến linh hoạt không được hỗ trợ |
+| Độ ưu tiên của message | Có hỗ trợ | Không hỗ trợ |
+| Giám sát | Giao diện người dùng tích hợp có sẵn để theo dõi | Cần có các công cụ của bên thứ ba như CloudKarafka hoặc Confluent để giám sát |
+| Khả năng tương thích với các ngôn ngữ lập trình | Hỗ trợ hầu hết các ngôn ngữ lập trình | Tương thích với hầu hết các ngôn ngữ lập trình |
+| Bảo mật xác thực | Xác thực tiêu chuẩn và hỗ trợ OAuth2 | Cung cấp hỗ trợ cho Kerberos, OAuth2 và xác thực tiêu chuẩn |
+
+
+
