@@ -9,6 +9,8 @@ nav:
     - 'Bài 1: Giới thiệu về Docker': posts/Docker/docker-start.md
   - Kafka:
     - 'So sánh Kafka và RabbitMQ': posts/Kafka/compare.md
+  - Thuật toán:
+    - 'Quicksort': posts/alth/quicksort.md
 theme:
   name: material
   custom_dir: overrides

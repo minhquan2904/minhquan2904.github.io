@@ -14,6 +14,8 @@
         <link rel="prev" href="../../Docker/docker-start/">
       
       
+        <link rel="next" href="../../alth/quicksort/">
+      
       
       <link rel="icon" href="../../../assets/favicon.jpg">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
@@ -763,6 +765,73 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Thuật toán
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Thuật toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alth/quicksort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quicksort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1433,7 +1502,18 @@
 </ul>
 <h3 id="nhuoc-iem">Nhược điểm</h3>
 <ul>
-<li><strong>Độ phức tạp</strong>: Kiến trúc và cấu hình của Kafka có thể phức tạp và đầy thách thức đối với người mới. Quá trình học tập của nó có thể khó khăn đối với những người cần làm quen nhiều hơn với các hệ thống phân tán và các khái niệm lưu trữ dựa trên log.</li>
+<li>
+<p><strong>Độ phức tạp</strong>: Kiến trúc và cấu hình của Kafka có thể phức tạp và đầy thách thức đối với người mới. Quá trình học tập của nó có thể khó khăn đối với những người cần làm quen nhiều hơn với các hệ thống phân tán và các khái niệm lưu trữ dựa trên log.</p>
+</li>
+<li>
+<p><strong>Hạn chế định tuyến message</strong>: Kafka chủ yếu dựa vào khả năng định tuyến theo topic và partition. Mặc dù phương pháp này phù hợp với nhiều trường hợp sử dụng nhưng nó có thể không linh hoạt bằng khả năng định tuyến được cung cấp bởi các hệ thống nhắn tin khác như RabbitMQ.</p>
+</li>
+<li>
+<p><strong>Thiếu tích hợp độ ưu tiên message</strong>: Các nhà phát triển không thiết kế Kafka để cung cấp hỗ trợ tích hợp cho việc ưu tiên tin nhắn. Nó xử lý tin nhắn theo thứ tự nhận được, điều này có thể không lý tưởng cho các ứng dụng yêu cầu mức độ ưu tiên dựa trên nội dung tin nhắn hoặc các yếu tố khác.</p>
+</li>
+<li>
+<p><strong>Hiệu suất giảm</strong>: Brokers và consumers nén và giải nén luồng dữ liệu có thể ảnh hưởng đến hiệu suất và thông lượng của Kafka. Quá trình này ảnh hưởng đến hiệu quả của Kafka và ảnh hưởng đến khả năng xử lý dữ liệu tổng thể của nó.</p>
+</li>
 </ul>
 
 
@@ -1482,6 +1562,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../../alth/quicksort/" class="md-footer__link md-footer__link--next" aria-label="Next: Quicksort">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Quicksort
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

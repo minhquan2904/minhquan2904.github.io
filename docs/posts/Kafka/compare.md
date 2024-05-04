@@ -283,3 +283,9 @@ Chúng ta hãy xem xét kỹ hơn những điểm mạnh và điểm yếu của
 ### Nhược điểm
 
 - **Độ phức tạp**: Kiến trúc và cấu hình của Kafka có thể phức tạp và đầy thách thức đối với người mới. Quá trình học tập của nó có thể khó khăn đối với những người cần làm quen nhiều hơn với các hệ thống phân tán và các khái niệm lưu trữ dựa trên log.
+
+- **Hạn chế định tuyến message**: Kafka chủ yếu dựa vào khả năng định tuyến theo topic và partition. Mặc dù phương pháp này phù hợp với nhiều trường hợp sử dụng nhưng nó có thể không linh hoạt bằng khả năng định tuyến được cung cấp bởi các hệ thống nhắn tin khác như RabbitMQ.
+
+- **Thiếu tích hợp độ ưu tiên message**: Các nhà phát triển không thiết kế Kafka để cung cấp hỗ trợ tích hợp cho việc ưu tiên tin nhắn. Nó xử lý tin nhắn theo thứ tự nhận được, điều này có thể không lý tưởng cho các ứng dụng yêu cầu mức độ ưu tiên dựa trên nội dung tin nhắn hoặc các yếu tố khác.
+
+- **Hiệu suất giảm**: Brokers và consumers nén và giải nén luồng dữ liệu có thể ảnh hưởng đến hiệu suất và thông lượng của Kafka. Quá trình này ảnh hưởng đến hiệu quả của Kafka và ảnh hưởng đến khả năng xử lý dữ liệu tổng thể của nó.
