@@ -14,6 +14,8 @@ Vũ khí bí mật của quicksort nằm ở chiến lược "chia để trị".
 
 Vậy quicksort hoạt động như thế nào? Hãy tưởng tượng bạn đang dọn dẹp một căn phòng bừa bộn. Thay vì dọn tất cả mọi thứ cùng lúc, bạn sẽ chia phòng thành các khu vực nhỏ hơn, chẳng hạn như khu vực giường ngủ, khu vực bàn làm việc, v.v. Sau đó, bạn dọn dẹp từng khu vực một cách cẩn thận và cuối cùng, cả căn phòng sẽ trở nên ngăn nắp. Quicksort cũng hoạt động tương tự như vậy!
 
+## Hoạt động 
+
 **Thuật toán này hoạt động theo các bước sau**:
 
 1. **Chọn "người chỉ huy" (pivot)**: Lựa chọn một phần tử bất kỳ trong mảng để làm phần tử chốt. Phần tử này sẽ đóng vai trò như "người chỉ huy", giúp phân chia mảng thành hai phần.
@@ -38,3 +40,71 @@ Vậy quicksort hoạt động như thế nào? Hãy tưởng tượng bạn đa
 Quicksort được ứng dụng rộng rãi trong nhiều lĩnh vực, từ hệ thống cơ sở dữ liệu, thuật toán đồ họa đến xử lý hình ảnh và các ứng dụng thương mại.
 
 > Tóm lại, quicksort là một thuật toán sắp xếp hiệu quả và linh hoạt, xứng đáng được coi là một "nghệ thuật sắp xếp" trong khoa học máy tính.
+
+## Ví dụ code Quicksort sử dụng .NET Core
+
+Dưới đây là ví dụ code triển khai thuật toán Quicksort trong C# sử dụng .NET Core:
+
+```cs
+public class QuickSort
+{
+    public static void Sort<T>(T[] arr, int low, int high) where T : IComparable<T>
+    {
+        if (low < high)
+        {
+            int pivotIndex = Partition(arr, low, high);
+
+            // Sắp xếp đệ quy hai mảng con
+            Sort(arr, low, pivotIndex - 1);
+            Sort(arr, pivotIndex + 1, high);
+        }
+    }
+
+    private static int Partition<T>(T[] arr, int low, int high) where T : IComparable<T>
+    {
+        T pivot = arr[high];
+        int i = (low - 1);
+
+        for (int j = low; j < high; j++)
+        {
+            if (arr[j].CompareTo(pivot) <= 0)
+            {
+                i++;
+                Swap(arr, i, j);
+            }
+        }
+
+        Swap(arr, i + 1, high);
+        return i + 1;
+    }
+
+    private static void Swap<T>(T[] arr, int i, int j)
+    {
+        T temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+```
+
+Cách sử dụng:
+
+```cs
+// Mảng cần sắp xếp
+int[] arr = { 10, 7, 8, 9, 1, 5 };
+
+// Sắp xếp mảng sử dụng Quicksort
+QuickSort.Sort(arr, 0, arr.Length - 1);
+
+// In mảng đã sắp xếp
+Console.WriteLine(string.Join(", ", arr));
+```
+
+**Giải thích**:
+Code sử dụng generic type T để cho phép sắp xếp các loại dữ liệu khác nhau, miễn là chúng triển khai interface IComparable<T>.
+Phương thức Sort thực hiện sắp xếp đệ quy mảng con dựa trên vị trí của phần tử chốt sau khi phân vùng.
+Phương thức Partition thực hiện phân vùng mảng, đưa phần tử chốt vào vị trí đúng và đảm bảo các phần tử nhỏ hơn nằm bên trái, phần tử lớn hơn nằm bên phải.
+Phương thức Swap đơn giản là trao đổi vị trí của hai phần tử trong mảng.
+Lưu ý:
+Ví dụ code này sử dụng phương pháp chọn phần tử chốt là phần tử cuối cùng của mảng. Bạn có thể thay đổi cách chọn phần tử chốt để cải thiện hiệu năng hoặc phù hợp với yêu cầu cụ thể.
+Bạn có thể thêm các kỹ thuật cải tiến như cutoff to insertion sort, median-of-three partitioning để tối ưu hóa hiệu năng của quicksort.
