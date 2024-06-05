@@ -4,7 +4,7 @@ nav_tile: Quicksort
 draft: true 
 date: 2024-05-04
 categories:
-  - Quicksort
+  - sort
 ---
 # Quicksort: Khi "Chia để trị" trở thành nghệ thuật sắp xếp
 

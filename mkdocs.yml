@@ -11,6 +11,10 @@ nav:
     - 'So sánh Kafka và RabbitMQ': posts/Kafka/compare.md
   - Thuật toán:
     - 'Quicksort': posts/alth/quicksort.md
+  - ABAC:
+    - 'Thuật ngữ': posts/abac/Terminology.md
+    - 'Access Control Models and Policies': posts/abac/ModelsAndPolicies.md
+    - ' Policy Enforcement': posts/abac/PolicyEnforcement.md
 theme:
   name: material
   custom_dir: overrides
