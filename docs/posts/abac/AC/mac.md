@@ -2,6 +2,7 @@
 title: mac
 nav_tile: nac
 draft: true 
+comments: true
 date: 2024-06-04
 categories:
   - abac

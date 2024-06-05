@@ -2,6 +2,7 @@
 title: Terminology
 nav_tile: Terminology
 draft: true 
+comments: true
 date: 2024-06-04
 categories:
   - abac

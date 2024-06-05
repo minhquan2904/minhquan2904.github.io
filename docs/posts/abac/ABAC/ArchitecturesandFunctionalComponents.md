@@ -2,6 +2,7 @@
 title: abac-architecture
 nav_tile: abac-architecture
 draft: true 
+comments: true
 date: 2024-06-04
 categories:
   - abac

@@ -1,3 +1,12 @@
+---
+title: enf
+nav_tile: enf
+draft: true 
+comments: true
+date: 2024-06-04
+categories:
+  - abac
+---
 # Cơ chế kiểm soát truy cập: Xây dựng chính sách bảo mật
 
 Bài viết này tập trung vào vai trò của cơ chế xác thực và ủy quyền trong việc thực thi chính sách kiểm soát truy cập, một yếu tố quan trọng đối với các doanh nghiệp hiện đại.

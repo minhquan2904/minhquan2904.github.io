@@ -2,6 +2,7 @@
 title: abac-intro
 nav_tile: abac-intro
 draft: true 
+comments: true
 date: 2024-06-04
 categories:
   - abac
