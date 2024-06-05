@@ -12,9 +12,15 @@ nav:
   - Thuật toán:
     - 'Quicksort': posts/alth/quicksort.md
   - ABAC:
-    - 'Thuật ngữ': posts/abac/Terminology.md
-    - 'Access Control Models and Policies': posts/abac/ModelsAndPolicies.md
-    - ' Policy Enforcement': posts/abac/PolicyEnforcement.md
+    - Các mô hình và phương pháp kiểm soát truy cập:
+      - 'Thuật ngữ': posts/abac/AC/Terminology.md
+      - 'Access Control Models and Policies': posts/abac/AC/ModelsAndPolicies.md
+      - 'Policy Enforcement': posts/abac/AC/PolicyEnforcement.md
+      - 'Discretionary Access Control - DAC': posts/abac/AC/dac.md
+      - 'Mandatory Access Control - MAC': posts/abac/AC/mac.md
+    - Mô hình và phương pháp tiếp cận ABAC:
+      - 'Giới thiệu': posts/abac/ABAC/intro.md
+      - 'Kiến trúc và thành phần chức năng của ABAC': posts/abac/ABAC/ArchitecturesandFunctionalComponents.md
 theme:
   name: material
   custom_dir: overrides

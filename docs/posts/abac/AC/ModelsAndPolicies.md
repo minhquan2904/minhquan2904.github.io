@@ -59,5 +59,6 @@ Sự khác biệt:
 - **Mô hình kiểm soát truy cập**: Cung cấp một khuôn khổ để xác định và thực thi chính sách kiểm soát truy cập.
 
 Lưu ý:
-Các mô hình kiểm soát truy cập được thiết kế ở cấp độ trừu tượng, không bao gồm các cơ chế bảo mật cụ thể để thực hiện mô hình.
+
+> Các mô hình kiểm soát truy cập được thiết kế ở cấp độ trừu tượng, không bao gồm các cơ chế bảo mật cụ thể để thực hiện mô hình.
 Các khía cạnh triển khai được xem xét thông qua các quy trình bảo đảm thông tin (ví dụ: tuân thủ mô hình và chính sách).

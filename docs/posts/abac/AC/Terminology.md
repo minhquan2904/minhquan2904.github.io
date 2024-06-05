@@ -1,3 +1,11 @@
+---
+title: Terminology
+nav_tile: Terminology
+draft: true 
+date: 2024-06-04
+categories:
+  - abac
+---
 # Kiểm soát truy cập: Hiểu rõ các khái niệm cơ bản
 
 Trong lĩnh vực kiểm soát truy cập, người dùng có thể là con người hoặc các thực thể phi người (ví dụ: chương trình hoặc thiết bị) tương tác với hệ thống máy tính. Mỗi người dùng có một danh tính duy nhất và được ánh xạ đến chỉ một thực thể.
@@ -39,4 +47,4 @@ Lưu trữ quyền hạn:
 Thông thường, quyền hạn không được lưu trữ trực tiếp dưới dạng đơn giản (u, ar, o) mà được biểu diễn gián tiếp bằng các hình thức khác (ví dụ: danh sách kiểm soát truy cập, danh sách khả năng, vai trò và mối quan hệ giữa chúng).
 
 Tóm lại:
-Hiểu rõ các khái niệm cơ bản về kiểm soát truy cập, xác thực và ủy quyền là điều cần thiết để xây dựng hệ thống bảo mật hiệu quả. Việc lựa chọn mô hình kiểm soát truy cập phù hợp phụ thuộc vào yêu cầu cụ thể của hệ thống và mức độ bảo mật cần thiết.
+> Hiểu rõ các khái niệm cơ bản về kiểm soát truy cập, xác thực và ủy quyền là điều cần thiết để xây dựng hệ thống bảo mật hiệu quả. Việc lựa chọn mô hình kiểm soát truy cập phù hợp phụ thuộc vào yêu cầu cụ thể của hệ thống và mức độ bảo mật cần thiết.

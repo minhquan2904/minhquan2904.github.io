@@ -8,23 +8,25 @@
       
       
       
-        <link rel="canonical" href="http://localhost:8000/">
+        <link rel="canonical" href="http://localhost:8000/posts/abac/ABAC/intro/">
       
       
+        <link rel="prev" href="../../AC/mac/">
       
-        <link rel="next" href="posts/hello-world/">
+      
+        <link rel="next" href="../ArchitecturesandFunctionalComponents/">
       
       
-      <link rel="icon" href="assets/favicon.jpg">
+      <link rel="icon" href="../../../../assets/favicon.jpg">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
-        <title>quanbm</title>
+        <title>abac-intro - quanbm</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bcfcd587.min.css">
       
       
 
@@ -43,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-unbounded-realm" class="md-skip">
+        <a href="#kiem-soat-truy-cap-dua-tren-thuoc-tinh-attribute-based-access-control-abac" class="md-skip">
           Skip to content
         </a>
       
@@ -82,9 +84,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="quanbm" class="md-header__button md-logo" aria-label="quanbm" data-md-component="logo">
+    <a href="../../../.." title="quanbm" class="md-header__button md-logo" aria-label="quanbm" data-md-component="logo">
       
-  <img src="assets/logo.jpg" alt="logo">
+  <img src="../../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              abac-intro
             
           </span>
         </div>
@@ -190,9 +192,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="quanbm" class="md-nav__button md-logo" aria-label="quanbm" data-md-component="logo">
+    <a href="../../../.." title="quanbm" class="md-nav__button md-logo" aria-label="quanbm" data-md-component="logo">
       
-  <img src="assets/logo.jpg" alt="logo">
+  <img src="../../../../assets/logo.jpg" alt="logo">
 
     </a>
     quanbm
@@ -216,30 +218,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -248,134 +230,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#coding-adventures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Coding Adventures
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Coding Adventures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exploring-the-digital-wilderness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exploring the Digital Wilderness
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crafting-code-poetry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Crafting Code Poetry
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#life-chronicles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Life Chronicles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Life Chronicles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wanderlust-chronicles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Wanderlust Chronicles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gastronomic-escapades" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gastronomic Escapades
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#musings-marvels" class="md-nav__link">
-    <span class="md-ellipsis">
-      Musings &amp; Marvels
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Musings & Marvels">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#philosophical-ponderings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Philosophical Ponderings
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#marvels-of-the-mundane" class="md-nav__link">
-    <span class="md-ellipsis">
-      Marvels of the Mundane
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connect &amp; Contribute
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -387,7 +241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/hello-world/" class="md-nav__link">
+      <a href="../../../hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -448,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/Docker/summary/" class="md-nav__link">
+      <a href="../../../Docker/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -469,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/Docker/docker-start/" class="md-nav__link">
+      <a href="../../../Docker/docker-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -536,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/Kafka/compare/" class="md-nav__link">
+      <a href="../../../Kafka/compare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -603,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/alth/quicksort/" class="md-nav__link">
+      <a href="../../../alth/quicksort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -628,8 +482,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -640,11 +496,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -658,7 +514,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             ABAC
@@ -719,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/abac/AC/Terminology/" class="md-nav__link">
+      <a href="../../AC/Terminology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -740,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/abac/AC/ModelsAndPolicies/" class="md-nav__link">
+      <a href="../../AC/ModelsAndPolicies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -761,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/abac/AC/PolicyEnforcement/" class="md-nav__link">
+      <a href="../../AC/PolicyEnforcement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -782,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/abac/AC/dac/" class="md-nav__link">
+      <a href="../../AC/dac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -803,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/abac/AC/mac/" class="md-nav__link">
+      <a href="../../AC/mac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -829,8 +685,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -841,11 +699,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
         
           
           <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
@@ -859,7 +717,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             Mô hình và phương pháp tiếp cận ABAC
@@ -870,10 +728,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="posts/abac/ABAC/intro/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Giới thiệu
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -882,6 +760,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cac-khai-niem-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Các khái niệm chính
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cach-thuc-hoat-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cách thức hoạt động:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-thanh-phan-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Các thành phần chính
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kết luận
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -894,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/abac/ABAC/ArchitecturesandFunctionalComponents/" class="md-nav__link">
+      <a href="../ArchitecturesandFunctionalComponents/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -950,108 +884,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#coding-adventures" class="md-nav__link">
+  <a href="#cac-khai-niem-chinh" class="md-nav__link">
     <span class="md-ellipsis">
-      Coding Adventures
+      Các khái niệm chính
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Coding Adventures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exploring-the-digital-wilderness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exploring the Digital Wilderness
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crafting-code-poetry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Crafting Code Poetry
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#life-chronicles" class="md-nav__link">
+  <a href="#cach-thuc-hoat-ong" class="md-nav__link">
     <span class="md-ellipsis">
-      Life Chronicles
+      Cách thức hoạt động:
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Life Chronicles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wanderlust-chronicles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Wanderlust Chronicles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gastronomic-escapades" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gastronomic Escapades
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#musings-marvels" class="md-nav__link">
+  <a href="#cac-thanh-phan-chinh" class="md-nav__link">
     <span class="md-ellipsis">
-      Musings &amp; Marvels
+      Các thành phần chính
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Musings & Marvels">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#philosophical-ponderings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Philosophical Ponderings
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#marvels-of-the-mundane" class="md-nav__link">
-    <span class="md-ellipsis">
-      Marvels of the Mundane
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect-contribute" class="md-nav__link">
+  <a href="#ket-luan" class="md-nav__link">
     <span class="md-ellipsis">
-      Connect &amp; Contribute
+      Kết luận
     </span>
   </a>
   
@@ -1075,33 +937,95 @@
   
 
 
-<h1 id="the-unbounded-realm">The Unbounded Realm</h1>
-<p>Welcome to The Unbounded Realm, where creativity knows no limits and exploration knows no bounds. Join us on a journey through the endless possibilities of programming and everyday life.</p>
-<h2 id="coding-adventures">Coding Adventures</h2>
-<h3 id="exploring-the-digital-wilderness">Exploring the Digital Wilderness</h3>
-<p>Embark on a quest through the digital wilderness, where lines of code are the paths we tread and algorithms are the secrets waiting to be discovered.</p>
-<h3 id="crafting-code-poetry">Crafting Code Poetry</h3>
-<p>Discover the beauty of code poetry, where syntax becomes art and algorithms dance in elegant harmony. Let's weave words and code into lyrical masterpieces.</p>
-<h2 id="life-chronicles">Life Chronicles</h2>
-<h3 id="wanderlust-chronicles">Wanderlust Chronicles</h3>
-<p>Follow our wanderlust chronicles as we traverse the globe, seeking inspiration in the wonders of nature and the diversity of cultures.</p>
-<h3 id="gastronomic-escapades">Gastronomic Escapades</h3>
-<p>Indulge in our gastronomic escapades, where culinary delights from every corner of the world await. Join us as we savor the flavors of life, one bite at a time.</p>
-<h2 id="musings-marvels">Musings &amp; Marvels</h2>
-<h3 id="philosophical-ponderings">Philosophical Ponderings</h3>
-<p>Delve into the depths of existential ponderings and philosophical musings. Let's contemplate the mysteries of the universe and the meaning of life itself.</p>
-<h3 id="marvels-of-the-mundane">Marvels of the Mundane</h3>
-<p>Marvel at the beauty of the mundane, where everyday moments are transformed into extraordinary experiences. Let's find wonder in the simplicity of life.</p>
-<h2 id="connect-contribute">Connect &amp; Contribute</h2>
-<p>Join The Unbounded Realm community and share your own adventures, musings, and marvels. Together, let's create a tapestry of creativity and inspiration that knows no bounds!</p>
-<hr />
-<p><strong>The Unbounded Realm</strong> © 2024. All rights reserved. | <a href="about.md">About</a></p>
+<h1 id="kiem-soat-truy-cap-dua-tren-thuoc-tinh-attribute-based-access-control-abac">Kiểm soát truy cập dựa trên thuộc tính (Attribute-Based Access Control - ABAC)</h1>
+<p>Bài viết này giới thiệu ABAC, một mô hình kiểm soát truy cập linh hoạt và mạnh mẽ, cho phép thiết lập chính sách dựa trên các thuộc tính của người dùng, đối tượng và môi trường.</p>
+<p>Ưu điểm của ABAC:</p>
+<ul>
+<li>
+<p>Linh hoạt: Dễ dàng thiết lập và sửa đổi chính sách dựa trên thuộc tính.</p>
+</li>
+<li>
+<p>Chính xác: Cho phép xác định chính xác quyền truy cập dựa trên nhiều thuộc tính.</p>
+</li>
+<li>
+<p>Nâng cao tính năng: Hỗ trợ nhiều quy tắc phức tạp hơn so với các mô hình truyền thống.</p>
+</li>
+<li>
+<p>Tự động hóa: Cho phép tự động hóa các quyết định về quyền truy cập.</p>
+</li>
+<li>
+<p>Xử lý người dùng ngoài: Hỗ trợ người dùng mới gia nhập mà không cần sửa đổi chính sách.</p>
+</li>
+</ul>
+<h2 id="cac-khai-niem-chinh">Các khái niệm chính</h2>
+<ul>
+<li>
+<p><strong>Thuộc tính</strong>: Các đặc điểm của người dùng, đối tượng và môi trường.</p>
+</li>
+<li>
+<p><strong>Chính sách</strong>: Được xác định dựa trên các thuộc tính để xác định ai có thể thực hiện thao tác nào trên đối tượng nào.</p>
+</li>
+<li>
+<p><strong>Quy tắc</strong>: Được sử dụng để xác định quyền truy cập dựa trên các thuộc tính.</p>
+</li>
+<li>
+<p><strong>Môi trường</strong>: Bao gồm các thuộc tính liên quan đến ngữ cảnh của yêu cầu truy cập.</p>
+</li>
+</ul>
+<h2 id="cach-thuc-hoat-ong">Cách thức hoạt động:</h2>
+<ul>
+<li>
+<p>Gán thuộc tính: Gán thuộc tính cho người dùng, đối tượng và môi trường.</p>
+</li>
+<li>
+<p>Xây dựng chính sách: Xây dựng chính sách dựa trên các thuộc tính.</p>
+</li>
+<li>
+<p>Xác định quy tắc: Thiết lập quy tắc kiểm soát quyền truy cập dựa trên chính sách.</p>
+</li>
+<li>
+<p>Phân tích yêu cầu: Phân tích yêu cầu truy cập dựa trên thuộc tính.</p>
+</li>
+<li>
+<p>Quyết định: Cơ chế ABAC đưa ra quyết định cho phép hoặc từ chối quyền truy cập dựa trên các quy tắc.</p>
+</li>
+</ul>
+<p>Ví dụ:</p>
+<ul>
+<li>
+<p>Một bác sĩ chuyên khoa tim có thể được phép truy cập vào hồ sơ bệnh nhân tim mạch.</p>
+</li>
+<li>
+<p>Một quản trị viên hệ thống có thể được phép truy cập vào các máy chủ trong giờ hành chính.</p>
+</li>
+</ul>
+<h2 id="cac-thanh-phan-chinh">Các thành phần chính</h2>
+<ul>
+<li>
+<p>Dữ liệu kiểm soát truy cập: Lưu trữ các thuộc tính và chính sách.</p>
+</li>
+<li>
+<p>Hoạt động quản trị: Cho phép cấu hình dữ liệu kiểm soát truy cập.</p>
+</li>
+<li>
+<p>Chức năng thực thi chính sách: Kiểm tra yêu cầu truy cập và áp dụng các quy tắc.</p>
+</li>
+</ul>
+<p>So sánh với các mô hình khác:</p>
+<p>ABAC: Linh hoạt hơn, chính xác hơn và có khả năng tự động hóa cao hơn so với DAC và RBAC.</p>
+<h2 id="ket-luan">Kết luận</h2>
+<blockquote>
+<p>ABAC là một mô hình kiểm soát truy cập mạnh mẽ và linh hoạt, phù hợp với các hệ thống phân tán, động và có nhu cầu quản lý quyền truy cập phức tạp.</p>
+</blockquote>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1124,15 +1048,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../../AC/mac/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mandatory Access Control - MAC">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Mandatory Access Control - MAC
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="posts/hello-world/" class="md-footer__link md-footer__link--next" aria-label="Next: Hello-word">
+          <a href="../ArchitecturesandFunctionalComponents/" class="md-footer__link md-footer__link--next" aria-label="Next: Kiến trúc và thành phần chức năng của ABAC">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Hello-word
+                Kiến trúc và thành phần chức năng của ABAC
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1183,10 +1123,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["search.suggest", "navigation.indexes", "navigation.insants", "navigation.footer", "announce.dismiss"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "quanbm"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "navigation.indexes", "navigation.insants", "navigation.footer", "announce.dismiss"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "quanbm"}}</script>
     
     
-      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>

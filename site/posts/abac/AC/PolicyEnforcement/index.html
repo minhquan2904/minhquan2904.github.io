@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="http://localhost:8000/posts/abac/ModelsAndPolicies/">
+        <link rel="canonical" href="http://localhost:8000/posts/abac/AC/PolicyEnforcement/">
       
       
-        <link rel="prev" href="../Terminology/">
+        <link rel="prev" href="../ModelsAndPolicies/">
       
       
-        <link rel="next" href="../PolicyEnforcement/">
+        <link rel="next" href="../dac/">
       
       
-      <link rel="icon" href="../../../assets/favicon.jpg">
+      <link rel="icon" href="../../../../assets/favicon.jpg">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
-        <title>ModelsAndPolicies - quanbm</title>
+        <title>Policy Enforcement - quanbm</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bcfcd587.min.css">
       
       
 
@@ -45,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kiem-soat-truy-cap-discretionary-vs-mandatory" class="md-skip">
+        <a href="#co-che-kiem-soat-truy-cap-xay-dung-chinh-sach-bao-mat" class="md-skip">
           Skip to content
         </a>
       
@@ -84,9 +84,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="quanbm" class="md-header__button md-logo" aria-label="quanbm" data-md-component="logo">
+    <a href="../../../.." title="quanbm" class="md-header__button md-logo" aria-label="quanbm" data-md-component="logo">
       
-  <img src="../../../assets/logo.jpg" alt="logo">
+  <img src="../../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ModelsAndPolicies
+              Policy Enforcement
             
           </span>
         </div>
@@ -192,9 +192,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="quanbm" class="md-nav__button md-logo" aria-label="quanbm" data-md-component="logo">
+    <a href="../../../.." title="quanbm" class="md-nav__button md-logo" aria-label="quanbm" data-md-component="logo">
       
-  <img src="../../../assets/logo.jpg" alt="logo">
+  <img src="../../../../assets/logo.jpg" alt="logo">
 
     </a>
     quanbm
@@ -221,7 +221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -241,7 +241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hello-world/" class="md-nav__link">
+      <a href="../../../hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -302,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/summary/" class="md-nav__link">
+      <a href="../../../Docker/summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/docker-start/" class="md-nav__link">
+      <a href="../../../Docker/docker-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -390,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Kafka/compare/" class="md-nav__link">
+      <a href="../../../Kafka/compare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -457,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../alth/quicksort/" class="md-nav__link">
+      <a href="../../../alth/quicksort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -488,8 +488,6 @@
   
     
     
-      
-        
       
         
       
@@ -527,6 +525,55 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Các mô hình và phương pháp kiểm soát truy cập
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Các mô hình và phương pháp kiểm soát truy cập
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -535,6 +582,27 @@
   
   <span class="md-ellipsis">
     Thuật ngữ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ModelsAndPolicies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Control Models and Policies
   </span>
   
 
@@ -564,7 +632,7 @@
           
   
   <span class="md-ellipsis">
-    Access Control Models and Policies
+    Policy Enforcement
   </span>
   
 
@@ -575,7 +643,7 @@
         
   
   <span class="md-ellipsis">
-    Access Control Models and Policies
+    Policy Enforcement
   </span>
   
 
@@ -597,36 +665,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#discretionary-access-control-dac" class="md-nav__link">
+  <a href="#vai-tro-cua-chinh-sach-kiem-soat-truy-cap" class="md-nav__link">
     <span class="md-ellipsis">
-      Discretionary Access Control (DAC):
+      Vai trò của chính sách kiểm soát truy cập:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mandatory-access-control-mac" class="md-nav__link">
+  <a href="#co-che-thuc-thi-chinh-sach-kiem-soat-truy-cap" class="md-nav__link">
     <span class="md-ellipsis">
-      Mandatory Access Control (MAC):
+      Cơ chế thực thi chính sách kiểm soát truy cập:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mo-hinh-kiem-soat-truy-cap" class="md-nav__link">
+  <a href="#hoat-ong-cua-co-che" class="md-nav__link">
     <span class="md-ellipsis">
-      Mô hình kiểm soát truy cập:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mo-hinh-kiem-soat-truy-cap_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mô hình kiểm soát truy cập:
+      Hoạt động của cơ chế:
     </span>
   </a>
   
@@ -657,15 +716,135 @@
   
   
     <li class="md-nav__item">
-      <a href="../PolicyEnforcement/" class="md-nav__link">
+      <a href="../dac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-     Policy Enforcement
+    Discretionary Access Control - DAC
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mandatory Access Control - MAC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mô hình và phương pháp tiếp cận ABAC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Mô hình và phương pháp tiếp cận ABAC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ABAC/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giới thiệu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ABAC/ArchitecturesandFunctionalComponents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kiến trúc và thành phần chức năng của ABAC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -705,36 +884,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#discretionary-access-control-dac" class="md-nav__link">
+  <a href="#vai-tro-cua-chinh-sach-kiem-soat-truy-cap" class="md-nav__link">
     <span class="md-ellipsis">
-      Discretionary Access Control (DAC):
+      Vai trò của chính sách kiểm soát truy cập:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mandatory-access-control-mac" class="md-nav__link">
+  <a href="#co-che-thuc-thi-chinh-sach-kiem-soat-truy-cap" class="md-nav__link">
     <span class="md-ellipsis">
-      Mandatory Access Control (MAC):
+      Cơ chế thực thi chính sách kiểm soát truy cập:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mo-hinh-kiem-soat-truy-cap" class="md-nav__link">
+  <a href="#hoat-ong-cua-co-che" class="md-nav__link">
     <span class="md-ellipsis">
-      Mô hình kiểm soát truy cập:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mo-hinh-kiem-soat-truy-cap_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mô hình kiểm soát truy cập:
+      Hoạt động của cơ chế:
     </span>
   </a>
   
@@ -767,85 +937,63 @@
   
 
 
-<h1 id="kiem-soat-truy-cap-discretionary-vs-mandatory">Kiểm soát truy cập: Discretionary vs. Mandatory</h1>
-<p>Bài viết này phân tích hai loại chính sách kiểm soát truy cập phổ biến: Discretionary Access Control (DAC) và Mandatory Access Control (MAC).</p>
-<h2 id="discretionary-access-control-dac">Discretionary Access Control (DAC):</h2>
+<h1 id="co-che-kiem-soat-truy-cap-xay-dung-chinh-sach-bao-mat">Cơ chế kiểm soát truy cập: Xây dựng chính sách bảo mật</h1>
+<p>Bài viết này tập trung vào vai trò của cơ chế xác thực và ủy quyền trong việc thực thi chính sách kiểm soát truy cập, một yếu tố quan trọng đối với các doanh nghiệp hiện đại.</p>
+<h2 id="vai-tro-cua-chinh-sach-kiem-soat-truy-cap">Vai trò của chính sách kiểm soát truy cập:</h2>
 <ul>
 <li>
-<p><strong>Quyền hạn</strong>: Cho phép người dùng hệ thống quyết định ai có thể truy cập vào các đối tượng họ kiểm soát.</p>
+<p><strong>Yêu cầu của doanh nghiệp</strong>: Xác định cách thức quản lý quyền truy cập và ai được phép truy cập thông tin nào, trong trường hợp nào.</p>
 </li>
 <li>
-<p><strong>Tính linh hoạt</strong>: Người dùng có thể tự do điều chỉnh quyền truy cập cho người khác.</p>
-</li>
-<li>
-<p><strong>Ví dụ</strong>: Một thư mục trên máy tính, nơi chủ sở hữu có thể cấp quyền đọc, ghi hoặc thực thi cho người khác.</p>
+<p><strong>Bảo mật</strong>: Ngăn chặn việc tiết lộ thông tin nhạy cảm trái phép, bảo vệ tính toàn vẹn của dữ liệu quan trọng, giảm thiểu nguy cơ gian lận và tạo điều kiện chia sẻ thông tin an toàn.</p>
 </li>
 </ul>
-<h2 id="mandatory-access-control-mac">Mandatory Access Control (MAC):</h2>
+<h2 id="co-che-thuc-thi-chinh-sach-kiem-soat-truy-cap">Cơ chế thực thi chính sách kiểm soát truy cập:</h2>
 <ul>
 <li>
-<p><strong>Quyền hạn</strong>: Quyết định về việc cấp quyền truy cập được thực hiện bởi một cơ quan trung tâm, không phải bởi chủ sở hữu của đối tượng.</p>
+<p><strong>Hệ thống chức năng cố định</strong>: Bao gồm các chức năng được xác định trước, xử lý yêu cầu truy cập của người dùng.</p>
 </li>
 <li>
-<p><strong>Bảo mật cao</strong>: Giúp đảm bảo rằng dữ liệu nhạy cảm chỉ được truy cập bởi những người được phép.</p>
+<p><strong>Dữ liệu kiểm soát truy cập</strong>: Lưu trữ cấu hình của cơ chế, phản ánh cách thức quản lý quyền truy cập.</p>
 </li>
 <li>
-<p><strong>Ví dụ</strong>: Hệ thống quân sự, nơi mức độ bảo mật được xác định bởi các quy định nghiêm ngặt về quyền truy cập.</p>
+<p><strong>Quyền hạn</strong>: Đại diện cho khả năng của người dùng thực hiện một thao tác (ví dụ: đọc, ghi) trên đối tượng hoặc tài nguyên.</p>
+</li>
+<li>
+<p><strong>Xác thực danh tính</strong>: Lưu trữ và xác thực danh tính của người dùng.</p>
+</li>
+<li>
+<p><strong>Bối cảnh bảo mật</strong>: Thiết lập bối cảnh bảo mật (nhóm, thuộc tính) dựa trên danh tính đã được xác thực, làm cơ sở để quyết định cho phép hoặc từ chối truy cập.</p>
 </li>
 </ul>
-<p>Sự khác biệt:</p>
+<h2 id="hoat-ong-cua-co-che">Hoạt động của cơ chế:</h2>
 <ul>
 <li>
-<p><strong>DAC</strong>: Người dùng tự quyết định quyền truy cập.</p>
+<p><strong>Phân tích yêu cầu truy cập</strong>: Cơ chế phân tích yêu cầu truy cập cụ thể của người dùng.</p>
 </li>
 <li>
-<p><strong>MAC</strong>: Quyết định được đưa ra bởi một cơ quan trung tâm.</p>
+<p><strong>Kiểm tra quyền hạn</strong>: Kiểm tra xem người dùng có quyền truy cập phù hợp với yêu cầu hay không.</p>
+</li>
+<li>
+<p><strong>Xác định bối cảnh bảo mật</strong>: Xác định bối cảnh bảo mật dựa trên danh tính đã được xác thực.</p>
+</li>
+<li>
+<p><strong>Quyết định</strong>: Cơ chế đưa ra quyết định cho phép hoặc từ chối truy cập dựa trên kết quả phân tích.</p>
 </li>
 </ul>
-<h2 id="mo-hinh-kiem-soat-truy-cap">Mô hình kiểm soát truy cập:</h2>
-<ul>
-<li>
-<p><strong>DAC</strong>: Là một lớp rộng lớn bao gồm nhiều mô hình kiểm soát truy cập.</p>
-</li>
-<li>
-<p><strong>MAC</strong>: Là mô hình bổ sung cho DAC, cung cấp mức độ bảo mật cao hơn.</p>
-</li>
-</ul>
-<h2 id="mo-hinh-kiem-soat-truy-cap_1">Mô hình kiểm soát truy cập:</h2>
-<ul>
-<li>
-<p><strong>Mô hình</strong>: Là một phương pháp trừu tượng hóa chính sách kiểm soát truy cập, giúp định nghĩa cách thức truy cập được quản lý.</p>
-</li>
-<li>
-<p><strong>Mục tiêu</strong>: Cung cấp một khuôn khổ logic để kiểm soát truy cập, cho phép xác minh sự tuân thủ chính sách.</p>
-</li>
-<li>
-<p><strong>Chính sách</strong>: Là tập hợp các quy tắc và hướng dẫn được xác định bởi tổ chức để quản lý quyền truy cập.</p>
-</li>
-</ul>
-<p>Sự khác biệt:</p>
-<ul>
-<li><strong>Mô hình</strong>: Trừu tượng, định nghĩa logic và tính chất.</li>
-<li><strong>Chính sách</strong>: Cụ thể, hướng dẫn và có thể không đầy đủ.</li>
-</ul>
+<p>Ví dụ:</p>
+<p>Xác thực: Người dùng nhập mật khẩu để xác minh danh tính.</p>
+<p>Ủy quyền: Hệ thống xác định xem người dùng có quyền truy cập vào tài liệu cụ thể hay không dựa trên vai trò và quyền hạn.</p>
 <h2 id="ket-luan">Kết luận:</h2>
-<ul>
-<li><strong>DAC</strong>: Phù hợp cho các môi trường nơi sự linh hoạt và kiểm soát bởi người dùng là ưu tiên.</li>
-<li><strong>MAC</strong>: Phù hợp cho các môi trường yêu cầu bảo mật cao, nơi dữ liệu nhạy cảm cần được bảo vệ.</li>
-<li><strong>Mô hình kiểm soát truy cập</strong>: Cung cấp một khuôn khổ để xác định và thực thi chính sách kiểm soát truy cập.</li>
-</ul>
-<p>Lưu ý:
-Các mô hình kiểm soát truy cập được thiết kế ở cấp độ trừu tượng, không bao gồm các cơ chế bảo mật cụ thể để thực hiện mô hình.
-Các khía cạnh triển khai được xem xét thông qua các quy trình bảo đảm thông tin (ví dụ: tuân thủ mô hình và chính sách).</p>
+<blockquote>
+<p>Cơ chế xác thực và ủy quyền đóng vai trò quan trọng trong việc thực thi chính sách kiểm soát truy cập, bảo vệ thông tin nhạy cảm và đảm bảo an toàn cho dữ liệu và hệ thống. Các cơ chế này cần được thiết kế và triển khai một cách hiệu quả để đáp ứng các yêu cầu bảo mật của doanh nghiệp.</p>
+</blockquote>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -869,7 +1017,7 @@ Các khía cạnh triển khai được xem xét thông qua các quy trình bả
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Terminology/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Thuật ngữ">
+          <a href="../ModelsAndPolicies/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Access Control Models and Policies">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -879,20 +1027,20 @@ Các khía cạnh triển khai được xem xét thông qua các quy trình bả
                 Previous
               </span>
               <div class="md-ellipsis">
-                Thuật ngữ
+                Access Control Models and Policies
               </div>
             </div>
           </a>
         
         
           
-          <a href="../PolicyEnforcement/" class="md-footer__link md-footer__link--next" aria-label="Next:  Policy Enforcement">
+          <a href="../dac/" class="md-footer__link md-footer__link--next" aria-label="Next: Discretionary Access Control - DAC">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                 Policy Enforcement
+                Discretionary Access Control - DAC
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -943,10 +1091,10 @@ Các khía cạnh triển khai được xem xét thông qua các quy trình bả
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "navigation.indexes", "navigation.insants", "navigation.footer", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "quanbm"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "navigation.indexes", "navigation.insants", "navigation.footer", "announce.dismiss"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "quanbm"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>

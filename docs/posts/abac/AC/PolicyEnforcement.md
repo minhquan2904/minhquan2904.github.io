@@ -38,4 +38,4 @@ Xác thực: Người dùng nhập mật khẩu để xác minh danh tính.
 
 ## Kết luận:
 
-Cơ chế xác thực và ủy quyền đóng vai trò quan trọng trong việc thực thi chính sách kiểm soát truy cập, bảo vệ thông tin nhạy cảm và đảm bảo an toàn cho dữ liệu và hệ thống. Các cơ chế này cần được thiết kế và triển khai một cách hiệu quả để đáp ứng các yêu cầu bảo mật của doanh nghiệp.
+> Cơ chế xác thực và ủy quyền đóng vai trò quan trọng trong việc thực thi chính sách kiểm soát truy cập, bảo vệ thông tin nhạy cảm và đảm bảo an toàn cho dữ liệu và hệ thống. Các cơ chế này cần được thiết kế và triển khai một cách hiệu quả để đáp ứng các yêu cầu bảo mật của doanh nghiệp.
