@@ -1,3 +1,12 @@
+---
+title: abac-logic-formulavsenum
+nav_tile: abac-logic-formulavsenum
+draft: true 
+comments: true
+date: 2024-06-04
+categories:
+  - abac
+---
 # Mô hình chính sách ABAC: Logic-Formula và Liệt kê
 Bài viết này giới thiệu hai kỹ thuật phổ biến để biểu diễn chính sách ABAC: Logic-Formula và Liệt kê.
 

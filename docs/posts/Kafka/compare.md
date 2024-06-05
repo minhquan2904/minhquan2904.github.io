@@ -2,6 +2,7 @@
 title: Kafka vs RabbitMQ
 nav_tile: kafka_vs_rabbitmq
 draft: true 
+comments: true
 date: 2023-04-10
 categories:
   - Kafka
