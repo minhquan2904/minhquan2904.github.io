@@ -12,6 +12,7 @@ nav:
   - Thuật toán:
     - 'Quicksort': posts/alth/quicksort.md
   - ABAC:
+    - 'Kế hoạch học ABAC 30 ngày': posts/abac/plan.md
     - Các mô hình và phương pháp kiểm soát truy cập:
       - 'Thuật ngữ': posts/abac/AC/Terminology.md
       - 'Access Control Models and Policies': posts/abac/AC/ModelsAndPolicies.md
