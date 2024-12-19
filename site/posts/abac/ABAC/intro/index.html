@@ -721,6 +721,8 @@
       
         
       
+        
+      
     
     
     
@@ -874,6 +876,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../HowABACWork/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cách thức hoạt động
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LogicalFormulaandEnumerated/" class="md-nav__link">
         
   
@@ -985,6 +1008,7 @@
 
 <h1 id="kiem-soat-truy-cap-dua-tren-thuoc-tinh-attribute-based-access-control-abac">Kiểm soát truy cập dựa trên thuộc tính (Attribute-Based Access Control - ABAC)</h1>
 <p>Bài viết này giới thiệu ABAC, một mô hình kiểm soát truy cập linh hoạt và mạnh mẽ, cho phép thiết lập chính sách dựa trên các thuộc tính của người dùng, đối tượng và môi trường.</p>
+<p>ABAC là một mô hình kiểm soát truy cập <strong>sử dụng các thuộc tính của chủ thể (người yêu cầu truy cập), đối tượng (tài nguyên được yêu cầu truy cập) và môi trường (bối cảnh của yêu cầu)</strong> để đưa ra quyết định về việc có cho phép truy cập hay không.</p>
 <p>Ưu điểm của ABAC:</p>
 <ul>
 <li>
@@ -1006,13 +1030,13 @@
 <h2 id="cac-khai-niem-chinh">Các khái niệm chính</h2>
 <ul>
 <li>
-<p><strong>Thuộc tính</strong>: Các đặc điểm của người dùng, đối tượng và môi trường.</p>
+<p><strong>Thuộc tính</strong>: cung cấp thông tin chi tiết về các thực thể tham gia vào quá trình kiểm soát truy cập, ví dụ: vai trò của người dùng, độ nhạy cảm của tài liệu, vị trí của thiết bị.</p>
 </li>
 <li>
-<p><strong>Chính sách</strong>: Được xác định dựa trên các thuộc tính để xác định ai có thể thực hiện thao tác nào trên đối tượng nào.</p>
+<p><strong>Quy tắc</strong>: được xây dựng bằng cách sử dụng các thuộc tính này để xác định các điều kiện cần thiết cho việc truy cập. Ví dụ: "Chỉ những bác sĩ được chỉ định cho khoa nhi mới có thể truy cập hồ sơ bệnh án của bệnh nhân trong khoa nhi".</p>
 </li>
 <li>
-<p><strong>Quy tắc</strong>: Được sử dụng để xác định quyền truy cập dựa trên các thuộc tính.</p>
+<p><strong>Chính sách</strong>: là tập hợp các quy tắc ABAC được sử dụng để quản lý truy cập cho một hệ thống hoặc ứng dụng cụ thể.</p>
 </li>
 <li>
 <p><strong>Môi trường</strong>: Bao gồm các thuộc tính liên quan đến ngữ cảnh của yêu cầu truy cập.</p>
@@ -1036,13 +1060,28 @@
 <p>Quyết định: Cơ chế ABAC đưa ra quyết định cho phép hoặc từ chối quyền truy cập dựa trên các quy tắc.</p>
 </li>
 </ul>
-<p>Ví dụ:</p>
+<p>Ví dụ tổng quát:</p>
 <ul>
 <li>
 <p>Một bác sĩ chuyên khoa tim có thể được phép truy cập vào hồ sơ bệnh nhân tim mạch.</p>
 </li>
 <li>
 <p>Một quản trị viên hệ thống có thể được phép truy cập vào các máy chủ trong giờ hành chính.</p>
+</li>
+</ul>
+<p>Ví dụ chi tiết:</p>
+<ul>
+<li>
+<p><strong>Chủ thể</strong>: Bác sĩ (vai trò: bác sĩ, khoa: nhi)</p>
+</li>
+<li>
+<p><strong>Đối tượng</strong>: Hồ sơ bệnh án (khoa: nhi)</p>
+</li>
+<li>
+<p><strong>Môi trường</strong>: Thời gian truy cập (trong giờ làm việc)</p>
+</li>
+<li>
+<p><strong>Quy tắc</strong>: Bác sĩ có vai trò là bác sĩ và được chỉ định cho khoa nhi có thể truy cập hồ sơ bệnh án của bệnh nhân trong khoa nhi trong giờ làm việc.</p>
 </li>
 </ul>
 <h2 id="cac-thanh-phan-chinh">Các thành phần chính</h2>
@@ -1058,7 +1097,26 @@
 </li>
 </ul>
 <p>So sánh với các mô hình khác:</p>
-<p>ABAC: Linh hoạt hơn, chính xác hơn và có khả năng tự động hóa cao hơn so với DAC và RBAC.</p>
+<ul>
+<li>
+<p><strong>Linh hoạt và chi tiết</strong>: ABAC cho phép xác định quyền truy cập dựa trên nhiều thuộc tính kết hợp, từ thuộc tính của người dùng, tài nguyên đến cả môi trường. Điều này cho phép quản trị viên thiết lập chính sách truy cập chi tiết, đáp ứng các yêu cầu phức tạp của doanh nghiệp. Ví dụ, thay vì chỉ cho phép "nhân viên" truy cập tệp X, ABAC cho phép quy định chi tiết hơn như "nhân viên thuộc dự án A, trong giờ hành chính, truy cập từ mạng nội bộ mới được phép đọc tệp X".</p>
+</li>
+<li>
+<p><strong>Khả năng mở rộng cao</strong>:  Khi doanh nghiệp phát triển, nhu cầu về kiểm soát truy cập cũng thay đổi. ABAC dễ dàng thích nghi với những thay đổi này bằng cách thêm thuộc tính và quy tắc mới. Việc bổ sung này không ảnh hưởng đến các chính sách hiện có, giúp đơn giản hóa việc quản lý và bảo trì hệ thống.</p>
+</li>
+<li>
+<p><strong>Hỗ trợ người dùng bên ngoài</strong>: ABAC rất hữu ích trong môi trường có nhiều người dùng bên ngoài, chẳng hạn như khách hàng, đối tác hoặc nhà cung cấp. ABAC cho phép cấp quyền truy cập cho người dùng này dựa trên thuộc tính của họ mà không cần phải tạo tài khoản riêng biệt.</p>
+</li>
+<li>
+<p><strong>Đơn giản hóa quản lý</strong>: ABAC loại bỏ sự cần thiết phải quản lý danh sách kiểm soát truy cập (ACL) phức tạp hoặc cấu trúc vai trò (role) rườm rà. Quản trị viên có thể dễ dàng tạo, sửa đổi và quản lý chính sách ABAC thông qua giao diện trực quan và ngôn ngữ chính sách dễ hiểu.</p>
+</li>
+<li>
+<p><strong>Nâng cao khả năng kiểm toán</strong>: ABAC giúp đơn giản hóa việc kiểm toán truy cập bằng cách cung cấp nhật ký chi tiết về các quyết định truy cập. Nhật ký này ghi lại thông tin về người dùng, tài nguyên, hành động và thuộc tính được sử dụng để ra quyết định, giúp dễ dàng theo dõi và phân tích hoạt động truy cập</p>
+</li>
+<li>
+<p><strong>Thúc đẩy chia sẻ thông tin an toàn</strong>: ABAC hỗ trợ chia sẻ thông tin an toàn giữa các tổ chức khác nhau. Bằng cách sử dụng các thuộc tính chung, các tổ chức có thể xác định chính sách truy cập nhất quán và cho phép chia sẻ thông tin an toàn mà không ảnh hưởng đến bảo mật.</p>
+</li>
+</ul>
 <h2 id="ket-luan">Kết luận</h2>
 <blockquote>
 <p>ABAC là một mô hình kiểm soát truy cập mạnh mẽ và linh hoạt, phù hợp với các hệ thống phân tán, động và có nhu cầu quản lý quyền truy cập phức tạp.</p>

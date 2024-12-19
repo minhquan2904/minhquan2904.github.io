@@ -22,6 +22,7 @@ nav:
     - Mô hình và phương pháp tiếp cận ABAC:
       - 'Giới thiệu': posts/abac/ABAC/intro.md
       - 'Kiến trúc và thành phần chức năng của ABAC': posts/abac/ABAC/ArchitecturesandFunctionalComponents.md
+      - 'Cách thức hoạt động': posts/abac/ABAC/HowABACWork.md
       - 'Logic-Formula và Liệt kê.': posts/abac/ABAC/LogicalFormulaandEnumerated.md
 theme:
   name: material

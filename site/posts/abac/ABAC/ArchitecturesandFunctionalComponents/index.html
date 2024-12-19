@@ -14,7 +14,7 @@
         <link rel="prev" href="../intro/">
       
       
-        <link rel="next" href="../LogicalFormulaandEnumerated/">
+        <link rel="next" href="../HowABACWork/">
       
       
       <link rel="icon" href="../../../../assets/favicon.jpg">
@@ -721,6 +721,8 @@
       
         
       
+        
+      
     
     
     
@@ -823,11 +825,143 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kien-truc-xacml" class="md-nav__link">
+  <a href="#cac-thanh-phan-chinh-cua-mot-he-thong-abac" class="md-nav__link">
     <span class="md-ellipsis">
-      Kiến trúc XACML:
+      Các thành phần chính của một hệ thống ABAC:
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-minh-hoa-ve-cach-cac-thanh-phan-abac-phoi-hop-voi-nhau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ minh họa về cách các thành phần ABAC phối hợp với nhau
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ví dụ minh họa về cách các thành phần ABAC phối hợp với nhau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tình huống:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quy-trinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quy trình:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kết luận:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-thanh-phan-bo-sung-trong-he-thong-abac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Các thành phần bổ sung trong hệ thống ABAC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Các thành phần bổ sung trong hệ thống ABAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bo-xu-ly-ngu-canh-context-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Bộ xử lý ngữ cảnh (Context Handler)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Bộ xử lý ngữ cảnh (Context Handler)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vai-tro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vai trò:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chuc-nang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chức năng:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-iem-truy-cap-tai-nguyen-resource-access-point-rap" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Điểm truy cập tài nguyên (Resource Access Point - RAP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Điểm truy cập tài nguyên (Resource Access Point - RAP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vai-tro_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vai trò:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chuc-nang_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chức năng:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tom-lai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tóm lại:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -844,6 +978,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowABACWork/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cách thức hoạt động
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -912,11 +1067,143 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kien-truc-xacml" class="md-nav__link">
+  <a href="#cac-thanh-phan-chinh-cua-mot-he-thong-abac" class="md-nav__link">
     <span class="md-ellipsis">
-      Kiến trúc XACML:
+      Các thành phần chính của một hệ thống ABAC:
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-minh-hoa-ve-cach-cac-thanh-phan-abac-phoi-hop-voi-nhau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ minh họa về cách các thành phần ABAC phối hợp với nhau
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ví dụ minh họa về cách các thành phần ABAC phối hợp với nhau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tình huống:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quy-trinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quy trình:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kết luận:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-thanh-phan-bo-sung-trong-he-thong-abac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Các thành phần bổ sung trong hệ thống ABAC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Các thành phần bổ sung trong hệ thống ABAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bo-xu-ly-ngu-canh-context-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Bộ xử lý ngữ cảnh (Context Handler)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Bộ xử lý ngữ cảnh (Context Handler)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vai-tro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vai trò:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chuc-nang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chức năng:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-iem-truy-cap-tai-nguyen-resource-access-point-rap" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Điểm truy cập tài nguyên (Resource Access Point - RAP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Điểm truy cập tài nguyên (Resource Access Point - RAP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vai-tro_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vai trò:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chuc-nang_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chức năng:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tom-lai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tóm lại:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -948,35 +1235,94 @@
 
 
 <h1 id="kien-truc-va-thanh-phan-chuc-nang-cua-abac">Kiến trúc và thành phần chức năng của ABAC</h1>
-<p>Bài viết này thảo luận về hai kiến trúc phổ biến được sử dụng để triển khai ABAC: kiến trúc XACML và kiến trúc NGAC. Cả hai kiến trúc đều bao gồm bốn lớp chức năng và phân chia thông tin: thực thi, quyết định, dữ liệu kiểm soát truy cập và quản trị.</p>
-<h2 id="kien-truc-xacml">Kiến trúc XACML:</h2>
-<p>Kiến trúc tham chiếu: Dựa trên tiêu chuẩn XACML (eXtensible Access Control Markup Language).</p>
-<p>Thành phần:</p>
+<h2 id="cac-thanh-phan-chinh-cua-mot-he-thong-abac">Các thành phần chính của một hệ thống ABAC:</h2>
 <ul>
 <li>
-<p>Điểm quyết định chính sách (PDP): Tính toán các quyết định cho phép hoặc từ chối yêu cầu truy cập.</p>
+<p><strong>PEP (Policy Enforcement Point - Điểm Thực Thi Chính Sách)</strong>: Đây là điểm tiếp xúc đầu tiên của yêu cầu truy cập. PEP nhận yêu cầu truy cập từ chủ thể và chịu trách nhiệm thu thập các thuộc tính cần thiết để đưa ra quyết định. PEP có thể được tích hợp vào các ứng dụng, dịch vụ hoặc thiết bị khác nhau. Ví dụ, PEP có thể được nhúng trong một máy chủ web để kiểm soát truy cập vào các trang web, hoặc trong một hệ thống quản lý cơ sở dữ liệu để kiểm soát truy cập vào dữ liệu.</p>
 </li>
 <li>
-<p>Điểm thực thi chính sách (PEP): Thực thi các quyết định của PDP.</p>
+<p><strong>PDP (Policy Decision Point - Bộ Quyết Định Chính Sách)</strong>: PDP là "bộ não" của hệ thống ABAC. PDP nhận thông tin về yêu cầu truy cập từ PEP, bao gồm các thuộc tính của chủ thể, đối tượng và môi trường. Sau đó, PDP so sánh thông tin này với các chính sách ABAC đã được thiết lập để đưa ra quyết định cuối cùng là cho phép hoặc từ chối truy cập.</p>
 </li>
 <li>
-<p>Xử lý ngữ cảnh: Chuyển đổi yêu cầu truy cập và phản hồi giữa các định dạng.</p>
+<p><strong>PAP (Policy Administration Point - Bộ Quản Lý Chính Sách)</strong>: PAP là nơi quản trị viên tạo, sửa đổi và quản lý các chính sách ABAC. PAP cung cấp giao diện để quản trị viên xác định thuộc tính, quy tắc và chính sách. Ví dụ, NextLabs Control Center trong giải pháp ABAC của NextLabs là một ví dụ về PAP, cho phép quản trị viên xây dựng các thành phần chính sách và triển khai chúng.</p>
 </li>
 <li>
-<p>Điểm thông tin chính sách (PIP): Lưu trữ thông tin về thuộc tính của người dùng, đối tượng và môi trường.</p>
+<p><strong>PIP (Policy Information Point - Điểm Cung Cấp Thông Tin)</strong>: PIP cung cấp thông tin về các thuộc tính cần thiết cho quá trình ra quyết định. PIP có thể truy xuất thuộc tính từ nhiều nguồn khác nhau, chẳng hạn như cơ sở dữ liệu người dùng, hệ thống quản lý danh tính hoặc các dịch vụ web. Các ví dụ về thuộc tính được sử dụng trong chính sách ABAC bao gồm vai trò của người dùng, độ nhạy cảm của đối tượng, vị trí của thiết bị, thời gian truy cập</p>
+</li>
+</ul>
+<h2 id="vi-du-minh-hoa-ve-cach-cac-thanh-phan-abac-phoi-hop-voi-nhau">Ví dụ minh họa về cách các thành phần ABAC phối hợp với nhau</h2>
+<h3 id="tinh-huong">Tình huống:</h3>
+<ul>
+<li>Một nhân viên (<em>chủ thể</em>) muốn truy cập vào một tệp (<em>đối tượng</em>) chứa thông tin nhạy cảm.</li>
+</ul>
+<h3 id="quy-trinh">Quy trình:</h3>
+<ol>
+<li>
+<p><strong>Yêu cầu truy cập</strong>: Yêu cầu truy cập được gửi đến <strong><em>PEP</em></strong> (Policy Enforcement Point) được tích hợp trong hệ thống quản lý tệp.</p>
 </li>
 <li>
-<p>Điểm truy xuất chính sách (PRP): Lưu trữ các chính sách và quy tắc.</p>
+<p><strong>Thu thập thuộc tính</strong>:  <strong><em>PEP</em></strong> thu thập các thuộc tính liên quan, chẳng hạn như:</p>
+<ul>
+<li>Vai trò của nhân viên.</li>
+<li>Phòng ban của nhân viên.</li>
+<li>Thời gian truy cập.</li>
+</ul>
 </li>
 <li>
-<p>Điểm quản trị chính sách (PAP): Tạo và quản lý các chính sách và quy tắc.</p>
+<p><strong>Gửi đến PDP</strong>: <strong><em>PEP</em></strong> gửi các thuộc tính này đến <strong><em>PDP</em></strong> (Policy Decision Point).</p>
 </li>
 <li>
-<p>Điểm quản trị thuộc tính (AAP): Tạo và quản lý các thuộc tính của người dùng và đối tượng.</p>
+<p><strong>So sánh với chính sách</strong>:  <strong><em>PDP</em></strong> so sánh các thuộc tính này với các chính sách ABAC đã được cấu hình bởi <strong><em>PAP</em></strong> (Policy Administration Point).</p>
 </li>
 <li>
-<p>Điểm truy cập tài nguyên (RAP): Thực hiện các thao tác trên tài nguyên.</p>
+<p><strong>Đưa ra quyết định</strong>: Nếu các thuộc tính đáp ứng các điều kiện trong chính sách (ví dụ: nhân viên thuộc phòng ban được phép truy cập tệp và đang truy cập trong giờ làm việc), <strong><em>PDP</em></strong> sẽ cho phép truy cập.</p>
 </li>
+<li>
+<p><strong>Thực thi quyết định</strong>: Quyết định này được <strong><em>PEP</em></strong> thực thi, và nhân viên có thể truy cập tệp.</p>
+</li>
+</ol>
+<h3 id="ket-luan">Kết luận:</h3>
+<p>Các thành phần <strong>PEP</strong>, <strong>PDP</strong>, <strong>PAP</strong>, và <strong>PIP</strong> (Policy Information Point) đóng vai trò quan trọng trong việc đảm bảo hệ thống ABAC hoạt động hiệu quả. </p>
+<p>Sự phối hợp nhịp nhàng giữa các thành phần này cho phép kiểm soát truy cập dựa trên thuộc tính một cách: <strong>Linh hoạt</strong>, <strong>Chi tiết</strong>, <strong>An toàn</strong>.</p>
+<p>Điều này đáp ứng nhu cầu ngày càng cao của các tổ chức và doanh nghiệp hiện đại.</p>
+<h2 id="cac-thanh-phan-bo-sung-trong-he-thong-abac">Các thành phần bổ sung trong hệ thống ABAC</h2>
+<p>Ngoài bốn thành phần chính của hệ thống ABAC (PEP, PDP, PAP và PIP), còn có một số thành phần bổ sung giúp tăng cường chức năng và khả năng mở rộng của hệ thống.</p>
+<h3 id="1-bo-xu-ly-ngu-canh-context-handler">1. <strong>Bộ xử lý ngữ cảnh (Context Handler)</strong></h3>
+<h4 id="vai-tro"><strong>Vai trò</strong>:</h4>
+<ul>
+<li>Chuyển đổi yêu cầu truy cập và phản hồi giữa các định dạng khác nhau.</li>
+</ul>
+<h4 id="chuc-nang"><strong>Chức năng</strong>:</h4>
+<ul>
+<li>Nhận yêu cầu truy cập từ <strong>PEP</strong> và chuyển đổi nó thành định dạng mà <strong>PDP</strong> có thể hiểu.</li>
+<li>Nhận phản hồi từ <strong>PDP</strong> và chuyển đổi nó trở lại định dạng mà <strong>PEP</strong> có thể xử lý.</li>
+<li>Có khả năng:<ul>
+<li>Thu thập thông tin thuộc tính từ <strong>PIP</strong>.</li>
+<li>Thực hiện các tác vụ bắt buộc bổ sung.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="2-iem-truy-cap-tai-nguyen-resource-access-point-rap">2. <strong>Điểm truy cập tài nguyên (Resource Access Point - RAP)</strong></h3>
+<h4 id="vai-tro_1"><strong>Vai trò</strong>:</h4>
+<ul>
+<li>Thực hiện các thao tác trên tài nguyên sau khi nhận được ủy quyền từ <strong>PEP</strong>.</li>
+</ul>
+<h4 id="chuc-nang_1"><strong>Chức năng</strong>:</h4>
+<ul>
+<li>PEP gửi lệnh cho <strong>RAP</strong> tương ứng với tài nguyên cần truy cập sau khi nhận được quyết định "cho phép" từ <strong>PDP</strong> (kèm theo URI của tài nguyên vật lý).  </li>
+<li><strong>RAP</strong> thực hiện thao tác trên tài nguyên, bao gồm:<ul>
+<li>Trả về dữ liệu.</li>
+<li>Trả về thông tin trạng thái cho <strong>PEP</strong>. </li>
+</ul>
+</li>
+<li><strong>RAP</strong> chỉ cho phép <strong>PEP</strong> truy cập tài nguyên và không chấp nhận yêu cầu từ bất kỳ thành phần nào khác.</li>
+</ul>
+<hr />
+<h3 id="tom-lai">Tóm lại:</h3>
+<ul>
+<li><strong>Bộ xử lý ngữ cảnh</strong> và <strong>Điểm truy cập tài nguyên</strong> là các thành phần bổ sung quan trọng giúp hệ thống ABAC hoạt động hiệu quả hơn.</li>
+<li>Chúng cung cấp các chức năng như xử lý dữ liệu đầu vào/đầu ra, đảm bảo tính nhất quán và tăng cường khả năng bảo mật trong quá trình truy cập tài nguyên.</li>
 </ul>
 <h2 id="kien-truc-ngac">Kiến trúc NGAC:</h2>
 <p>Kiến trúc chức năng: Dựa trên tiêu chuẩn NGAC (Next Generation Access Control).</p>
@@ -1109,13 +1455,13 @@
         
         
           
-          <a href="../LogicalFormulaandEnumerated/" class="md-footer__link md-footer__link--next" aria-label="Next: Logic-Formula và Liệt kê.">
+          <a href="../HowABACWork/" class="md-footer__link md-footer__link--next" aria-label="Next: Cách thức hoạt động">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Logic-Formula và Liệt kê.
+                Cách thức hoạt động
               </div>
             </div>
             <div class="md-footer__button md-icon">

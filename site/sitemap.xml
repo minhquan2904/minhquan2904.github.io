@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://localhost:8000/posts/abac/ABAC/HowABACWork/</loc>
+         <lastmod>2024-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://localhost:8000/posts/abac/ABAC/LogicalFormulaandEnumerated/</loc>
          <lastmod>2024-12-19</lastmod>
          <changefreq>daily</changefreq>
