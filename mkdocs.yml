@@ -23,6 +23,9 @@ nav:
       - 'Giới thiệu': posts/abac/ABAC/intro.md
       - 'Kiến trúc và thành phần chức năng của ABAC': posts/abac/ABAC/ArchitecturesandFunctionalComponents.md
       - 'Cách thức hoạt động': posts/abac/ABAC/HowABACWork.md
+      - 'Ví dụ thực tế': posts/abac/ABAC/Using.md
+      - 'So sánh ABAC và RBAC': posts/abac/ABAC/ABACvsRBAC.md
+      - 'Tìm hiểu về NGAC': posts/abac/ABAC/NGAC.md
       - 'Logic-Formula và Liệt kê.': posts/abac/ABAC/LogicalFormulaandEnumerated.md
 theme:
   name: material

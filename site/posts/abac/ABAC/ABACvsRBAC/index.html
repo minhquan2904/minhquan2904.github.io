@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://localhost:8000/posts/abac/ABAC/LogicalFormulaandEnumerated/">
+        <link rel="canonical" href="http://localhost:8000/posts/abac/ABAC/ABACvsRBAC/">
       
       
-        <link rel="prev" href="../NGAC/">
+        <link rel="prev" href="../Using/">
       
+      
+        <link rel="next" href="../NGAC/">
       
       
       <link rel="icon" href="../../../../assets/favicon.jpg">
@@ -20,7 +22,7 @@
     
     
       
-        <title>abac-logic-formulavsenum - quanbm</title>
+        <title>abac-vs-rbac - quanbm</title>
       
     
     
@@ -62,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mo-hinh-chinh-sach-abac-logic-formula-va-liet-ke" class="md-skip">
+        <a href="#so-sanh-abac-va-rbac-lua-chon-phu-hop-cho-kiem-soat-truy-cap" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              abac-logic-formulavsenum
+              abac-vs-rbac
             
           </span>
         </div>
@@ -843,10 +845,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ABACvsRBAC/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    So sánh ABAC và RBAC
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -855,6 +877,152 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-iem-khac-biet-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Điểm khác biệt chính
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Điểm khác biệt chính">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bang-so-sanh-abac-va-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bảng so sánh ABAC và RBAC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-uu-iem-cua-abac-so-voi-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ưu điểm của ABAC so với RBAC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Ưu điểm của ABAC so với RBAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linh-hoat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linh hoạt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiem-soat-chi-tiet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kiểm soát chi tiết
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mo-rong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mở rộng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quan-ly-on-gian-hon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quản lý đơn giản hơn
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-nhuoc-iem-cua-abac" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Nhược điểm của ABAC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Nhược điểm của ABAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phuc-tap-trong-trien-khai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phức tạp trong triển khai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tai-nguyen-tinh-toan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tài nguyên tính toán
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-khi-nao-nen-chon-abac-hoac-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Khi nào nên chọn ABAC hoặc RBAC?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Kết luận
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -885,30 +1053,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Logic-Formula và Liệt kê.
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../LogicalFormulaandEnumerated/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,44 +1065,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-mo-hinh-logic-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Mô hình Logic-Formula:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-mo-hinh-liet-ke" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Mô hình Liệt kê:
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1002,18 +1112,126 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-mo-hinh-logic-formula" class="md-nav__link">
+  <a href="#1-iem-khac-biet-chinh" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Mô hình Logic-Formula:
+      1. Điểm khác biệt chính
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Điểm khác biệt chính">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bang-so-sanh-abac-va-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bảng so sánh ABAC và RBAC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-uu-iem-cua-abac-so-voi-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ưu điểm của ABAC so với RBAC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Ưu điểm của ABAC so với RBAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linh-hoat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linh hoạt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiem-soat-chi-tiet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kiểm soát chi tiết
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mo-rong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mở rộng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quan-ly-on-gian-hon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quản lý đơn giản hơn
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-nhuoc-iem-cua-abac" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Nhược điểm của ABAC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Nhược điểm của ABAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phuc-tap-trong-trien-khai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phức tạp trong triển khai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tai-nguyen-tinh-toan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tài nguyên tính toán
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-khi-nao-nen-chon-abac-hoac-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Khi nào nên chọn ABAC hoặc RBAC?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-mo-hinh-liet-ke" class="md-nav__link">
+  <a href="#5-ket-luan" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Mô hình Liệt kê:
+      5. Kết luận
     </span>
   </a>
   
@@ -1037,77 +1255,132 @@
   
 
 
-<h1 id="mo-hinh-chinh-sach-abac-logic-formula-va-liet-ke">Mô hình chính sách ABAC: Logic-Formula và Liệt kê</h1>
-<p>Bài viết này giới thiệu hai kỹ thuật phổ biến để biểu diễn chính sách ABAC: Logic-Formula và Liệt kê.</p>
-<h2 id="1-mo-hinh-logic-formula">1. Mô hình Logic-Formula:</h2>
-<p>Phương pháp: Xác định chính sách ủy quyền bằng cách sử dụng các công thức logic, bao gồm các mệnh đề được biểu diễn bằng các toán tử logic (ví dụ: AND, OR, ≥, ≠) trên 
-các giá trị thuộc tính.</p>
-<p>Ví dụ:</p>
-<pre><code class="language-sh"> can_access(s, a, o) -&gt; role(s) = &quot;doctor&quot; AND ward(s) = ward(o) AND (a = read OR a = write)
-</code></pre>
-<p>Chính sách này cho phép các chủ thể có vai trò là bác sĩ đọc hoặc ghi vào bất kỳ đối tượng nào có cùng khoa với họ.</p>
-<p><strong>Ưu điểm</strong>:</p>
+<h1 id="so-sanh-abac-va-rbac-lua-chon-phu-hop-cho-kiem-soat-truy-cap">So sánh ABAC và RBAC: Lựa chọn phù hợp cho kiểm soát truy cập</h1>
+<p>Mô hình kiểm soát truy cập dựa trên vai trò (RBAC) và dựa trên thuộc tính (ABAC) là hai phương pháp phổ biến trong quản lý truy cập. Việc lựa chọn giữa hai mô hình này phụ thuộc vào yêu cầu bảo mật, độ phức tạp và khả năng mở rộng của tổ chức.</p>
+<hr />
+<h2 id="1-iem-khac-biet-chinh"><strong>1. Điểm khác biệt chính</strong></h2>
+<p>ABAC xác định quyền truy cập dựa trên thuộc tính (người dùng, tài nguyên, môi trường), trong khi RBAC dựa trên vai trò được gán cho người dùng.</p>
+<h3 id="bang-so-sanh-abac-va-rbac"><strong>Bảng so sánh ABAC và RBAC</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Đặc điểm</strong></th>
+<th><strong>ABAC</strong></th>
+<th><strong>RBAC</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cơ sở xác định</strong></td>
+<td>Thuộc tính (người dùng, tài nguyên, môi trường)</td>
+<td>Vai trò được gán cho người dùng</td>
+</tr>
+<tr>
+<td><strong>Độ chi tiết</strong></td>
+<td><strong>Cao</strong>: Kiểm soát truy cập ở mức tinh tế và linh hoạt</td>
+<td><strong>Thấp hơn</strong>: Kiểm soát giới hạn ở mức vai trò</td>
+</tr>
+<tr>
+<td><strong>Khả năng mở rộng</strong></td>
+<td><strong>Dễ dàng mở rộng</strong>: Thêm thuộc tính, chính sách linh hoạt</td>
+<td><strong>Hạn chế</strong>: Thêm vai trò cần cấu hình lại</td>
+</tr>
+<tr>
+<td><strong>Quản lý</strong></td>
+<td><strong>Đơn giản hơn</strong>: Tập trung vào chính sách, ít vai trò cố định</td>
+<td><strong>Phức tạp hơn</strong>: Quản lý nhiều vai trò và quyền</td>
+</tr>
+<tr>
+<td><strong>Khả năng kiểm soát</strong></td>
+<td><strong>Linh hoạt và chính xác hơn</strong></td>
+<td><strong>Giới hạn</strong> ở mức vai trò</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-uu-iem-cua-abac-so-voi-rbac"><strong>2. Ưu điểm của ABAC so với RBAC</strong></h2>
+<h3 id="linh-hoat"><strong>Linh hoạt</strong></h3>
+<ul>
+<li>ABAC cho phép xác định chính sách dựa trên nhiều thuộc tính khác nhau (ví dụ: thời gian, vị trí, trạng thái của tài nguyên), tạo ra sự linh hoạt vượt trội.</li>
+</ul>
+<h3 id="kiem-soat-chi-tiet"><strong>Kiểm soát chi tiết</strong></h3>
+<ul>
+<li>Kiểm soát truy cập ở mức độ chính xác, cho phép quản lý các trường hợp phức tạp và giảm thiểu nguy cơ truy cập trái phép.</li>
+</ul>
+<h3 id="mo-rong"><strong>Mở rộng</strong></h3>
+<ul>
+<li>Hệ thống ABAC có thể dễ dàng mở rộng khi thêm người dùng, tài nguyên hoặc chính sách mới, mà không cần cấu hình lại vai trò cố định như trong RBAC.</li>
+</ul>
+<h3 id="quan-ly-on-gian-hon"><strong>Quản lý đơn giản hơn</strong></h3>
+<ul>
+<li>Với ABAC, việc quản lý tập trung vào chính sách dựa trên thuộc tính, giảm bớt sự phức tạp trong việc gán vai trò và quyền cho từng người dùng.</li>
+</ul>
+<hr />
+<h2 id="3-nhuoc-iem-cua-abac"><strong>3. Nhược điểm của ABAC</strong></h2>
+<h3 id="phuc-tap-trong-trien-khai"><strong>Phức tạp trong triển khai</strong></h3>
+<ul>
+<li>Việc xác định và cấu hình các thuộc tính cũng như chính sách có thể phức tạp, đặc biệt đối với các tổ chức chưa quen thuộc với mô hình này.</li>
+</ul>
+<h3 id="tai-nguyen-tinh-toan"><strong>Tài nguyên tính toán</strong></h3>
+<ul>
+<li>ABAC đòi hỏi nhiều tài nguyên tính toán hơn để đánh giá chính sách, đặc biệt khi số lượng thuộc tính và quy tắc lớn.</li>
+</ul>
+<hr />
+<h2 id="4-khi-nao-nen-chon-abac-hoac-rbac"><strong>4. Khi nào nên chọn ABAC hoặc RBAC?</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Tiêu chí</strong></th>
+<th><strong>ABAC</strong></th>
+<th><strong>RBAC</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Yêu cầu kiểm soát phức tạp</strong></td>
+<td>Phù hợp: Kiểm soát truy cập dựa trên nhiều yếu tố</td>
+<td>Không phù hợp</td>
+</tr>
+<tr>
+<td><strong>Hệ thống có quy mô lớn, nhiều biến động</strong></td>
+<td>Dễ dàng mở rộng, phù hợp với nhu cầu thay đổi</td>
+<td>Hạn chế do cần cấu hình lại vai trò</td>
+</tr>
+<tr>
+<td><strong>Đơn giản hóa quản lý</strong></td>
+<td>Quản lý chính sách trực tiếp qua thuộc tính</td>
+<td>Quản lý phức tạp với nhiều vai trò và quyền</td>
+</tr>
+<tr>
+<td><strong>Hiệu suất hệ thống</strong></td>
+<td>Yêu cầu cao hơn, cần tối ưu</td>
+<td>Yêu cầu thấp hơn</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-ket-luan"><strong>5. Kết luận</strong></h2>
+<p>ABAC và RBAC đều có những điểm mạnh riêng:</p>
 <ul>
 <li>
-<p>Biểu diễn chính sách một cách mạnh mẽ và hiệu quả.</p>
+<p><strong>RBAC</strong>: Lý tưởng cho các hệ thống nhỏ, ít phức tạp và ít biến động.</p>
 </li>
 <li>
-<p>Cho phép xác định các yêu cầu kinh doanh phức tạp.</p>
+<p><strong>ABAC</strong>: Lựa chọn tối ưu cho các tổ chức lớn, yêu cầu kiểm soát linh hoạt, chi tiết, và khả năng mở rộng.</p>
 </li>
 </ul>
-<p><strong>Nhược điểm</strong>:</p>
+<p>Sự lựa chọn giữa hai mô hình này cần dựa trên:</p>
 <ul>
 <li>
-<p>Khó kiểm tra chính sách hiệu quả.</p>
+<p>Nhu cầu kiểm soát truy cập.</p>
 </li>
 <li>
-<p>Yêu cầu gán giá trị thuộc tính cho tất cả các chủ thể và đối tượng trước khi kiểm tra.</p>
+<p>Quy mô và tính phức tạp của hệ thống.</p>
+</li>
+<li>
+<p>Nguồn lực triển khai và quản lý.</p>
 </li>
 </ul>
-<h2 id="2-mo-hinh-liet-ke">2. Mô hình Liệt kê:</h2>
-<p>Phương pháp: Xác định chính sách bằng cách liệt kê các mối quan hệ giữa các tên thuộc tính.</p>
-<p>Ví dụ:</p>
-<ul>
-<li>
-<p><strong>NGAC</strong>: Sử dụng các mối quan hệ chứa đựng, liên kết (uai, opsi, oai) để xác định quyền truy cập.</p>
-</li>
-<li>
-<p><strong>Kiểm soát truy cập dựa trên nhãn</strong>: Sử dụng các nhãn để xác định quyền truy cập.</p>
-</li>
-</ul>
-<p><strong>Ưu điểm</strong>:</p>
-<ul>
-<li>Hỗ trợ các thuật toán hiệu quả để kiểm tra chính sách cho từng người dùng và từng đối tượng.</li>
-</ul>
-<p><strong>Nhược điểm</strong>:</p>
-<ul>
-<li>Có thể phức tạp khi số lượng thuộc tính và mối quan hệ tăng lên.</li>
-</ul>
-<p><strong>So sánh</strong>:</p>
-<ul>
-<li>
-<p>Logic-Formula: Mạnh mẽ và hiệu quả, nhưng khó kiểm tra.</p>
-</li>
-<li>
-<p>Liệt kê: Dễ kiểm tra, nhưng có thể phức tạp khi số lượng thuộc tính tăng lên.</p>
-</li>
-</ul>
-<p><strong>Kiểm tra chính sách</strong>:</p>
-<ul>
-<li>
-<p>Kiểm tra trước: Kiểm tra các khả năng (thao tác, đối tượng) của chủ thể và các mục nhập kiểm soát truy cập (chủ thể, thao tác) của đối tượng.</p>
-</li>
-<li>
-<p>Mô hình Liệt kê: Hỗ trợ các thuật toán hiệu quả để kiểm tra chính sách.</p>
-</li>
-<li>
-<p>Mô hình Logic-Formula: Khó kiểm tra hiệu quả.</p>
-</li>
-</ul>
-<p>Kết luận:</p>
-<blockquote>
-<p>Cả hai mô hình Logic-Formula và Liệt kê đều có ưu nhược điểm riêng. Lựa chọn mô hình phù hợp phụ thuộc vào yêu cầu cụ thể của hệ thống và ưu tiên về hiệu suất kiểm tra chính sách.</p>
-</blockquote>
 
 
 
@@ -1194,7 +1467,7 @@ các giá trị thuộc tính.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../NGAC/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tìm hiểu về NGAC">
+          <a href="../Using/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ví dụ thực tế">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1204,11 +1477,27 @@ các giá trị thuộc tính.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Tìm hiểu về NGAC
+                Ví dụ thực tế
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../NGAC/" class="md-footer__link md-footer__link--next" aria-label="Next: Tìm hiểu về NGAC">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Tìm hiểu về NGAC
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
