@@ -17,8 +17,11 @@
         <link rel="next" href="../../alth/quicksort/">
       
       
+        
+      
+      
       <link rel="icon" href="../../../assets/favicon.jpg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -26,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -45,11 +48,10 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
-    
     
     
   </head>
@@ -91,7 +93,7 @@
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -111,30 +113,32 @@
     </div>
     
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
@@ -142,7 +146,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -153,13 +157,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/minhquan2904/minhquan2904.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -204,7 +209,7 @@
       <a href="https://github.com/minhquan2904/minhquan2904.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -224,9 +229,16 @@
       <a href="../../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -244,9 +256,16 @@
       <a href="../../hello-world/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Hello-word
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -270,6 +289,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -280,9 +300,16 @@
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Docker
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -291,7 +318,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Docker
+            
+  
+    Docker
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -305,9 +336,16 @@
       <a href="../../Docker/summary/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Tổng quan
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -326,9 +364,16 @@
       <a href="../../Docker/docker-start/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Bài 1: Giới thiệu về Docker
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -360,6 +405,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
@@ -370,9 +416,16 @@
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Kafka
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -381,7 +434,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Kafka
+            
+  
+    Kafka
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -404,9 +461,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     So sánh Kafka và RabbitMQ
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -415,9 +479,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     So sánh Kafka và RabbitMQ
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -440,7 +511,9 @@
         <li class="md-nav__item">
   <a href="#giai-thich-cac-khai-niem-ve-he-thong-tin-nhan-publishsubscribe-pubsub-va-message-broker" class="md-nav__link">
     <span class="md-ellipsis">
-      Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker
+      
+        Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker
+      
     </span>
   </a>
   
@@ -450,7 +523,9 @@
           <li class="md-nav__item">
   <a href="#inh-nghia-ve-message-broker" class="md-nav__link">
     <span class="md-ellipsis">
-      Định nghĩa về Message Broker
+      
+        Định nghĩa về Message Broker
+      
     </span>
   </a>
   
@@ -459,7 +534,9 @@
           <li class="md-nav__item">
   <a href="#inh-nghia-ve-he-thong-tin-nhan-pubsub" class="md-nav__link">
     <span class="md-ellipsis">
-      Định nghĩa về Hệ thống tin nhắn Pub/Sub
+      
+        Định nghĩa về Hệ thống tin nhắn Pub/Sub
+      
     </span>
   </a>
   
@@ -468,7 +545,9 @@
           <li class="md-nav__item">
   <a href="#so-sanh-message-brokers-va-he-thong-tin-nhan-pubsub" class="md-nav__link">
     <span class="md-ellipsis">
-      So sánh Message Brokers và Hệ thống tin nhắn Pub/Sub
+      
+        So sánh Message Brokers và Hệ thống tin nhắn Pub/Sub
+      
     </span>
   </a>
   
@@ -482,7 +561,9 @@
         <li class="md-nav__item">
   <a href="#kafka-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka là gì?
+      
+        Kafka là gì?
+      
     </span>
   </a>
   
@@ -492,7 +573,9 @@
           <li class="md-nav__item">
   <a href="#nguon-goc-va-lich-su-cua-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Nguồn gốc và lịch sử của Kafka
+      
+        Nguồn gốc và lịch sử của Kafka
+      
     </span>
   </a>
   
@@ -501,7 +584,9 @@
           <li class="md-nav__item">
   <a href="#kien-truc-cua-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Kiến trúc của Kafka
+      
+        Kiến trúc của Kafka
+      
     </span>
   </a>
   
@@ -515,7 +600,9 @@
         <li class="md-nav__item">
   <a href="#rabbitmq-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      RabbitMQ là gì?
+      
+        RabbitMQ là gì?
+      
     </span>
   </a>
   
@@ -525,7 +612,9 @@
           <li class="md-nav__item">
   <a href="#nguon-goc-va-lich-su-cua-rabbitmq" class="md-nav__link">
     <span class="md-ellipsis">
-      Nguồn gốc và lịch sử của RabbitMQ
+      
+        Nguồn gốc và lịch sử của RabbitMQ
+      
     </span>
   </a>
   
@@ -534,7 +623,9 @@
           <li class="md-nav__item">
   <a href="#kien-truc-cua-rabbitmq" class="md-nav__link">
     <span class="md-ellipsis">
-      Kiến trúc của RabbitMQ
+      
+        Kiến trúc của RabbitMQ
+      
     </span>
   </a>
   
@@ -548,7 +639,9 @@
         <li class="md-nav__item">
   <a href="#kafka-uoc-su-dung-e-lam-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka được sử dụng để làm gì?
+      
+        Kafka được sử dụng để làm gì?
+      
     </span>
   </a>
   
@@ -558,7 +651,9 @@
           <li class="md-nav__item">
   <a href="#kafka-trong-data-streaming-va-phan-tich-thoi-gian-thuc" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka trong Data Streaming và phân tích thời gian thực
+      
+        Kafka trong Data Streaming và phân tích thời gian thực
+      
     </span>
   </a>
   
@@ -567,7 +662,9 @@
           <li class="md-nav__item">
   <a href="#kafka-trong-he-thong-phan-tan" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka trong hệ thống phân tán
+      
+        Kafka trong hệ thống phân tán
+      
     </span>
   </a>
   
@@ -576,7 +673,9 @@
           <li class="md-nav__item">
   <a href="#loi-ich-cua-viec-su-dung-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Lợi ích của việc sử dụng Kafka
+      
+        Lợi ích của việc sử dụng Kafka
+      
     </span>
   </a>
   
@@ -590,7 +689,9 @@
         <li class="md-nav__item">
   <a href="#rabbitmq-uoc-su-dung-e-lam-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      RabbitMQ được sử dụng để làm gì?
+      
+        RabbitMQ được sử dụng để làm gì?
+      
     </span>
   </a>
   
@@ -600,7 +701,9 @@
           <li class="md-nav__item">
   <a href="#rabbitmq-trong-tich-hop-ung-dung-va-messaging" class="md-nav__link">
     <span class="md-ellipsis">
-      RabbitMQ trong tích hợp ứng dụng và Messaging
+      
+        RabbitMQ trong tích hợp ứng dụng và Messaging
+      
     </span>
   </a>
   
@@ -609,7 +712,9 @@
           <li class="md-nav__item">
   <a href="#rabbitmq-trong-kien-truc-microservices" class="md-nav__link">
     <span class="md-ellipsis">
-      RabbitMQ trong kiến trúc Microservices
+      
+        RabbitMQ trong kiến trúc Microservices
+      
     </span>
   </a>
   
@@ -618,7 +723,9 @@
           <li class="md-nav__item">
   <a href="#loi-ich-cua-viec-su-dung-rabbitmq" class="md-nav__link">
     <span class="md-ellipsis">
-      Lợi ích của việc sử dụng RabbitMQ
+      
+        Lợi ích của việc sử dụng RabbitMQ
+      
     </span>
   </a>
   
@@ -632,7 +739,9 @@
         <li class="md-nav__item">
   <a href="#kafka-vs-rabbitmq-su-khac-biet" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka vs RabbitMQ: Sự khác biệt
+      
+        Kafka vs RabbitMQ: Sự khác biệt
+      
     </span>
   </a>
   
@@ -642,7 +751,9 @@
           <li class="md-nav__item">
   <a href="#so-sanh-hieu-nang" class="md-nav__link">
     <span class="md-ellipsis">
-      So sánh hiệu năng
+      
+        So sánh hiệu năng
+      
     </span>
   </a>
   
@@ -651,7 +762,9 @@
           <li class="md-nav__item">
   <a href="#so-sanh-kha-nang-mo-rong" class="md-nav__link">
     <span class="md-ellipsis">
-      So sánh khả năng mở rộng
+      
+        So sánh khả năng mở rộng
+      
     </span>
   </a>
   
@@ -660,7 +773,9 @@
           <li class="md-nav__item">
   <a href="#o-ben-va-o-tin-cay-cua-tin-nhan" class="md-nav__link">
     <span class="md-ellipsis">
-      Độ bền và độ tin cậy của tin nhắn
+      
+        Độ bền và độ tin cậy của tin nhắn
+      
     </span>
   </a>
   
@@ -669,7 +784,9 @@
           <li class="md-nav__item">
   <a href="#de-su-dung-va-thiet-lap" class="md-nav__link">
     <span class="md-ellipsis">
-      Dễ sử dụng và thiết lập
+      
+        Dễ sử dụng và thiết lập
+      
     </span>
   </a>
   
@@ -678,7 +795,9 @@
           <li class="md-nav__item">
   <a href="#cong-ong-va-he-sinh-thai" class="md-nav__link">
     <span class="md-ellipsis">
-      Cộng đồng và hệ sinh thái
+      
+        Cộng đồng và hệ sinh thái
+      
     </span>
   </a>
   
@@ -687,7 +806,9 @@
           <li class="md-nav__item">
   <a href="#inh-tuyen-va-mau-tin-nhan" class="md-nav__link">
     <span class="md-ellipsis">
-      Định tuyến và mẫu tin nhắn
+      
+        Định tuyến và mẫu tin nhắn
+      
     </span>
   </a>
   
@@ -696,7 +817,9 @@
           <li class="md-nav__item">
   <a href="#ho-tro-giao-thuc-thu-vien-va-ngon-ngu" class="md-nav__link">
     <span class="md-ellipsis">
-      Hỗ trợ giao thức, thư viện và ngôn ngữ
+      
+        Hỗ trợ giao thức, thư viện và ngôn ngữ
+      
     </span>
   </a>
   
@@ -705,7 +828,9 @@
           <li class="md-nav__item">
   <a href="#o-tre" class="md-nav__link">
     <span class="md-ellipsis">
-      Độ trễ
+      
+        Độ trễ
+      
     </span>
   </a>
   
@@ -719,7 +844,9 @@
         <li class="md-nav__item">
   <a href="#uu-va-nhuoc-iem-cua-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Ưu và nhược điểm của Kafka
+      
+        Ưu và nhược điểm của Kafka
+      
     </span>
   </a>
   
@@ -729,7 +856,9 @@
           <li class="md-nav__item">
   <a href="#uu-iem" class="md-nav__link">
     <span class="md-ellipsis">
-      Ưu điểm
+      
+        Ưu điểm
+      
     </span>
   </a>
   
@@ -738,7 +867,9 @@
           <li class="md-nav__item">
   <a href="#nhuoc-iem" class="md-nav__link">
     <span class="md-ellipsis">
-      Nhược điểm
+      
+        Nhược điểm
+      
     </span>
   </a>
   
@@ -779,6 +910,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -789,9 +921,16 @@
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Thuật toán
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -800,7 +939,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Thuật toán
+            
+  
+    Thuật toán
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -814,9 +957,16 @@
       <a href="../../alth/quicksort/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Quicksort
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -850,6 +1000,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -860,9 +1011,16 @@
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     ABAC
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -871,7 +1029,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            ABAC
+            
+  
+    ABAC
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -885,9 +1047,16 @@
       <a href="../../abac/plan/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Kế hoạch học ABAC 30 ngày
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -918,6 +1087,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -928,9 +1098,16 @@
           <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Các mô hình và phương pháp kiểm soát truy cập
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -939,7 +1116,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
-            Các mô hình và phương pháp kiểm soát truy cập
+            
+  
+    Các mô hình và phương pháp kiểm soát truy cập
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -953,9 +1134,16 @@
       <a href="../../abac/AC/Terminology/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Thuật ngữ
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -974,9 +1162,16 @@
       <a href="../../abac/AC/ModelsAndPolicies/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Access Control Models and Policies
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -995,9 +1190,16 @@
       <a href="../../abac/AC/PolicyEnforcement/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Policy Enforcement
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1016,9 +1218,16 @@
       <a href="../../abac/AC/dac/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Discretionary Access Control - DAC
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1037,9 +1246,16 @@
       <a href="../../abac/AC/mac/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Mandatory Access Control - MAC
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1079,6 +1295,9 @@
       
         
       
+        
+      
+    
     
     
     
@@ -1092,9 +1311,16 @@
           <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Mô hình và phương pháp tiếp cận ABAC
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1103,7 +1329,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_3">
             <span class="md-nav__icon md-icon"></span>
-            Mô hình và phương pháp tiếp cận ABAC
+            
+  
+    Mô hình và phương pháp tiếp cận ABAC
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1117,9 +1347,16 @@
       <a href="../../abac/ABAC/intro/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Giới thiệu
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1138,9 +1375,16 @@
       <a href="../../abac/ABAC/ArchitecturesandFunctionalComponents/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Kiến trúc và thành phần chức năng của ABAC
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1159,9 +1403,16 @@
       <a href="../../abac/ABAC/HowABACWork/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Cách thức hoạt động
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1180,9 +1431,16 @@
       <a href="../../abac/ABAC/Using/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Ví dụ thực tế
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1201,9 +1459,16 @@
       <a href="../../abac/ABAC/ABACvsRBAC/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     So sánh ABAC và RBAC
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1222,9 +1487,44 @@
       <a href="../../abac/ABAC/NGAC/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Tìm hiểu về NGAC
+  
+
+    
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/AttributeInfluencingFactors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Các Yếu Tố Ảnh Hưởng Đến Thuộc Tính trong ABAC
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -1243,9 +1543,16 @@
       <a href="../../abac/ABAC/LogicalFormulaandEnumerated/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Logic-Formula và Liệt kê.
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1257,6 +1564,465 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../javascript/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Javascript
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Javascript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 var, let, const: Bí mật và Quy tắc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/1.2.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 const, let và sự thật về tính bất biến (Immutability)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/1.3.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.3 Bộ Nhớ JavaScript: Stack Tập trunng & Heap Mở rộng
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/1.99.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.99 JavaScript Under The Hood: Khám phá Call Stack, Event Loop, và Execution Context.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/2.1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 Clean code if-else style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/2.2.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Cấu trúc Function và Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/2.3.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 Các lối tư duy mới về For loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/3.1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 DOM Performance Warfare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/4.1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 JavaScript Asynchronous Quest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/4.2.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 RxJS: Làm Chủ Luồng Bất Đồng Bộ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/4.3.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 RxJS Map & Tap Mastery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/5.1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 Modern JavaScript NgRx Angular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/5.2.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 Advanced aspects of JavaScript language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1298,7 +2064,9 @@
         <li class="md-nav__item">
   <a href="#giai-thich-cac-khai-niem-ve-he-thong-tin-nhan-publishsubscribe-pubsub-va-message-broker" class="md-nav__link">
     <span class="md-ellipsis">
-      Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker
+      
+        Giải thích các khái niệm về Hệ thống tin nhắn Publish/Subscribe (Pub/Sub) và Message Broker
+      
     </span>
   </a>
   
@@ -1308,7 +2076,9 @@
           <li class="md-nav__item">
   <a href="#inh-nghia-ve-message-broker" class="md-nav__link">
     <span class="md-ellipsis">
-      Định nghĩa về Message Broker
+      
+        Định nghĩa về Message Broker
+      
     </span>
   </a>
   
@@ -1317,7 +2087,9 @@
           <li class="md-nav__item">
   <a href="#inh-nghia-ve-he-thong-tin-nhan-pubsub" class="md-nav__link">
     <span class="md-ellipsis">
-      Định nghĩa về Hệ thống tin nhắn Pub/Sub
+      
+        Định nghĩa về Hệ thống tin nhắn Pub/Sub
+      
     </span>
   </a>
   
@@ -1326,7 +2098,9 @@
           <li class="md-nav__item">
   <a href="#so-sanh-message-brokers-va-he-thong-tin-nhan-pubsub" class="md-nav__link">
     <span class="md-ellipsis">
-      So sánh Message Brokers và Hệ thống tin nhắn Pub/Sub
+      
+        So sánh Message Brokers và Hệ thống tin nhắn Pub/Sub
+      
     </span>
   </a>
   
@@ -1340,7 +2114,9 @@
         <li class="md-nav__item">
   <a href="#kafka-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka là gì?
+      
+        Kafka là gì?
+      
     </span>
   </a>
   
@@ -1350,7 +2126,9 @@
           <li class="md-nav__item">
   <a href="#nguon-goc-va-lich-su-cua-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Nguồn gốc và lịch sử của Kafka
+      
+        Nguồn gốc và lịch sử của Kafka
+      
     </span>
   </a>
   
@@ -1359,7 +2137,9 @@
           <li class="md-nav__item">
   <a href="#kien-truc-cua-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Kiến trúc của Kafka
+      
+        Kiến trúc của Kafka
+      
     </span>
   </a>
   
@@ -1373,7 +2153,9 @@
         <li class="md-nav__item">
   <a href="#rabbitmq-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      RabbitMQ là gì?
+      
+        RabbitMQ là gì?
+      
     </span>
   </a>
   
@@ -1383,7 +2165,9 @@
           <li class="md-nav__item">
   <a href="#nguon-goc-va-lich-su-cua-rabbitmq" class="md-nav__link">
     <span class="md-ellipsis">
-      Nguồn gốc và lịch sử của RabbitMQ
+      
+        Nguồn gốc và lịch sử của RabbitMQ
+      
     </span>
   </a>
   
@@ -1392,7 +2176,9 @@
           <li class="md-nav__item">
   <a href="#kien-truc-cua-rabbitmq" class="md-nav__link">
     <span class="md-ellipsis">
-      Kiến trúc của RabbitMQ
+      
+        Kiến trúc của RabbitMQ
+      
     </span>
   </a>
   
@@ -1406,7 +2192,9 @@
         <li class="md-nav__item">
   <a href="#kafka-uoc-su-dung-e-lam-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka được sử dụng để làm gì?
+      
+        Kafka được sử dụng để làm gì?
+      
     </span>
   </a>
   
@@ -1416,7 +2204,9 @@
           <li class="md-nav__item">
   <a href="#kafka-trong-data-streaming-va-phan-tich-thoi-gian-thuc" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka trong Data Streaming và phân tích thời gian thực
+      
+        Kafka trong Data Streaming và phân tích thời gian thực
+      
     </span>
   </a>
   
@@ -1425,7 +2215,9 @@
           <li class="md-nav__item">
   <a href="#kafka-trong-he-thong-phan-tan" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka trong hệ thống phân tán
+      
+        Kafka trong hệ thống phân tán
+      
     </span>
   </a>
   
@@ -1434,7 +2226,9 @@
           <li class="md-nav__item">
   <a href="#loi-ich-cua-viec-su-dung-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Lợi ích của việc sử dụng Kafka
+      
+        Lợi ích của việc sử dụng Kafka
+      
     </span>
   </a>
   
@@ -1448,7 +2242,9 @@
         <li class="md-nav__item">
   <a href="#rabbitmq-uoc-su-dung-e-lam-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      RabbitMQ được sử dụng để làm gì?
+      
+        RabbitMQ được sử dụng để làm gì?
+      
     </span>
   </a>
   
@@ -1458,7 +2254,9 @@
           <li class="md-nav__item">
   <a href="#rabbitmq-trong-tich-hop-ung-dung-va-messaging" class="md-nav__link">
     <span class="md-ellipsis">
-      RabbitMQ trong tích hợp ứng dụng và Messaging
+      
+        RabbitMQ trong tích hợp ứng dụng và Messaging
+      
     </span>
   </a>
   
@@ -1467,7 +2265,9 @@
           <li class="md-nav__item">
   <a href="#rabbitmq-trong-kien-truc-microservices" class="md-nav__link">
     <span class="md-ellipsis">
-      RabbitMQ trong kiến trúc Microservices
+      
+        RabbitMQ trong kiến trúc Microservices
+      
     </span>
   </a>
   
@@ -1476,7 +2276,9 @@
           <li class="md-nav__item">
   <a href="#loi-ich-cua-viec-su-dung-rabbitmq" class="md-nav__link">
     <span class="md-ellipsis">
-      Lợi ích của việc sử dụng RabbitMQ
+      
+        Lợi ích của việc sử dụng RabbitMQ
+      
     </span>
   </a>
   
@@ -1490,7 +2292,9 @@
         <li class="md-nav__item">
   <a href="#kafka-vs-rabbitmq-su-khac-biet" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka vs RabbitMQ: Sự khác biệt
+      
+        Kafka vs RabbitMQ: Sự khác biệt
+      
     </span>
   </a>
   
@@ -1500,7 +2304,9 @@
           <li class="md-nav__item">
   <a href="#so-sanh-hieu-nang" class="md-nav__link">
     <span class="md-ellipsis">
-      So sánh hiệu năng
+      
+        So sánh hiệu năng
+      
     </span>
   </a>
   
@@ -1509,7 +2315,9 @@
           <li class="md-nav__item">
   <a href="#so-sanh-kha-nang-mo-rong" class="md-nav__link">
     <span class="md-ellipsis">
-      So sánh khả năng mở rộng
+      
+        So sánh khả năng mở rộng
+      
     </span>
   </a>
   
@@ -1518,7 +2326,9 @@
           <li class="md-nav__item">
   <a href="#o-ben-va-o-tin-cay-cua-tin-nhan" class="md-nav__link">
     <span class="md-ellipsis">
-      Độ bền và độ tin cậy của tin nhắn
+      
+        Độ bền và độ tin cậy của tin nhắn
+      
     </span>
   </a>
   
@@ -1527,7 +2337,9 @@
           <li class="md-nav__item">
   <a href="#de-su-dung-va-thiet-lap" class="md-nav__link">
     <span class="md-ellipsis">
-      Dễ sử dụng và thiết lập
+      
+        Dễ sử dụng và thiết lập
+      
     </span>
   </a>
   
@@ -1536,7 +2348,9 @@
           <li class="md-nav__item">
   <a href="#cong-ong-va-he-sinh-thai" class="md-nav__link">
     <span class="md-ellipsis">
-      Cộng đồng và hệ sinh thái
+      
+        Cộng đồng và hệ sinh thái
+      
     </span>
   </a>
   
@@ -1545,7 +2359,9 @@
           <li class="md-nav__item">
   <a href="#inh-tuyen-va-mau-tin-nhan" class="md-nav__link">
     <span class="md-ellipsis">
-      Định tuyến và mẫu tin nhắn
+      
+        Định tuyến và mẫu tin nhắn
+      
     </span>
   </a>
   
@@ -1554,7 +2370,9 @@
           <li class="md-nav__item">
   <a href="#ho-tro-giao-thuc-thu-vien-va-ngon-ngu" class="md-nav__link">
     <span class="md-ellipsis">
-      Hỗ trợ giao thức, thư viện và ngôn ngữ
+      
+        Hỗ trợ giao thức, thư viện và ngôn ngữ
+      
     </span>
   </a>
   
@@ -1563,7 +2381,9 @@
           <li class="md-nav__item">
   <a href="#o-tre" class="md-nav__link">
     <span class="md-ellipsis">
-      Độ trễ
+      
+        Độ trễ
+      
     </span>
   </a>
   
@@ -1577,7 +2397,9 @@
         <li class="md-nav__item">
   <a href="#uu-va-nhuoc-iem-cua-kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Ưu và nhược điểm của Kafka
+      
+        Ưu và nhược điểm của Kafka
+      
     </span>
   </a>
   
@@ -1587,7 +2409,9 @@
           <li class="md-nav__item">
   <a href="#uu-iem" class="md-nav__link">
     <span class="md-ellipsis">
-      Ưu điểm
+      
+        Ưu điểm
+      
     </span>
   </a>
   
@@ -1596,7 +2420,9 @@
           <li class="md-nav__item">
   <a href="#nhuoc-iem" class="md-nav__link">
     <span class="md-ellipsis">
-      Nhược điểm
+      
+        Nhược điểm
+      
     </span>
   </a>
   
@@ -1617,9 +2443,11 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
+
 
   
   
@@ -2041,7 +2869,7 @@
           <a href="../../Docker/docker-start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bài 1: Giới thiệu về Docker">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
@@ -2066,7 +2894,7 @@
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
             </div>
           </a>
         
@@ -2085,7 +2913,8 @@
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -2097,7 +2926,7 @@
       
     
     <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"/></svg>
     </a>
   
 </div>
@@ -2112,10 +2941,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "navigation.indexes", "navigation.insants", "navigation.footer", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "quanbm"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "navigation.indexes", "navigation.insants", "navigation.footer", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "quanbm"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

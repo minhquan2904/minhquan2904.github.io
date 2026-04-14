@@ -4,29 +4,45 @@ repo_url: https://github.com/minhquan2904/minhquan2904.github.io
 nav:
   - Home: index.md
   - Hello-word: posts/hello-world.md
-  - Docker: 
-    - 'Tổng quan': posts/Docker/summary.md
-    - 'Bài 1: Giới thiệu về Docker': posts/Docker/docker-start.md
+  - Docker:
+      - "Tổng quan": posts/Docker/summary.md
+      - "Bài 1: Giới thiệu về Docker": posts/Docker/docker-start.md
   - Kafka:
-    - 'So sánh Kafka và RabbitMQ': posts/Kafka/compare.md
+      - "So sánh Kafka và RabbitMQ": posts/Kafka/compare.md
   - Thuật toán:
-    - 'Quicksort': posts/alth/quicksort.md
+      - "Quicksort": posts/alth/quicksort.md
   - ABAC:
-    - 'Kế hoạch học ABAC 30 ngày': posts/abac/plan.md
-    - Các mô hình và phương pháp kiểm soát truy cập:
-      - 'Thuật ngữ': posts/abac/AC/Terminology.md
-      - 'Access Control Models and Policies': posts/abac/AC/ModelsAndPolicies.md
-      - 'Policy Enforcement': posts/abac/AC/PolicyEnforcement.md
-      - 'Discretionary Access Control - DAC': posts/abac/AC/dac.md
-      - 'Mandatory Access Control - MAC': posts/abac/AC/mac.md
-    - Mô hình và phương pháp tiếp cận ABAC:
-      - 'Giới thiệu': posts/abac/ABAC/intro.md
-      - 'Kiến trúc và thành phần chức năng của ABAC': posts/abac/ABAC/ArchitecturesandFunctionalComponents.md
-      - 'Cách thức hoạt động': posts/abac/ABAC/HowABACWork.md
-      - 'Ví dụ thực tế': posts/abac/ABAC/Using.md
-      - 'So sánh ABAC và RBAC': posts/abac/ABAC/ABACvsRBAC.md
-      - 'Tìm hiểu về NGAC': posts/abac/ABAC/NGAC.md
-      - 'Logic-Formula và Liệt kê.': posts/abac/ABAC/LogicalFormulaandEnumerated.md
+      - "Kế hoạch học ABAC 30 ngày": posts/abac/plan.md
+      - Các mô hình và phương pháp kiểm soát truy cập:
+          - "Thuật ngữ": posts/abac/AC/Terminology.md
+          - "Access Control Models and Policies": posts/abac/AC/ModelsAndPolicies.md
+          - "Policy Enforcement": posts/abac/AC/PolicyEnforcement.md
+          - "Discretionary Access Control - DAC": posts/abac/AC/dac.md
+          - "Mandatory Access Control - MAC": posts/abac/AC/mac.md
+      - Mô hình và phương pháp tiếp cận ABAC:
+          - "Giới thiệu": posts/abac/ABAC/intro.md
+          - "Kiến trúc và thành phần chức năng của ABAC": posts/abac/ABAC/ArchitecturesandFunctionalComponents.md
+          - "Cách thức hoạt động": posts/abac/ABAC/HowABACWork.md
+          - "Ví dụ thực tế": posts/abac/ABAC/Using.md
+          - "So sánh ABAC và RBAC": posts/abac/ABAC/ABACvsRBAC.md
+          - "Tìm hiểu về NGAC": posts/abac/ABAC/NGAC.md
+          - "Các Yếu Tố Ảnh Hưởng Đến Thuộc Tính trong ABAC": posts/abac/ABAC/AttributeInfluencingFactors.md
+          - "Logic-Formula và Liệt kê.": posts/abac/ABAC/LogicalFormulaandEnumerated.md
+  - Javascript:
+      - "Overview": posts/javascript/index.md
+      - "1.1 var, let, const: Bí mật và Quy tắc": posts/javascript/1.1.md
+      - "1.2 const, let và sự thật về tính bất biến (Immutability)": posts/javascript/1.2.md
+      - "1.3 Bộ Nhớ JavaScript: Stack Tập trunng & Heap Mở rộng": posts/javascript/1.3.md
+      - "1.99 JavaScript Under The Hood: Khám phá Call Stack, Event Loop, và Execution Context.": posts/javascript/1.99.md
+      - "2.1 Clean code if-else style": posts/javascript/2.1.md
+      - "2.2 Cấu trúc Function và Scope": posts/javascript/2.2.md
+      - "2.3 Các lối tư duy mới về For loop": posts/javascript/2.3.md
+      - "3.1 DOM Performance Warfare": posts/javascript/3.1.md
+      - "4.1 JavaScript Asynchronous Quest": posts/javascript/4.1.md
+      - "4.2 RxJS: Làm Chủ Luồng Bất Đồng Bộ": posts/javascript/4.2.md
+      - "4.3 RxJS Map & Tap Mastery": posts/javascript/4.3.md
+      - "5.1 Modern JavaScript NgRx Angular": posts/javascript/5.1.md
+      - "5.2 Advanced aspects of JavaScript language": posts/javascript/5.2.md
 theme:
   name: material
   custom_dir: overrides
@@ -40,11 +56,11 @@ theme:
     - announce.dismiss
 
 plugins:
- - search
+  - search
 
 extra:
   social:
-    - icon: fontawesome/brands/mastodon 
+    - icon: fontawesome/brands/mastodon
       link: https://fosstodon.org/@squidfunk
   version:
     provider: quanbm
