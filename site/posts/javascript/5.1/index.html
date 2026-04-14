@@ -1,0 +1,2096 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://localhost:8000/posts/javascript/5.1/">
+      
+      
+        <link rel="prev" href="../4.3/">
+      
+      
+        <link rel="next" href="../5.2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>5.1 Modern Web: Làm chủ State Management với NgRx trong Angular - quanbm</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#51-modern-web-lam-chu-state-management-voi-ngrx-trong-angular" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="quanbm" class="md-header__button md-logo" aria-label="quanbm" data-md-component="logo">
+      
+  <img src="../../../assets/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            quanbm
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5.1 Modern Web: Làm chủ State Management với NgRx trong Angular
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/minhquan2904/minhquan2904.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="quanbm" class="md-nav__button md-logo" aria-label="quanbm" data-md-component="logo">
+      
+  <img src="../../../assets/logo.jpg" alt="logo">
+
+    </a>
+    quanbm
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/minhquan2904/minhquan2904.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hello-world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello-word
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tổng quan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/docker-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bài 1: Giới thiệu về Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kafka
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Kafka
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kafka/compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    So sánh Kafka và RabbitMQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thuật toán
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Thuật toán
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alth/quicksort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quicksort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABAC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ABAC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kế hoạch học ABAC 30 ngày
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Các mô hình và phương pháp kiểm soát truy cập
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Các mô hình và phương pháp kiểm soát truy cập
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/Terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thuật ngữ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/ModelsAndPolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control Models and Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/PolicyEnforcement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy Enforcement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/dac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discretionary Access Control - DAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/mac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mandatory Access Control - MAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mô hình và phương pháp tiếp cận ABAC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mô hình và phương pháp tiếp cận ABAC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giới thiệu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/ArchitecturesandFunctionalComponents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kiến trúc và thành phần chức năng của ABAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/HowABACWork/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cách thức hoạt động
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/Using/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ví dụ thực tế
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/ABACvsRBAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    So sánh ABAC và RBAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/NGAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tìm hiểu về NGAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/AttributeInfluencingFactors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Các Yếu Tố Ảnh Hưởng Đến Thuộc Tính trong ABAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/LogicalFormulaandEnumerated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic-Formula và Liệt kê.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Javascript
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Javascript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 var, let, const: Bí mật và Quy tắc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 const, let và sự thật về tính bất biến (Immutability)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.3 Bộ Nhớ JavaScript: Stack Tập trunng & Heap Mở rộng
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.99 JavaScript Under The Hood: Khám phá Call Stack, Event Loop, và Execution Context.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 Clean code if-else style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Cấu trúc Function và Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 Các lối tư duy mới về For loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 DOM Performance Warfare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 JavaScript Asynchronous Quest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 RxJS: Làm Chủ Luồng Bất Đồng Bộ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 RxJS Map & Tap Mastery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 Modern JavaScript NgRx Angular
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 Modern JavaScript NgRx Angular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#noi-nam-anh-prop-drilling-truyen-nhan-qua-trung-gian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💣 Nỗi Nám Ảnh Prop Drilling (Truyền Nhận Qua Trung Gian)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triet-ly-ngrx-xay-dung-lau-nam-goc-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏛️ Triết lý NgRx - Xây Dựng "Lầu Năm Góc" Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏛️ Triết lý NgRx - Xây Dựng &#34;Lầu Năm Góc&#34; Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-store-kho-luu-tru-single-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ STORE (Kho Lưu Trữ - Single Source of Truth)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-actions-lenh-trang-het-hanh-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ ACTIONS (Lệnh Trạng - Hét Hành Động)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-reducers-ke-toan-kho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ REDUCERS (Kế Toán Kho)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-selectors-camera-kinh-vien-vong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ SELECTORS (Camera Kính Viễn Vọng)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-effects-bo-truong-giao-thuong-xu-ly-bat-ong-bo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5️⃣ EFFECTS (Bộ Trưởng Giao Thương - Xử Lý Bất Đồng Bộ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thanh-qua-oat-uoc-bang-state-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💎 Thành Quả Đoạt Được Bằng State Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tom-gon-hanh-trinh-mang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tóm gọn hành trình Mảng
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 Advanced aspects of JavaScript language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#noi-nam-anh-prop-drilling-truyen-nhan-qua-trung-gian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💣 Nỗi Nám Ảnh Prop Drilling (Truyền Nhận Qua Trung Gian)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triet-ly-ngrx-xay-dung-lau-nam-goc-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏛️ Triết lý NgRx - Xây Dựng "Lầu Năm Góc" Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏛️ Triết lý NgRx - Xây Dựng &#34;Lầu Năm Góc&#34; Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-store-kho-luu-tru-single-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ STORE (Kho Lưu Trữ - Single Source of Truth)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-actions-lenh-trang-het-hanh-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ ACTIONS (Lệnh Trạng - Hét Hành Động)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-reducers-ke-toan-kho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ REDUCERS (Kế Toán Kho)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-selectors-camera-kinh-vien-vong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ SELECTORS (Camera Kính Viễn Vọng)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-effects-bo-truong-giao-thuong-xu-ly-bat-ong-bo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5️⃣ EFFECTS (Bộ Trưởng Giao Thương - Xử Lý Bất Đồng Bộ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thanh-qua-oat-uoc-bang-state-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💎 Thành Quả Đoạt Được Bằng State Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tom-gon-hanh-trinh-mang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tóm gọn hành trình Mảng
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="51-modern-web-lam-chu-state-management-voi-ngrx-trong-angular">5.1 Modern Web: Làm Chủ State Management Với NgRx Trong Angular</h1>
+<p>Trải qua những chặng đường thấu hiểu JavaScript cốt lõi, giờ là lúc chúng ta ghép mọi thứ (Scope, Immutability, Map/Reduce và RxJS Observables) vào một "Hệ sinh thái thực chiến" tinh vi và quy mô cực lớn bậc nhất thế giới Frontend: <strong>Angular kết hợp NgRx</strong>.</p>
+<h2 id="noi-nam-anh-prop-drilling-truyen-nhan-qua-trung-gian">💣 Nỗi Nám Ảnh Prop Drilling (Truyền Nhận Qua Trung Gian)</h2>
+<p>Ngày trước, để chuyển một cục Data từ Component Ông, nội truyền xuống Component Cháu, cách duy nhất là bạn phải cõng cục Data đó đẩy xuống Bố (bằng <code>@Input()</code>), rồi từ Bố tiếp tục tạo <code>@Input()</code> gồng xuống cho Cháu. Vòng lặp báo tin cũng ngược lại bằng <code>@Output()</code> EventEmitter (gây Event Bubbling).</p>
+<p>Kiến trúc liên đới chằng chịt rễ cây này (hay còn gọi là <em>Prop Drilling</em>) dẫn đến một bãi mìn: Lúc xảy ra lỗi ở Cháu, ta phải mò ngược lùi 10 cái lồng Component xem thằng nào ở trên truyền dữ liệu sai.</p>
+<p>Đó là lúc khái niệm <strong>State Management (Quản Trị Trạng Thái Tập Trung)</strong> ra đời.</p>
+<hr />
+<h2 id="triet-ly-ngrx-xay-dung-lau-nam-goc-code">🏛️ Triết lý NgRx - Xây Dựng "Lầu Năm Góc" Code</h2>
+<p>NgRx là thư viện triển khai mô hình Redux Pattern nổi tiếng dành riêng cho Angular, ứng dụng mạnh mẽ 100% "Dòng chảy RxJS" như bạn đã tu luyện ở Chương 4.</p>
+<p>Thay vì Component cha con lén lút trao Data với nhau, NgRx đem mọi bộ não lên lập một <strong>"Kho thóc trung ương" (Store)</strong> duy nhất. Mọi bộ phận UI chỉ làm 2 việc: Lấy data về để hiển thị và Hét to hành động (Action) để Kho trung ương điều chỉnh. Kỷ cương được thiết lập qua 5 vị chỉ huy:</p>
+<h3 id="1-store-kho-luu-tru-single-source-of-truth">1️⃣ STORE (Kho Lưu Trữ - Single Source of Truth)</h3>
+<p>Nơi duy nhất nắm giữ toàn bộ dữ liệu dự trữ hệ thống (State) dưới dạng sống ngầm (Observable). Nếu cần lấy danh sách Customer, bất cứ Component nào gọi Store lấy ra là giống hệt nhau, không có sự sai khác hay chờ đợi 2 bên độc lập.</p>
+<h3 id="2-actions-lenh-trang-het-hanh-ong">2️⃣ ACTIONS (Lệnh Trạng - Hét Hành Động)</h3>
+<p>Component trở thành "Kẻ ngốc nghếch" (Dumb Components). Nút Login trên UI không chứa hàm xử lí Login, khi bấm vào, nó chỉ việc đứng hét to một câu khẩu hiệu kiểu dạng:</p>
+<blockquote>
+<p>Lệnh <code>[Auth Page] Login User Nhé Kho!</code></p>
+</blockquote>
+<pre><code class="language-typescript">// Chỉ định cấu trúc lệnh
+export const loginUser = createAction(
+  '[Auth Page] Login User',
+  props&lt;{ username: string }&gt;() // Cầm gói hồ sơ đính kèm báo lên.
+);
+</code></pre>
+<h3 id="3-reducers-ke-toan-kho">3️⃣ REDUCERS (Kế Toán Kho)</h3>
+<p>Thằng duy nhất nắm chìa khóa nhà Kho là Thằng Kế Toán <code>Reducer</code>. Khắp app không ai có quyền sửa data trong Store ngoại trừ Reducer.
+Khi nó nghe lệnh <code>[Auth Page] Login User</code>, nó lôi hồ sơ ra phân tích và bắt đầu tạo một phiên bản MỚI cho Kho Bạc.</p>
+<blockquote>
+<p>[!CAUTION] Tính Cố Định Bất Biến (Immutability)
+Tại đây kiến thức Bài 1.2 lên ngôi: Reducers phải là MỘT HÀM THUẦN TÚY (Pure Function). Nghĩa là nó không được sửa mảng State cũ, mà nó dùng <code>spread operator (...)</code> để xé lấy một Mảng Copy, cập nhật và đổ trả vào kho bản mới nhất, xoá bản cũ!</p>
+</blockquote>
+<h3 id="4-selectors-camera-kinh-vien-vong">4️⃣ SELECTORS (Camera Kính Viễn Vọng)</h3>
+<p>Trong Kho bãi chứa tới hàng trăm ngàn Data (User, Post, Setting). Để UI Component ngoài xa tránh việc lấy lộn thông tin, người ta cấp cho chúng các cái Ống nhòm <code>Selector</code>.</p>
+<pre><code class="language-typescript">// Bộ ống nhòm chỉ quét đúng Khu vực Danh Sách Users. Tránh quét toàn bộ làm giật tải.
+export const selectAllUsers = createSelector(
+  selectUserState,
+  (state) =&gt; state.users
+);
+</code></pre>
+<h3 id="5-effects-bo-truong-giao-thuong-xu-ly-bat-ong-bo">5️⃣ EFFECTS (Bộ Trưởng Giao Thương - Xử Lý Bất Đồng Bộ)</h3>
+<p>Tuyệt đối cấm Reducers gọi API ngoài hay dính líu đến cái gì mất thời gian. Khi nhận Lệnh đi lấy API <code>[User] Fetch Users</code>, Thằng <code>Reducers</code> sẽ làm ngơ, người nghe là <strong>Effects</strong>.
+<code>Effects</code> chạy ra ngoài gọi API, đón lấy cục Data xong, nó mới đóng gói ném trả ngược về một cái Lệnh Mới cho Hệ thống: <code>[User API] Danh Sách Tải Thành Công</code>. Lúc này Reducer lại ra bê cục đó đắp vô kho.</p>
+<blockquote>
+<p>Quá trình giao dịch bên ngoài này sặc mùi <code>RxJS Map/SwitchMap/Tap</code> vì nó hứng luồng data.</p>
+</blockquote>
+<hr />
+<h2 id="thanh-qua-oat-uoc-bang-state-management">💎 Thành Quả Đoạt Được Bằng State Management</h2>
+<p>Cấu trúc 5 thành tựu (Store, Action, Reducer, Selector, Effect) tuy cực kỳ tốn thời kì khởi tạo (Boilerplate) - Nhưng một khi Hệ thống phình to lên, lợi thế của NgRx sẽ đè bẹp tất cả:</p>
+<ol>
+<li><strong>Khử sự Tùy tiện:</strong> Data luân chuyển đi theo 1 chiều ngang kim tự tháp chóp <code>(Action -&gt; Reducer -&gt; Store -&gt; Selector -&gt; Component)</code>. Đứt gãy ở đâu, debug đúng cái khúc đó.</li>
+<li><strong>Kiến Trúc Cô Lập Testing (Unit Testing hân hoan):</strong> </li>
+<li>Vì Code chia chẻ từng File Lệnh (Action), Lọc Dữ liệu (Selector), bạn test Code Logic 100% không liên lụy chi đến cái Giao Diện UI cồng kềnh.</li>
+<li><strong>Nâng Tâm Giao Diện (Time Traveling):</strong> Khi kết nối với <code>Redux DevTools</code>, bởi do mỗi <code>Action</code> trút vô là một bản thể Array Data mới, bạn có quyền ấn nút "Giật ngược Cổ máy thời gian", UI lùi về trạng thái y hệt thời điểm bấm nút 5 phút trước cho bạn quan sát lỗi.</li>
+</ol>
+<hr />
+<h2 id="tom-gon-hanh-trinh-mang">Tóm gọn hành trình Mảng</h2>
+<p>Vậy là ta đã đi một quãng đường dằng dặc: Từ hiểu tại sao Mảng và Objects dễ bị lây lan tham chiếu chéo (Heap Memory Bài 1.3), tới cách tách mảng ra lọc (Array Filter/Map Bài 2.3), quản lý Async thời gian (RxJS Bài 4.2), và giờ đây - NgRx.</p>
+<p>Nếu không nắm bắt vững chắc quy luật <strong>Immutability (Sự bất biến)</strong> và <strong>RxJS Observable</strong>, làm việc với một thư viện Store đỉnh lưu như NgRx trong Angular sẽ làm bạn rơi vào mê hồn trận và code ra vô số lỗi phản tác dụng. Chúc mừng bạn đã đi đường vòng mà chắc chắn nhất để nâng cấp hệ kĩ năng thực chiến hoàn chỉnh của giới Front-end!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../4.3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4.3 RxJS Map &amp; Tap Mastery">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4.3 RxJS Map & Tap Mastery
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../5.2/" class="md-footer__link md-footer__link--next" aria-label="Next: 5.2 Advanced aspects of JavaScript language">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                5.2 Advanced aspects of JavaScript language
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "navigation.indexes", "navigation.insants", "navigation.footer", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "quanbm"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

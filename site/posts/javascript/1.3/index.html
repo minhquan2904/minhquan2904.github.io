@@ -1,0 +1,2224 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://localhost:8000/posts/javascript/1.3/">
+      
+      
+        <link rel="prev" href="../1.2/">
+      
+      
+        <link rel="next" href="../1.99/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>1.3 Bộ Nhớ JavaScript: Stack Tối Ưu & Heap Mở Rộng - quanbm</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#13-bo-nho-javascript-stack-toi-uu-heap-mo-rong" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="quanbm" class="md-header__button md-logo" aria-label="quanbm" data-md-component="logo">
+      
+  <img src="../../../assets/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            quanbm
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.3 Bộ Nhớ JavaScript: Stack Tối Ưu & Heap Mở Rộng
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/minhquan2904/minhquan2904.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="quanbm" class="md-nav__button md-logo" aria-label="quanbm" data-md-component="logo">
+      
+  <img src="../../../assets/logo.jpg" alt="logo">
+
+    </a>
+    quanbm
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/minhquan2904/minhquan2904.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hello-world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello-word
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tổng quan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/docker-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bài 1: Giới thiệu về Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kafka
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Kafka
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kafka/compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    So sánh Kafka và RabbitMQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thuật toán
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Thuật toán
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alth/quicksort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quicksort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABAC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ABAC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kế hoạch học ABAC 30 ngày
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Các mô hình và phương pháp kiểm soát truy cập
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Các mô hình và phương pháp kiểm soát truy cập
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/Terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thuật ngữ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/ModelsAndPolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control Models and Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/PolicyEnforcement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy Enforcement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/dac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discretionary Access Control - DAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/AC/mac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mandatory Access Control - MAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mô hình và phương pháp tiếp cận ABAC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mô hình và phương pháp tiếp cận ABAC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giới thiệu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/ArchitecturesandFunctionalComponents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kiến trúc và thành phần chức năng của ABAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/HowABACWork/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cách thức hoạt động
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/Using/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ví dụ thực tế
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/ABACvsRBAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    So sánh ABAC và RBAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/NGAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tìm hiểu về NGAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/AttributeInfluencingFactors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Các Yếu Tố Ảnh Hưởng Đến Thuộc Tính trong ABAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abac/ABAC/LogicalFormulaandEnumerated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic-Formula và Liệt kê.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Javascript
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Javascript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 var, let, const: Bí mật và Quy tắc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 const, let và sự thật về tính bất biến (Immutability)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.3 Bộ Nhớ JavaScript: Stack Tập trunng & Heap Mở rộng
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.3 Bộ Nhớ JavaScript: Stack Tập trunng & Heap Mở rộng
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-stack-memory-bo-nho-ngan-xep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Stack Memory (Bộ Nhớ Ngăn Xếp)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Stack Memory (Bộ Nhớ Ngăn Xếp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack-luu-tru-nhung-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack lưu trữ những gì?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac-iem-cua-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đặc điểm của Stack:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-heap-memory-bo-nho-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Heap Memory (Bộ Nhớ Động)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Heap Memory (Bộ Nhớ Động)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heap-luu-tru-nhung-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heap lưu trữ những gì?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac-iem-cua-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đặc điểm của Heap:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-qua-trinh-don-dep-bo-nho-garbage-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Quá trình dọn dẹp bộ nhớ: Garbage Collection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-nhung-nguyen-nhan-gay-ra-memory-leak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Những nguyên nhân gây ra Memory Leak
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Những nguyên nhân gây ra Memory Leak">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-rac-tu-global-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Rác từ Global Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-khong-don-dep-event-listener-va-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Không dọn dẹp Event Listener và Timers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-van-nan-cua-closure-bi-ngam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Vấn nạn của Closure bị ngâm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tổng kết
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.99 JavaScript Under The Hood: Khám phá Call Stack, Event Loop, và Execution Context.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 Clean code if-else style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Cấu trúc Function và Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 Các lối tư duy mới về For loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 DOM Performance Warfare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 JavaScript Asynchronous Quest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 RxJS: Làm Chủ Luồng Bất Đồng Bộ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 RxJS Map & Tap Mastery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 Modern JavaScript NgRx Angular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 Advanced aspects of JavaScript language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-stack-memory-bo-nho-ngan-xep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Stack Memory (Bộ Nhớ Ngăn Xếp)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Stack Memory (Bộ Nhớ Ngăn Xếp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack-luu-tru-nhung-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack lưu trữ những gì?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac-iem-cua-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đặc điểm của Stack:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-heap-memory-bo-nho-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Heap Memory (Bộ Nhớ Động)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Heap Memory (Bộ Nhớ Động)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heap-luu-tru-nhung-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heap lưu trữ những gì?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac-iem-cua-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đặc điểm của Heap:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-qua-trinh-don-dep-bo-nho-garbage-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Quá trình dọn dẹp bộ nhớ: Garbage Collection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-nhung-nguyen-nhan-gay-ra-memory-leak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Những nguyên nhân gây ra Memory Leak
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Những nguyên nhân gây ra Memory Leak">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-rac-tu-global-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Rác từ Global Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-khong-don-dep-event-listener-va-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Không dọn dẹp Event Listener và Timers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-van-nan-cua-closure-bi-ngam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Vấn nạn của Closure bị ngâm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tổng kết
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="13-bo-nho-javascript-stack-toi-uu-heap-mo-rong">1.3 Bộ Nhớ JavaScript: Stack Tối Ưu &amp; Heap Mở Rộng</h1>
+<p>Khi viết code JavaScript, chúng ta thường "take it for granted" (xem là điều hiển nhiên) việc khai báo một biến, một mảng hay khởi tạo một object mà ít khi tự hỏi: <em>"Dữ liệu này được cất ở đâu? Dọn dẹp như thế nào lúc không dùng nữa?"</em></p>
+<p>JavaScript là một ngôn ngữ bậc cao có tính năng tự động thu gom rác (Garbage Collection), giúp dev không phải tự tay gọi hàm cấp phát (như <code>malloc</code> trong C) hay tự tay giải phóng bộ nhớ. Tuy nhiên, nếu bạn không hiểu cơ chế bên dưới, bạn rất dễ gặp các vấn đề về <strong>Memory Leak</strong> hoặc những "chiếc bẫy" khó hiểu về tham chiếu (reference).</p>
+<p>Trong JavaScript engine (như V8 của Google Chrome hay Node.js), bộ nhớ được chia thành hai khu vực chính để phân loại và lưu trữ dữ liệu hiệu quả: <strong>Stack (Ngăn xếp)</strong> và <strong>Heap (Vùng nhớ động)</strong>.</p>
+<hr />
+<h2 id="1-stack-memory-bo-nho-ngan-xep">1. Stack Memory (Bộ Nhớ Ngăn Xếp)</h2>
+<p>Stack là một cấu trúc dữ liệu hoạt động theo nguyên tắc <strong>LIFO (Last-In-First-Out)</strong>, nghĩa là dải dữ liệu nào vào sau sẽ được lấy ra trước. Stack trong JavaScript đảm nhận trách nhiệm lưu trữ các thành phần có <em>kích thước tĩnh (static data)</em> mà engine có thể xác định được ngay khi chạy code.</p>
+<h3 id="stack-luu-tru-nhung-gi">Stack lưu trữ những gì?</h3>
+<ul>
+<li><strong>Các dữ liệu kiểu nguyên thủy (Primitive values):</strong> Bao gồm <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>Undefined</code>, <code>Null</code>, <code>Symbol</code>, và <code>BigInt</code>.</li>
+<li><strong>References (Điểm trỏ):</strong> Địa chỉ vùng nhớ trỏ tới các object hoặc array đang nằm bên trong vùng Heap.</li>
+<li><strong>Dữ liệu của Execution Contexts:</strong> Trạng thái thực thi của hàm (Call Stack).</li>
+</ul>
+<h3 id="ac-iem-cua-stack">Đặc điểm của Stack:</h3>
+<ul>
+<li><strong>Tốc độ:</strong> Rất nhanh (vì kích thước mỗi phần tử cố định và cách làm việc tĩnh).</li>
+<li><strong>Giới hạn dung lượng:</strong> Stack có kích thước tối đa giới hạn (nếu gọi hàm đệ quy không có điểm dừng, bạn sẽ gặp lỗi <code>RangeError: Maximum call stack size exceeded</code>).</li>
+<li><strong>Phân bổ trực tiếp:</strong> Các biến được cấp vùng nhớ trực tiếp độc lập.</li>
+</ul>
+<pre><code class="language-javascript">let myName = &quot;John&quot;; // Primitive -&gt; Lưu thẳng giá trị trong Stack
+let myAge = 30; // Primitive -&gt; Lưu thẳng giá trị trong Stack
+
+let anotherName = myName; // Tạo ra một ô nhớ mới trong Stack và copy giá trị &quot;John&quot; sang
+anotherName = &quot;Doe&quot;; // Không hề ảnh hưởng tới myName
+
+console.log(myName); // &quot;John&quot;
+</code></pre>
+<hr />
+<h2 id="2-heap-memory-bo-nho-ong">2. Heap Memory (Bộ Nhớ Động)</h2>
+<p>Trong khi Stack thích hợp cho dữ liệu kích thước cực nhỏ và đã biết trước định mức, thì <strong>Heap</strong> là không gian rộng lớn và tự do dành cho các dữ liệu phức tạp, có thể phình to hoặc thu nhỏ liên tục gọi là <em>Dynamic data</em>.</p>
+<h3 id="heap-luu-tru-nhung-gi">Heap lưu trữ những gì?</h3>
+<ul>
+<li><strong>Các kiểu tham chiếu (Reference types):</strong> Là <code>Object</code>, <code>Array</code>, và <code>Function</code>.</li>
+</ul>
+<h3 id="ac-iem-cua-heap">Đặc điểm của Heap:</h3>
+<ul>
+<li><strong>Kích thước khổng lồ:</strong> Phân bổ cho những object lớn, mảng chứa cả triệu phần tử mà không gian bị dồn hay cần định hình trước.</li>
+<li><strong>Tốc độ:</strong> Chậm hơn Stack do cơ chế tra cứu động (phải rà soát pointer trong Stack trước để nhảy vào vị trí tương ứng trong Heap).</li>
+<li><strong>Phân bổ dạng tham chiếu:</strong> Khi khởi tạo một Object, phần bản thể chứa dữ liệu thực sẽ đặt ở Heap, còn trên Stack sẽ tạo ra một biến chỉ lưu <strong>địa chỉ (Pointer)</strong> trỏ xuống Heap.</li>
+</ul>
+<pre><code class="language-javascript">let myCar = { brand: &quot;VinFast&quot;, year: 2024 }; 
+// Object { brand: &quot;VinFast&quot;, year: 2024 } nằm trong Heap.
+// myCar nằm trong Stack và chỉ là địa chỉ trỏ (ví dụ: 0x00A1) tới Object đó.
+
+let yourCar = myCar; 
+// yourCar ở Stack được nhận địa chỉ giống hết myCar (0x00A1).
+
+yourCar.year = 2025; // Sửa dữ liệu ở vùng nhớ 0x00A1 trong Heap.
+
+console.log(myCar.year); // 2025 - Cả 2 biến đều trỏ vào cùng 1 nhà!
+</code></pre>
+<blockquote>
+<p>[!WARNING] Cảnh báo về Mutation
+Như đã học ở bài trước (sự thật về const), lý do khi dùng <code>const</code> để khai báo Object bạn vẫn có thể thay đổi các thuộc tính bên trong nó là do: <code>const</code> khoá chết cái Điểm trỏ ở <strong>Stack</strong>, không cho cập nhật biến thành 1 pointer khác, nhưng giá trị động tại <strong>Heap</strong> thì không hề bị khoá.</p>
+</blockquote>
+<hr />
+<h2 id="3-qua-trinh-don-dep-bo-nho-garbage-collection">3. Quá trình dọn dẹp bộ nhớ: Garbage Collection</h2>
+<p>Javascript tự động cấp và tự động dọn rác (Garbage Collector - GC). Khi dữ liệu trên bộ nhớ nằm yên và <em>không còn ai có khả năng với tới nó</em> nữa, thì JS Engine sẽ thu gom chúng để trả lại RAM.</p>
+<p><strong>Thuật toán Mark-and-Sweep (Đánh dấu &amp; Quét rác):</strong>
+Thay vì đếm số lần sử dụng thì V8 sử dụng khái niệm <strong>"Reachability"</strong> (độ phân bổ có thể tiếp cận được từ rễ - Root).</p>
+<ol>
+<li><strong>Rễ (Roots):</strong> Đại diện là <code>window</code> object trong Browser hoặc <code>global</code> trong Node.js.</li>
+<li><strong>Đánh dấu (Marking):</strong> GC bắt đầu từ Roots, duyệt dọc theo mọi biến đang tồn tại và object tham chiếu từ biến đó. Những thứ được chạm đến là <em>đang hữu dụng (Reachable)</em>.</li>
+<li><strong>Quét (Sweeping):</strong> Tất cả các vùng kí gửi trong Heap nào KHÔNG được đánh đấu (nghĩa là mất đường liên kết trỏ tới từ Stack) sẽ bị coi là thư rác vô dụng, và bộ nhớ đó sẽ được giải phóng.</li>
+</ol>
+<pre><code class="language-javascript">let data = { id: 1, action: &quot;FETCH&quot; }; // Pointer trỏ tới Object 1
+data = null; 
+// Hiện tại pointer trong Stack của 'data' đổi thành null.
+// Đồng nghĩa cái Object { id: 1... } dưới Heap đã bị mồ côi (không ai trỏ đến).
+// -&gt; Tại lần chạy Mark-and-Sweep kế tiếp, Object này sẽ bị xóa khỏi bộ nhớ Heap.
+</code></pre>
+<hr />
+<h2 id="4-nhung-nguyen-nhan-gay-ra-memory-leak">4. Những nguyên nhân gây ra Memory Leak</h2>
+<p>Memory Leak là hiện tượng khi vùng nhớ lẽ ra đã hết giá trị sử dụng nhưng không được dọn đi vì chúng vẫn <em>vô tình được đánh dấu reachable</em>. Dưới đây là 3 hủ tục hàng đầu sinh ra chuyện đó:</p>
+<h3 id="1-rac-tu-global-variables">1. Rác từ Global Variables</h3>
+<p>Nếu bạn gắn lung tung biến lên <code>window</code> (hoặc lỡ quên khai báo <code>let</code>, <code>const</code>), những biến đó sống bám vào Root, nghĩa là sống mãi với trình duyệt.</p>
+<pre><code class="language-javascript">function loadData() {
+  cacheList = new Array(1000000).fill(&quot;Data&quot;); // Quên let/const -&gt; thành window.cacheList
+}
+</code></pre>
+<h3 id="2-khong-don-dep-event-listener-va-timers">2. Không dọn dẹp Event Listener và Timers</h3>
+<p>Khi xài <code>setInterval</code>, hoặc <code>addEventListener</code>, các callback đóng vai trò tham chiếu giữ function của bạn tồn tại. Nếu cái UI components bị tháo ra (unmounted), mà bạn không "Clear" những vòng lặp này, rò rỉ sẽ xảy ra.</p>
+<pre><code class="language-javascript">const element = document.getElementById('btn');
+element.addEventListener('click', function onClick() {
+   // Nếu xóa cái 'btn' khỏi DOM nhưng không dùng removeEventListener, callback này vẫn ngầm ghim trong bộ nhớ 
+});
+</code></pre>
+<h3 id="3-van-nan-cua-closure-bi-ngam">3. Vấn nạn của Closure bị ngâm</h3>
+<p>Closure rất mạnh để giấu data. Nhưng một hàm closure đang hoạt động sẽ khóa tất cả bộ nhớ Parent scope lại khiến GC không thể xóa được vòng đời bên trong đó, nên nếu Closure sống mãi, parent memory cũng không bị thu dọn.</p>
+<hr />
+<h2 id="tong-ket">Tổng kết</h2>
+<p>Bạn chỉ cần nhớ kĩ 2 định dạng:
+1. <strong>Stack:</strong> Dùng cho dữ liệu nguyên thuỷ (String, Number, Bool...), nhẹ, nhanh, tĩnh. Copy biến là nhân bản song song giá trị.
+2. <strong>Heap:</strong> Dành cho mảng (Array) và Object phức tạp, tốn dung lượng, cấu trúc linh động. Nó thao tác qua hệ thống "chìa khoá nhà" (Ref pointer) tại Stack. Copy biến chỉ là trao cho người khác chép lại địa chỉ ổ khóa.</p>
+<p>Hiểu về bộ nhớ mang tới cho bạn kỹ năng tối ưu mã cho Framework hiện đại, giải thích được rất nhiều lỗi logic thay đổi state không mong muốn ở React hay Angular sau này. Và quan trọng nhất: viết code không làm máy khách hàng giật lag do bị tràn ngập Memory Leak.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../1.2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1.2 const, let và sự thật về tính bất biến (Immutability)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1.2 const, let và sự thật về tính bất biến (Immutability)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../1.99/" class="md-footer__link md-footer__link--next" aria-label="Next: 1.99 JavaScript Under The Hood: Khám phá Call Stack, Event Loop, và Execution Context.">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                1.99 JavaScript Under The Hood: Khám phá Call Stack, Event Loop, và Execution Context.
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "navigation.indexes", "navigation.insants", "navigation.footer", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "quanbm"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
