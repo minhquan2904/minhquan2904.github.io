@@ -1897,7 +1897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../antigravity/1.2.md" class="md-nav__link">
+      <a href="../../antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2656,28 +2656,28 @@
 <hr />
 <h2 id="thoi-ky-o-a-callbacks-va-ia-nguc-thap-long">🏛️ Thời kỳ đồ đá: Callbacks và Địa ngục tháp lồng</h2>
 <p>Cách thô sơ nhất để báo cho JavaScript biết <em>"Làm xong việc này rồi hãy báo lại tôi nhé"</em> chính là nhét một hàm (gọi là callback) vào bên trong lời gọi đó.</p>
-<pre><code class="language-javascript">// Function bất đồng bộ cũ kỹ
-function fetchUserData(id, callback) {
-  setTimeout(() =&gt; {
-    callback({ userId: id, username: &quot;QuanBM&quot; }); // Trả kết quả thông qua gọi lại hàm
-  }, 1000);
-}
+<div class="highlight"><pre><span></span><code><span class="c1">// Function bất đồng bộ cũ kỹ</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">fetchUserData</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">callback</span><span class="p">({</span><span class="w"> </span><span class="nx">userId</span><span class="o">:</span><span class="w"> </span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;QuanBM&quot;</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Trả kết quả thông qua gọi lại hàm</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="p">}</span>
 
-// Cách gọi 
-fetchUserData(1, function(user) {
-  console.log(&quot;Xong user:&quot;, user);
-});
-</code></pre>
+<span class="c1">// Cách gọi </span>
+<span class="nx">fetchUserData</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Xong user:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 <p>Điều này hoạt động tuyệt vời nếu bạn chỉ làm một việc duy nhất. Nhưng chuyện gì sẽ xảy ra nếu để in ra dữ liệu, bạn cần tuần tự 3 tiến trình phụ thuộc lẫn nhau: <em>Lấy User -&gt; Lấy Posts của User đó -&gt; Lấy Comments của Post đó</em>?</p>
-<pre><code class="language-javascript">// ⚡ CALLBACK HELL (Pyramid of Doom - Kim tự tháp diệt vong)
-fetchUser(1, function(user) {
-  fetchPosts(user.id, function(posts) {
-    fetchComments(posts[0].id, function(comments) {
-      console.log(&quot;Lấy bình luận thành công:&quot;, comments);
-    });
-  });
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// ⚡ CALLBACK HELL (Pyramid of Doom - Kim tự tháp diệt vong)</span>
+<span class="nx">fetchUser</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">fetchPosts</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">posts</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fetchComments</span><span class="p">(</span><span class="nx">posts</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">comments</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Lấy bình luận thành công:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">comments</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
 <p>Đây chính là lúc <strong>Callback Hell</strong> xuất hiện. Code thụt lề dạt hết sang bên phải, khó theo dõi lồng ghép luồng, và cực kỳ tồi tệ trong việc kiểm soát dòng bắt lỗi (Error handling).</p>
 <hr />
 <h2 id="ky-nguyen-phuc-hung-quyen-nang-cua-promises">⚔️ Kỷ nguyên Phục hưng: Quyền năng của Promises</h2>
@@ -2687,45 +2687,45 @@ fetchUser(1, function(user) {
 - <code>Fulfilled / Resolved</code> (Đã có data, trút vào <code>.then()</code>)
 - <code>Rejected</code> (Lỗi rồi, bị từ chối, trút vào <code>.catch()</code>)</p>
 <p>Khắc phục kim tự tháp, Promise chuỗi hóa code sang dạng phẳng dẹt (Flat chaining):</p>
-<pre><code class="language-javascript">// 💡 CỨU BINH DÀN HÀNG NGANG
-fetchUser(1)
-  .then(user =&gt; {
-    return fetchPosts(user.id);
-  })
-  .then(posts =&gt; {
-    return fetchComments(posts[0].id);
-  })
-  .then(comments =&gt; {
-    console.log(&quot;Tuyệt vời, bình luận đây: &quot;, comments);
-  })
-  .catch(error =&gt; {
-    // Chỉ cần MỘT TÊN CẢNH SÁT cho 3 vụ án
-    console.error(&quot;Luồng lấy dữ liệu tan tành vì: &quot;, error); 
-  });
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// 💡 CỨU BINH DÀN HÀNG NGANG</span>
+<span class="nx">fetchUser</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">user</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">fetchPosts</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">posts</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">fetchComments</span><span class="p">(</span><span class="nx">posts</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">comments</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tuyệt vời, bình luận đây: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">comments</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Chỉ cần MỘT TÊN CẢNH SÁT cho 3 vụ án</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Luồng lấy dữ liệu tan tành vì: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span><span class="w"> </span>
+<span class="w">  </span><span class="p">});</span>
+</code></pre></div>
 <p><strong>Lợi thế tuyệt đối:</strong> Không những trình bày đẹp mắt hơn, <code>.catch()</code> duy nhất nằm ở đáy sẽ tóm gọn tất tay bất kể lỗi đó xảy ra ở lời gội <code>fetchUser</code>, <code>fetchPosts</code> hay <code>fetchComments</code>!</p>
 <hr />
 <h2 id="ky-nguyen-hien-ai-async-await">🚀 Kỷ nguyên Hiện đại: <code>async</code> / <code>await</code></h2>
 <p>Mặc dù <code>Promise</code> là một phát minh xuất chúng, việc phải liên tục nối dây <code>.then().then()</code> vẫn mang lại cảm giác lạ lẫm so với tư duy rẽ nhánh của các ngôn ngữ backend. 
 Vậy là giới công nghệ đón nhận cập nhật ES8 với 2 từ khóa: <code>async / await</code> (thực chất nó bên dưới vẫn chính là Promise, nhưng được khoác "bộ áo cú pháp" đẹp đẽ hơn - Syntatic Sugar).</p>
 <p><strong>Công thức thần tốc:</strong> Viết code bất đồng bộ mà nhìn cứ phẳng phiu như code đồng bộ bình thường!</p>
-<pre><code class="language-javascript">// 🌟 MAGIC ASYNC / AWAIT
-async function getFullData() {
-  try {
-    const user = await fetchUser(1); // Block &quot;giả lập&quot; dòng này tới khi có kết quả
-    const posts = await fetchPosts(user.id);
-    const comments = await fetchComments(posts[0].id);
+<div class="highlight"><pre><span></span><code><span class="c1">// 🌟 MAGIC ASYNC / AWAIT</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getFullData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchUser</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Block &quot;giả lập&quot; dòng này tới khi có kết quả</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchPosts</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">comments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchComments</span><span class="p">(</span><span class="nx">posts</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">id</span><span class="p">);</span>
 
-    console.log(&quot;Top notch!&quot;, comments);
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Top notch!&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">comments</span><span class="p">);</span>
 
-  } catch (error) {
-    // Khởi đầu tư duy bắt lỗi Try Catch truyền thống
-    console.error(&quot;Vỡ mộng: &quot;, error);
-  }
-}
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Khởi đầu tư duy bắt lỗi Try Catch truyền thống</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Vỡ mộng: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-getFullData();
-</code></pre>
+<span class="nx">getFullData</span><span class="p">();</span>
+</code></pre></div>
 <blockquote>
 <p>[!TIP] Lưu ý quan trọng
 Keyword <code>await</code> CHỈ ĐƯỢC PHÉP đứng trong một function đã được đính mác <code>async</code> (Hoặc ở Top-Level module trong ES_modules sau này). Nhưng khi bạn chạy nó, nó không xả đứng nguyên cái Main Thread trình duyệt của máy đâu (Nhờ Event Loop làm nhiệm vụ bảo trợ), nó chỉ dập đứng context của cái hàm ấy mà thôi. Cực kì sảng khoái và an toàn!</p>
@@ -2734,28 +2734,28 @@ Keyword <code>await</code> CHỈ ĐƯỢC PHÉP đứng trong một function đ�
 <h2 id="bay-ngam-chet-ngoc-lam-dung-await-chay-tuan-tu-serial">💣 Bẫy ngầm chết ngọc: Lạm dụng <code>await</code> chạy tuần tự (Serial)</h2>
 <p>Một khi xài rành xài sướng <code>await</code>, các dev JS lại rơi vào một cái hố sâu mới: <strong>Lười biếng ghép các await liền kề nhau vô tội vạ.</strong></p>
 <p>Cùng xem đoạn mã tai hoạ dưới đây:</p>
-<pre><code class="language-javascript">async function loadDashboard() {
-  const weather = await fetchWeather();     // Nghỉ mất 2 giây
-  const stocks = await fetchStockPrices();  // Lại nghỉ mất 3 giây
-  const news = await fetchNewsToday();      // Nghỉ mất thêm 1 giây
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">loadDashboard</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">weather</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchWeather</span><span class="p">();</span><span class="w">     </span><span class="c1">// Nghỉ mất 2 giây</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">stocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchStockPrices</span><span class="p">();</span><span class="w">  </span><span class="c1">// Lại nghỉ mất 3 giây</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">news</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchNewsToday</span><span class="p">();</span><span class="w">      </span><span class="c1">// Nghỉ mất thêm 1 giây</span>
 
-  console.log(&quot;Tổng mất: 6 GIÂY! Quá chậm!&quot;);
-}
-</code></pre>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tổng mất: 6 GIÂY! Quá chậm!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Stock, thời tiết hay tin tức là 3 bảng tin hoàn toàn độc lập, chả liên quan gì đến nhau. Sao bảng tin chứng khoán phải chờ đến lúc tải xong cục thời tiết mới được đi vào ống khói chạy API? Chúng ta đã tự bóp méo lợi thế Concurrency (Hỗ trợ gọi đồng thời).</p>
 <p>Hãy kích hoạt <strong>Promise.all</strong> làm quản đốc!</p>
-<pre><code class="language-javascript">// 🔥 TỐI ƯU CONCURRENCY (Gọi song song)
-async function loadDashboard() {
-  // Bắn 3 súng đi tải cùng 1 tít tắc
-  const [weather, stocks, news] = await Promise.all([
-    fetchWeather(),
-    fetchStockPrices(),
-    fetchNewsToday()
-  ]);
+<div class="highlight"><pre><span></span><code><span class="c1">// 🔥 TỐI ƯU CONCURRENCY (Gọi song song)</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">loadDashboard</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Bắn 3 súng đi tải cùng 1 tít tắc</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">weather</span><span class="p">,</span><span class="w"> </span><span class="nx">stocks</span><span class="p">,</span><span class="w"> </span><span class="nx">news</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+<span class="w">    </span><span class="nx">fetchWeather</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">fetchStockPrices</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">fetchNewsToday</span><span class="p">()</span>
+<span class="w">  </span><span class="p">]);</span>
 
-  console.log(&quot;Tổng mất: 3 GIÂY (Chỉ đợi đúng cái nào tốn lâu nhất). Tốc độ bàn thờ!&quot;);
-}
-</code></pre>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tổng mất: 3 GIÂY (Chỉ đợi đúng cái nào tốn lâu nhất). Tốc độ bàn thờ!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="tom-gon-hanh-trinh">Tóm gọn hành trình</h2>
 <ul>

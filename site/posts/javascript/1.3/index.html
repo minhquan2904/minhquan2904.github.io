@@ -1992,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../antigravity/1.2.md" class="md-nav__link">
+      <a href="../../antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2859,14 +2859,14 @@
 <li><strong>Giới hạn dung lượng:</strong> Stack có kích thước tối đa giới hạn (nếu gọi hàm đệ quy không có điểm dừng, bạn sẽ gặp lỗi <code>RangeError: Maximum call stack size exceeded</code>).</li>
 <li><strong>Phân bổ trực tiếp:</strong> Các biến được cấp vùng nhớ trực tiếp độc lập.</li>
 </ul>
-<pre><code class="language-javascript">let myName = &quot;John&quot;; // Primitive -&gt; Lưu thẳng giá trị trong Stack
-let myAge = 30; // Primitive -&gt; Lưu thẳng giá trị trong Stack
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">myName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Primitive -&gt; Lưu thẳng giá trị trong Stack</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w"> </span><span class="c1">// Primitive -&gt; Lưu thẳng giá trị trong Stack</span>
 
-let anotherName = myName; // Tạo ra một ô nhớ mới trong Stack và copy giá trị &quot;John&quot; sang
-anotherName = &quot;Doe&quot;; // Không hề ảnh hưởng tới myName
+<span class="kd">let</span><span class="w"> </span><span class="nx">anotherName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myName</span><span class="p">;</span><span class="w"> </span><span class="c1">// Tạo ra một ô nhớ mới trong Stack và copy giá trị &quot;John&quot; sang</span>
+<span class="nx">anotherName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Doe&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Không hề ảnh hưởng tới myName</span>
 
-console.log(myName); // &quot;John&quot;
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myName</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;John&quot;</span>
+</code></pre></div>
 <hr />
 <h2 id="2-heap-memory-bo-nho-ong">2. Heap Memory (Bộ Nhớ Động)</h2>
 <p>Trong khi Stack thích hợp cho dữ liệu kích thước cực nhỏ và đã biết trước định mức, thì <strong>Heap</strong> là không gian rộng lớn và tự do dành cho các dữ liệu phức tạp, có thể phình to hoặc thu nhỏ liên tục gọi là <em>Dynamic data</em>.</p>
@@ -2880,17 +2880,17 @@ console.log(myName); // &quot;John&quot;
 <li><strong>Tốc độ:</strong> Chậm hơn Stack do cơ chế tra cứu động (phải rà soát pointer trong Stack trước để nhảy vào vị trí tương ứng trong Heap).</li>
 <li><strong>Phân bổ dạng tham chiếu:</strong> Khi khởi tạo một Object, phần bản thể chứa dữ liệu thực sẽ đặt ở Heap, còn trên Stack sẽ tạo ra một biến chỉ lưu <strong>địa chỉ (Pointer)</strong> trỏ xuống Heap.</li>
 </ul>
-<pre><code class="language-javascript">let myCar = { brand: &quot;VinFast&quot;, year: 2024 }; 
-// Object { brand: &quot;VinFast&quot;, year: 2024 } nằm trong Heap.
-// myCar nằm trong Stack và chỉ là địa chỉ trỏ (ví dụ: 0x00A1) tới Object đó.
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">myCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">brand</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;VinFast&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2024</span><span class="w"> </span><span class="p">};</span><span class="w"> </span>
+<span class="c1">// Object { brand: &quot;VinFast&quot;, year: 2024 } nằm trong Heap.</span>
+<span class="c1">// myCar nằm trong Stack và chỉ là địa chỉ trỏ (ví dụ: 0x00A1) tới Object đó.</span>
 
-let yourCar = myCar; 
-// yourCar ở Stack được nhận địa chỉ giống hết myCar (0x00A1).
+<span class="kd">let</span><span class="w"> </span><span class="nx">yourCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myCar</span><span class="p">;</span><span class="w"> </span>
+<span class="c1">// yourCar ở Stack được nhận địa chỉ giống hết myCar (0x00A1).</span>
 
-yourCar.year = 2025; // Sửa dữ liệu ở vùng nhớ 0x00A1 trong Heap.
+<span class="nx">yourCar</span><span class="p">.</span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2025</span><span class="p">;</span><span class="w"> </span><span class="c1">// Sửa dữ liệu ở vùng nhớ 0x00A1 trong Heap.</span>
 
-console.log(myCar.year); // 2025 - Cả 2 biến đều trỏ vào cùng 1 nhà!
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCar</span><span class="p">.</span><span class="nx">year</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2025 - Cả 2 biến đều trỏ vào cùng 1 nhà!</span>
+</code></pre></div>
 <blockquote>
 <p>[!WARNING] Cảnh báo về Mutation
 Như đã học ở bài trước (sự thật về const), lý do khi dùng <code>const</code> để khai báo Object bạn vẫn có thể thay đổi các thuộc tính bên trong nó là do: <code>const</code> khoá chết cái Điểm trỏ ở <strong>Stack</strong>, không cho cập nhật biến thành 1 pointer khác, nhưng giá trị động tại <strong>Heap</strong> thì không hề bị khoá.</p>
@@ -2905,28 +2905,28 @@ Thay vì đếm số lần sử dụng thì V8 sử dụng khái niệm <strong>
 <li><strong>Đánh dấu (Marking):</strong> GC bắt đầu từ Roots, duyệt dọc theo mọi biến đang tồn tại và object tham chiếu từ biến đó. Những thứ được chạm đến là <em>đang hữu dụng (Reachable)</em>.</li>
 <li><strong>Quét (Sweeping):</strong> Tất cả các vùng kí gửi trong Heap nào KHÔNG được đánh đấu (nghĩa là mất đường liên kết trỏ tới từ Stack) sẽ bị coi là thư rác vô dụng, và bộ nhớ đó sẽ được giải phóng.</li>
 </ol>
-<pre><code class="language-javascript">let data = { id: 1, action: &quot;FETCH&quot; }; // Pointer trỏ tới Object 1
-data = null; 
-// Hiện tại pointer trong Stack của 'data' đổi thành null.
-// Đồng nghĩa cái Object { id: 1... } dưới Heap đã bị mồ côi (không ai trỏ đến).
-// -&gt; Tại lần chạy Mark-and-Sweep kế tiếp, Object này sẽ bị xóa khỏi bộ nhớ Heap.
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FETCH&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// Pointer trỏ tới Object 1</span>
+<span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span>
+<span class="c1">// Hiện tại pointer trong Stack của &#39;data&#39; đổi thành null.</span>
+<span class="c1">// Đồng nghĩa cái Object { id: 1... } dưới Heap đã bị mồ côi (không ai trỏ đến).</span>
+<span class="c1">// -&gt; Tại lần chạy Mark-and-Sweep kế tiếp, Object này sẽ bị xóa khỏi bộ nhớ Heap.</span>
+</code></pre></div>
 <hr />
 <h2 id="4-nhung-nguyen-nhan-gay-ra-memory-leak">4. Những nguyên nhân gây ra Memory Leak</h2>
 <p>Memory Leak là hiện tượng khi vùng nhớ lẽ ra đã hết giá trị sử dụng nhưng không được dọn đi vì chúng vẫn <em>vô tình được đánh dấu reachable</em>. Dưới đây là 3 hủ tục hàng đầu sinh ra chuyện đó:</p>
 <h3 id="1-rac-tu-global-variables">1. Rác từ Global Variables</h3>
-<p>Nếu bạn gắn lung tung biến lên <code>window</code> (hoặc lỡ quên khai báo <code>let</code>, <code>const</code>), những biến đó sống bám vào Root, nghĩa là sống mãi với trình duyệt.</p>
-<pre><code class="language-javascript">function loadData() {
-  cacheList = new Array(1000000).fill(&quot;Data&quot;); // Quên let/const -&gt; thành window.cacheList
-}
-</code></pre>
+<p>Nếu bạn gắn lung tung biến lên <code>window</code> (hoặc lỡ quên khai báo <code>let</code>, <code>const</code>), những biến đó sống bám vào Root, nghĩa là sống mãi với trình duyệt.
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">loadData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">cacheList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="mf">1000000</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">&quot;Data&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Quên let/const -&gt; thành window.cacheList</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <h3 id="2-khong-don-dep-event-listener-va-timers">2. Không dọn dẹp Event Listener và Timers</h3>
-<p>Khi xài <code>setInterval</code>, hoặc <code>addEventListener</code>, các callback đóng vai trò tham chiếu giữ function của bạn tồn tại. Nếu cái UI components bị tháo ra (unmounted), mà bạn không "Clear" những vòng lặp này, rò rỉ sẽ xảy ra.</p>
-<pre><code class="language-javascript">const element = document.getElementById('btn');
-element.addEventListener('click', function onClick() {
-   // Nếu xóa cái 'btn' khỏi DOM nhưng không dùng removeEventListener, callback này vẫn ngầm ghim trong bộ nhớ 
-});
-</code></pre>
+<p>Khi xài <code>setInterval</code>, hoặc <code>addEventListener</code>, các callback đóng vai trò tham chiếu giữ function của bạn tồn tại. Nếu cái UI components bị tháo ra (unmounted), mà bạn không "Clear" những vòng lặp này, rò rỉ sẽ xảy ra.
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;btn&#39;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">onClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// Nếu xóa cái &#39;btn&#39; khỏi DOM nhưng không dùng removeEventListener, callback này vẫn ngầm ghim trong bộ nhớ </span>
+<span class="p">});</span>
+</code></pre></div></p>
 <h3 id="3-van-nan-cua-closure-bi-ngam">3. Vấn nạn của Closure bị ngâm</h3>
 <p>Closure rất mạnh để giấu data. Nhưng một hàm closure đang hoạt động sẽ khóa tất cả bộ nhớ Parent scope lại khiến GC không thể xóa được vòng đời bên trong đó, nên nếu Closure sống mãi, parent memory cũng không bị thu dọn.</p>
 <hr />

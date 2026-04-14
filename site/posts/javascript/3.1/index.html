@@ -1925,7 +1925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../antigravity/1.2.md" class="md-nav__link">
+      <a href="../../antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2726,71 +2726,71 @@
 <h2 id="2-cac-chien-thuat-toi-uu-hoa-tactics">2. Các Chiến Thuật Tối Ưu Hóa (Tactics)</h2>
 <h3 id="chien-thuat-1-gom-nhom-thao-tac-truoc-khi-nap-dom-batching">⚔️ Chiến thuật 1: Gom nhóm thao tác trước khi nạp DOM (Batching)</h3>
 <p>Đây là lối code vô cớ bòn rút sức lao động của Browser nhiều nhất.</p>
-<pre><code class="language-javascript">// ⚡ CODE SAI LẦM: Chọc vào DOM 100 lần 
-const container = document.getElementById('list');
+<div class="highlight"><pre><span></span><code><span class="c1">// ⚡ CODE SAI LẦM: Chọc vào DOM 100 lần </span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;list&#39;</span><span class="p">);</span>
 
-for (let i = 0; i &lt; 100; i++) {
-  container.innerHTML += `&lt;li&gt;Mục số ${i}&lt;/li&gt;`; // Gọi Reflow 100 lần !!!
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">container</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&lt;li&gt;Mục số </span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">&lt;/li&gt;`</span><span class="p">;</span><span class="w"> </span><span class="c1">// Gọi Reflow 100 lần !!!</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Hãy nhớ, môi trường thực thi bộ nhớ của JS cực nhanh. Hãy nhào nặn hoàn tất dữ liệu đàng hoàng trong JS (như một xưởng đúc kín), và cuối cùng mới đem thả kết quả vào DOM.</p>
-<pre><code class="language-javascript">// ✅ CODE CHUẨN: Bắn 1 phát vào DOM
-const container = document.getElementById('list');
-let listHTML = ''; 
+<div class="highlight"><pre><span></span><code><span class="c1">// ✅ CODE CHUẨN: Bắn 1 phát vào DOM</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;list&#39;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">listHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w"> </span>
 
-for (let i = 0; i &lt; 100; i++) {
-  listHTML += `&lt;li&gt;Mục số ${i}&lt;/li&gt;`; // Việc nối chuỗi này nằm trọn trong vũng JS
-}
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">listHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&lt;li&gt;Mục số </span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">&lt;/li&gt;`</span><span class="p">;</span><span class="w"> </span><span class="c1">// Việc nối chuỗi này nằm trọn trong vũng JS</span>
+<span class="p">}</span>
 
-// Gọi Reflow ĐÚNG 1 LẦN DƯY NHẤT
-container.innerHTML = listHTML; 
-</code></pre>
+<span class="c1">// Gọi Reflow ĐÚNG 1 LẦN DƯY NHẤT</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">listHTML</span><span class="p">;</span><span class="w"> </span>
+</code></pre></div>
 <h3 id="chien-thuat-2-su-dung-vu-khi-mat-documentfragment">⚔️ Chiến thuật 2: Sử Dụng Vũ Khí Mật <code>DocumentFragment</code></h3>
 <p>Nếu bài toán buộc bạn không thể xài chuỗi <code>innerHTML</code> (do cấu trúc Tag phức tạp cần build qua hàm <code>document.createElement</code>), thì sao?</p>
 <p>Đừng bao giờ cứ tạo <code>Node</code> cái nào thì <code>.appendChild</code> vào <code>DOM</code> mẹ ngay lúc đó. Thay vào đó, xài <code>DocumentFragment</code>. Đây là một dạng "DOM giả ảo" nhẹ, sống cô lập chìm nghỉm trong RAM và không hiển thị (không bị bắt Reflow).</p>
-<pre><code class="language-javascript">const list = document.getElementById('list');
-const fragment = document.createDocumentFragment(); // Vùng chóp bóng tối
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;list&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fragment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createDocumentFragment</span><span class="p">();</span><span class="w"> </span><span class="c1">// Vùng chóp bóng tối</span>
 
-for (let i = 0; i &lt; 100; i++) {
-  const li = document.createElement('li');
-  li.textContent = `Mục hệ Node ${i}`;
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Mục hệ Node </span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
 
-  fragment.appendChild(li); // Nạp 100 cái li vào fragment ảo. Lúc này DOM mẹ vẫn chưa biết gì!
-}
+<span class="w">  </span><span class="nx">fragment</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span><span class="w"> </span><span class="c1">// Nạp 100 cái li vào fragment ảo. Lúc này DOM mẹ vẫn chưa biết gì!</span>
+<span class="p">}</span>
 
-// Bùm, bắn nguyên cái Fragment chứa 100 Node đó vào DOM thực tế 1 lần thôi!
-list.appendChild(fragment);
-</code></pre>
+<span class="c1">// Bùm, bắn nguyên cái Fragment chứa 100 Node đó vào DOM thực tế 1 lần thôi!</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fragment</span><span class="p">);</span>
+</code></pre></div>
 <h3 id="chien-thuat-3-ne-hieu-ung-layout-thrashing-may-ep-don-layout">⚔️ Chiến thuật 3: Né hiệu ứng Layout Thrashing (Máy ép dồn layout)</h3>
 <p>Browser vốn đã có máy vắt DOM riêng. Tức là đôi khi bạn xài JS thao túng DOM 5 lần, Browser nó khôn, nó gom 5 lần đó ròi mới Render đúng 1 đợt chót.
 Tuy nhiên, có một thủ phạm xoá bỏ sự tự tối ưu hoá của trình duyệt = Gọi hàm ép đọc kích thước <code>Offset</code>.</p>
-<pre><code class="language-javascript">// Ngay khi bạn gọi hàm đọc .offsetHeight hay .offsetWidth, 
-// trình duyệt phải lập tức DỪNG MỌI THỨ VÀ ĐO ĐẠC KÍCH THƯỚC DOM BÂY GIỜ LẬP TỨC.
-const boxes = document.querySelectorAll('.box');
+<div class="highlight"><pre><span></span><code><span class="c1">// Ngay khi bạn gọi hàm đọc .offsetHeight hay .offsetWidth, </span>
+<span class="c1">// trình duyệt phải lập tức DỪNG MỌI THỨ VÀ ĐO ĐẠC KÍCH THƯỚC DOM BÂY GIỜ LẬP TỨC.</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">boxes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">);</span>
 
-for (let i = 0; i &lt; boxes.length; i++) {
-  // Lấy độ rộng .offsetWidth TRONG CÙNG LÚC lặp bắt trình duyệt Đo - Render - Đo - Render cồng kềnh quá tải.
-  const oldWidth = boxes[i].offsetWidth; 
-  boxes[i].style.width = oldWidth + 10 + 'px';
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">boxes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Lấy độ rộng .offsetWidth TRONG CÙNG LÚC lặp bắt trình duyệt Đo - Render - Đo - Render cồng kềnh quá tải.</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">oldWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">boxes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">offsetWidth</span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">boxes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oldWidth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;px&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Cách gỡ bom:</strong> Tách hoàn toàn quá trình LẤY DỮ LIỆU ĐỌC (Read) và QUÁ TRÌNH GÁN (Write) ra làm hai mảng loop khác biệt nhau, hoặc cache (lưu nháp) giá trị thông số lại.</p>
 <h3 id="chien-thuat-4-event-delegation-bo-cao-mang-luoi-thay-vi-go-cua-tang-o">⚔️ Chiến thuật 4: Event Delegation (Bố Cáo Mạng Lưới Thay Vì Gõ Cửa Tầng Ô)</h3>
 <p>Hãy tưởng tượng bạn có 1 cái bảng Table sinh ra chứa tận 1000 dòng học sinh cần gắn Nút (Xóa). </p>
 <p>Việc gắn <code>.addEventListener</code> cho tận 1000 cái nút khác nhau sẽ khiến máy phình bộ nhớ kẹt bộ nhớ Memory (đã nhắc tới ở bài <code>Heap Allocation</code>).</p>
 <p>Nhờ đặc tính sinh học của JS là <strong>Event Bubbling (Sự kiện nổi Bọt)</strong>: Bất cứ nút nào click gõ cọc, âm báo sẽ lan truyền truyền từ thẻ con dội dội ra ngõ bố mẹ của nó. Do đó, hãy cắm ĐÚNG 1 CÁI ĐUÔI THEO DÕI (<code>Listener</code>) nằm ngay tại thẻ mẹ bự chát bám lấy tất cả!</p>
-<pre><code class="language-javascript">// Thay vì gắn 1000 sự kiện cho the &lt;li&gt; con.
-// Ta gắn DUY NHẤT cho cái &lt;ul&gt; cha bao trọn.
-const ulParent = document.getElementById('student-table');
+<div class="highlight"><pre><span></span><code><span class="c1">// Thay vì gắn 1000 sự kiện cho the &lt;li&gt; con.</span>
+<span class="c1">// Ta gắn DUY NHẤT cho cái &lt;ul&gt; cha bao trọn.</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ulParent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;student-table&#39;</span><span class="p">);</span>
 
-ulParent.addEventListener('click', function(event) {
-  // event.target là kẻ cụ thể bị bấm trúng.
-  // Kiểm tra nếu kẻ đó là Nút xóa
-  if (event.target &amp;&amp; event.target.matches('button.btn-delete')) {
-    console.log('Bạn vừa xóa một ai đó kìa!', event.target.id);
-  }
-});
-</code></pre>
+<span class="nx">ulParent</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// event.target là kẻ cụ thể bị bấm trúng.</span>
+<span class="w">  </span><span class="c1">// Kiểm tra nếu kẻ đó là Nút xóa</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">matches</span><span class="p">(</span><span class="s1">&#39;button.btn-delete&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Bạn vừa xóa một ai đó kìa!&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
 <hr />
 <h2 id="3-loi-mo-uong-toi-giao-ky-nguyen-js-frameworks">3. Lời Mở Đường tới Giao Kỷ Nguyên JS Frameworks</h2>
 <p>Tất cả các chiến thuật đẫm máu mà chúng ta áp dụng ở phương diện DOM Manipulation trên nhằm ép buộc cho số lần <strong>Reflow/Repaint</strong> nhỏ nhoi nhất.</p>

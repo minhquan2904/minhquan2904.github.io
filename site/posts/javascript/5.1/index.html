@@ -1947,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../antigravity/1.2.md" class="md-nav__link">
+      <a href="../../antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2767,12 +2767,12 @@
 <blockquote>
 <p>Lệnh <code>[Auth Page] Login User Nhé Kho!</code></p>
 </blockquote>
-<pre><code class="language-typescript">// Chỉ định cấu trúc lệnh
-export const loginUser = createAction(
-  '[Auth Page] Login User',
-  props&lt;{ username: string }&gt;() // Cầm gói hồ sơ đính kèm báo lên.
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Chỉ định cấu trúc lệnh</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">loginUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAction</span><span class="p">(</span>
+<span class="w">  </span><span class="s1">&#39;[Auth Page] Login User&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">props</span><span class="o">&lt;</span><span class="p">{</span><span class="w"> </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">}</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="c1">// Cầm gói hồ sơ đính kèm báo lên.</span>
+<span class="p">);</span>
+</code></pre></div>
 <h3 id="3-reducers-ke-toan-kho">3️⃣ REDUCERS (Kế Toán Kho)</h3>
 <p>Thằng duy nhất nắm chìa khóa nhà Kho là Thằng Kế Toán <code>Reducer</code>. Khắp app không ai có quyền sửa data trong Store ngoại trừ Reducer.
 Khi nó nghe lệnh <code>[Auth Page] Login User</code>, nó lôi hồ sơ ra phân tích và bắt đầu tạo một phiên bản MỚI cho Kho Bạc.</p>
@@ -2782,12 +2782,12 @@ Tại đây kiến thức Bài 1.2 lên ngôi: Reducers phải là MỘT HÀM TH
 </blockquote>
 <h3 id="4-selectors-camera-kinh-vien-vong">4️⃣ SELECTORS (Camera Kính Viễn Vọng)</h3>
 <p>Trong Kho bãi chứa tới hàng trăm ngàn Data (User, Post, Setting). Để UI Component ngoài xa tránh việc lấy lộn thông tin, người ta cấp cho chúng các cái Ống nhòm <code>Selector</code>.</p>
-<pre><code class="language-typescript">// Bộ ống nhòm chỉ quét đúng Khu vực Danh Sách Users. Tránh quét toàn bộ làm giật tải.
-export const selectAllUsers = createSelector(
-  selectUserState,
-  (state) =&gt; state.users
-);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Bộ ống nhòm chỉ quét đúng Khu vực Danh Sách Users. Tránh quét toàn bộ làm giật tải.</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">selectAllUsers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createSelector</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">selectUserState</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">users</span>
+<span class="p">);</span>
+</code></pre></div>
 <h3 id="5-effects-bo-truong-giao-thuong-xu-ly-bat-ong-bo">5️⃣ EFFECTS (Bộ Trưởng Giao Thương - Xử Lý Bất Đồng Bộ)</h3>
 <p>Tuyệt đối cấm Reducers gọi API ngoài hay dính líu đến cái gì mất thời gian. Khi nhận Lệnh đi lấy API <code>[User] Fetch Users</code>, Thằng <code>Reducers</code> sẽ làm ngơ, người nghe là <strong>Effects</strong>.
 <code>Effects</code> chạy ra ngoài gọi API, đón lấy cục Data xong, nó mới đóng gói ném trả ngược về một cái Lệnh Mới cho Hệ thống: <code>[User API] Danh Sách Tải Thành Công</code>. Lúc này Reducer lại ra bê cục đó đắp vô kho.</p>

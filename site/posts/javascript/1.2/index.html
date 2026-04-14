@@ -1931,7 +1931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../antigravity/1.2.md" class="md-nav__link">
+      <a href="../../antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2723,32 +2723,32 @@
 <hr />
 <h2 id="1-lam-tuong-pho-bien-const-tao-ra-gia-tri-khong-the-thay-oi">1. Lầm tưởng phổ biến: <code>const</code> tạo ra giá trị KHÔNG THỂ thay đổi?</h2>
 <p>Hầu hết chúng ta bắt đầu với suy nghĩ này. Khi làm việc với các kiểu dữ liệu nguyên thủy (primitive types) như <code>number</code>, <code>string</code>, hay <code>boolean</code>, lầm tưởng này có vẻ hoàn toàn đúng:</p>
-<pre><code class="language-javascript">// Khai báo một hằng số
-const PI = 3.14;
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Khai báo một hằng số</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
 
-// Cố gắng gán lại giá trị
-PI = 3.14159; 
+<span class="c1">// Cố gắng gán lại giá trị</span>
+<span class="nx">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span><span class="w"> </span>
 
-// ❌ LỖI! Uncaught TypeError: Assignment to constant variable.
-</code></pre>
-<p>Với các kiểu nguyên thuỷ, <code>const</code> hoạt động đúng y hệt như mong đợi ở nghĩa đen – nó ngăn chặn việc gán lại một giá trị mới.</p>
+<span class="c1">// ❌ LỖI! Uncaught TypeError: Assignment to constant variable.</span>
+</code></pre></div>
+Với các kiểu nguyên thuỷ, <code>const</code> hoạt động đúng y hệt như mong đợi ở nghĩa đen – nó ngăn chặn việc gán lại một giá trị mới.</p>
 <p>Tuy nhiên, "vết nứt" trong lầm tưởng này bắt đầu xuất hiện khi chúng ta sử dụng <code>const</code> cho <strong>Objects</strong> hoặc <strong>Arrays</strong>!</p>
 <hr />
 <h2 id="2-su-that-bat-ngo-khi-const-phan-boi-ban">2. Sự thật bất ngờ khi <code>const</code> "phản bội" bạn</h2>
 <p>Hãy xem xét đoạn code sau:</p>
-<pre><code class="language-javascript">const USER = {
-  name: &quot;Alice&quot;,
-  role: &quot;Developer&quot;
-};
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">USER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Developer&quot;</span>
+<span class="p">};</span>
 
-// Thay đổi thuộc tính của đối tượng
-USER.role = &quot;Team Lead&quot;;
+<span class="c1">// Thay đổi thuộc tính của đối tượng</span>
+<span class="nx">USER</span><span class="p">.</span><span class="nx">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Team Lead&quot;</span><span class="p">;</span>
 
-// Thêm một thuộc tính mới
-USER.email = &quot;alice@example.com&quot;;
+<span class="c1">// Thêm một thuộc tính mới</span>
+<span class="nx">USER</span><span class="p">.</span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;alice@example.com&quot;</span><span class="p">;</span>
 
-console.log(USER.role); // Kết quả in ra: &quot;Team Lead&quot; 
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">USER</span><span class="p">.</span><span class="nx">role</span><span class="p">);</span><span class="w"> </span><span class="c1">// Kết quả in ra: &quot;Team Lead&quot; </span>
+</code></pre></div>
 <p><strong>✅ Hoàn toàn hợp lệ! Không có một lỗi nào xảy ra cả.</strong></p>
 <p>Rõ ràng, <code>const</code> không hề ngăn chặn việc thay đổi nội dung (mutation) của một đối tượng. Nội dung bên trong mảng và đối tượng được khai báo bằng <code>const</code> vẫn hoàn toàn có thể thay đổi. Vậy cơ chế thực sự ở đây là gì?</p>
 <hr />
@@ -2770,34 +2770,34 @@ console.log(USER.role); // Kết quả in ra: &quot;Team Lead&quot;
 <h2 id="4-at-uoc-tinh-bat-bien-thuc-su-voi-objectfreeze">4. Đạt Được Tính Bất Biến Thực Sự Với <code>Object.freeze()</code></h2>
 <p>Nếu <code>const</code> không thể bảo vệ đối tượng khỏi sự thay đổi, thì chúng ta làm thế nào để có một đối tượng cấu hình hoàn toàn "bất biến" (như <code>CONFIG</code>)?</p>
 <p>Cứu tinh của chúng ta là phương thức tích hợp sẵn có của JavaScript: <code>Object.freeze()</code>. Hàm này nhận một đối tượng làm đầu vào và trả về chính nó nhưng trong một trạng thái "bị đóng băng". Bạn sẽ không thể thêm, xoá hay sửa giá trị thuộc tính.</p>
-<pre><code class="language-javascript">// Thay vì const đơn thuần:
-const mutableUser = { name: &quot;John&quot; };
-mutableUser.name = &quot;Jane&quot;; // Hợp lệ
+<div class="highlight"><pre><span></span><code><span class="c1">// Thay vì const đơn thuần:</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mutableUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="nx">mutableUser</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jane&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Hợp lệ</span>
 
-// Kết hợp const với Object.freeze():
-const immutableUser = Object.freeze({
-  name: &quot;John&quot;
-});
+<span class="c1">// Kết hợp const với Object.freeze():</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">immutableUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span>
+<span class="p">});</span>
 
-immutableUser.name = &quot;Jane&quot;; // ❌ Thao tác thất bại (Trong Strict Mode sẽ văng lỗi TypeError)
-console.log(immutableUser.name); // Vẫn in ra &quot;John&quot;
-</code></pre>
+<span class="nx">immutableUser</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jane&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ❌ Thao tác thất bại (Trong Strict Mode sẽ văng lỗi TypeError)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">immutableUser</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// Vẫn in ra &quot;John&quot;</span>
+</code></pre></div>
 <h3 id="luu-y-cuc-quan-trong-can-than-voi-shallow-freeze">⚠️ Lưu ý Cực Quan Trọng: Cẩn thận với Shallow Freeze!</h3>
 <p><code>Object.freeze()</code> chỉ đóng băng ở mức bề mặt (cấp độ nông / shallow level). Nói cách khác, nó không hoạt động đệ quy sâu xuống bên dưới. Nếu trong đối tượng đóng băng lại chứa một đối tượng/mảng lồng nhau khác, thì "đứa con" đó vẫn hoàn toàn có thể thay đổi giá trị.</p>
-<pre><code class="language-javascript">const user = Object.freeze({
-  name: &quot;Admin&quot;,
-  permissions: {
-    canEdit: true,
-    canDelete: false
-  }
-});
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Admin&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">permissions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">canEdit</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">canDelete</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
 
-// Thất bại: Cấp nông bị đóng băng
-user.name = &quot;Super Admin&quot;; 
+<span class="c1">// Thất bại: Cấp nông bị đóng băng</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Super Admin&quot;</span><span class="p">;</span><span class="w"> </span>
 
-// ✅ Thành công: Object lồng sâu bên trong vẫn có thể bị chỉnh sửa!
-user.permissions.canDelete = true; 
-</code></pre>
+<span class="c1">// ✅ Thành công: Object lồng sâu bên trong vẫn có thể bị chỉnh sửa!</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">permissions</span><span class="p">.</span><span class="nx">canDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span>
+</code></pre></div>
 <blockquote>
 <p><strong>🔥 Pro Tip:</strong> Nếu bạn cần một đối tượng bất biến 100% đến mọi tầng lõi, bạn phải tự triển khai một hàm đệ quy để duyệt các thuộc tính đối tượng và thực thi <code>freeze</code> (cách này gọi là Deep Freeze), hoặc sử dụng các thư viện hỗ trợ chuyên quản lý Immutability.</p>
 </blockquote>

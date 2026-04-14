@@ -1789,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../posts/antigravity/1.2.md" class="md-nav__link">
+      <a href="../posts/antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2533,14 +2533,14 @@ to Markdown converter</li>
 <h2 id="installation">Installation</h2>
 <p>Dillinger requires <a href="https://nodejs.org/">Node.js</a> v10+ to run.</p>
 <p>Install the dependencies and devDependencies and start the server.</p>
-<pre><code class="language-sh">cd dillinger
-npm i
-node app
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>dillinger
+npm<span class="w"> </span>i
+node<span class="w"> </span>app
+</code></pre></div>
 <p>For production environments...</p>
-<pre><code class="language-sh">npm install --production
-NODE_ENV=production node app
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>--production
+<span class="nv">NODE_ENV</span><span class="o">=</span>production<span class="w"> </span>node<span class="w"> </span>app
+</code></pre></div>
 <h2 id="plugins">Plugins</h2>
 <p>Dillinger is currently extended with the following plugins.
 Instructions on how to use them in your own application are linked below.</p>
@@ -2584,44 +2584,44 @@ Instructions on how to use them in your own application are linked below.</p>
 Make a change in your file and instantaneously see your updates!</p>
 <p>Open your favorite Terminal and run these commands.</p>
 <p>First Tab:</p>
-<pre><code class="language-sh">node app
-</code></pre>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>app
+</code></pre></div>
 <p>Second Tab:</p>
-<pre><code class="language-sh">gulp watch
-</code></pre>
+<div class="highlight"><pre><span></span><code>gulp<span class="w"> </span>watch
+</code></pre></div>
 <p>(optional) Third:</p>
-<pre><code class="language-sh">karma test
-</code></pre>
+<div class="highlight"><pre><span></span><code>karma<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
 <h4 id="building-for-source">Building for source</h4>
 <p>For production release:</p>
-<pre><code class="language-sh">gulp build --prod
-</code></pre>
+<div class="highlight"><pre><span></span><code>gulp<span class="w"> </span>build<span class="w"> </span>--prod
+</code></pre></div>
 <p>Generating pre-built zip archives for distribution:</p>
-<pre><code class="language-sh">gulp build dist --prod
-</code></pre>
+<div class="highlight"><pre><span></span><code>gulp<span class="w"> </span>build<span class="w"> </span>dist<span class="w"> </span>--prod
+</code></pre></div>
 <h2 id="docker">Docker</h2>
 <p>Dillinger is very easy to install and deploy in a Docker container.</p>
 <p>By default, the Docker will expose port 8080, so change this within the
 Dockerfile if necessary. When ready, simply use the Dockerfile to
 build the image.</p>
-<pre><code class="language-sh">cd dillinger
-docker build -t &lt;youruser&gt;/dillinger:${package.json.version} .
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>dillinger
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>&lt;youruser&gt;/dillinger:<span class="si">${</span><span class="nv">package</span><span class="p">.json.version</span><span class="si">}</span><span class="w"> </span>.
+</code></pre></div>
 <p>This will create the dillinger image and pull in the necessary dependencies.
 Be sure to swap out <code>${package.json.version}</code> with the actual
 version of Dillinger.</p>
 <p>Once done, run the Docker image and map the port to whatever you wish on
 your host. In this example, we simply map port 8000 of the host to
 port 8080 of the Docker (or whatever port was exposed in the Dockerfile):</p>
-<pre><code class="language-sh">docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger &lt;youruser&gt;/dillinger:${package.json.version}
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8080<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>--cap-add<span class="o">=</span>SYS_ADMIN<span class="w"> </span>--name<span class="o">=</span>dillinger<span class="w"> </span>&lt;youruser&gt;/dillinger:<span class="si">${</span><span class="nv">package</span><span class="p">.json.version</span><span class="si">}</span>
+</code></pre></div>
 <blockquote>
 <p>Note: <code>--capt-add=SYS-ADMIN</code> is required for PDF rendering.</p>
 </blockquote>
 <p>Verify the deployment by navigating to your server address in
 your preferred browser.</p>
-<pre><code class="language-sh">127.0.0.1:8000
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="m">127</span>.0.0.1:8000
+</code></pre></div>
 <h2 id="license">License</h2>
 <p>MIT</p>
 <p><strong>Free Software, Hell Yeah!</strong></p>

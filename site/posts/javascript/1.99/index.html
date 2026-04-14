@@ -1947,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../antigravity/1.2.md" class="md-nav__link">
+      <a href="../../antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2814,18 +2814,18 @@ Nếu bạn viết một hàm đệ quy mà quên điều kiện thoát, Call St
 <hr />
 <h2 id="6-bai-tap-code-ang-cap-thau-hieu">6. Bài Tập Code - Đẳng Cấp Thấu Hiểu</h2>
 <p>Hãy nhìn đoạn mã sau và tập tự mình mô phỏng thứ tự ra Console. Đây là câu hỏi kinh điển nhất khi phỏng vấn JS Advanced.</p>
-<pre><code class="language-javascript">console.log(&quot;1. Bắt đầu&quot;);
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1. Bắt đầu&quot;</span><span class="p">);</span>
 
-setTimeout(() =&gt; {
-  console.log(&quot;2. Timeout Macrotask&quot;);
-}, 0);
+<span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2. Timeout Macrotask&quot;</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
 
-Promise.resolve().then(() =&gt; {
-  console.log(&quot;3. Promise Microtask&quot;);
-});
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;3. Promise Microtask&quot;</span><span class="p">);</span>
+<span class="p">});</span>
 
-console.log(&quot;4. Kết thúc&quot;);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;4. Kết thúc&quot;</span><span class="p">);</span>
+</code></pre></div>
 <p><strong>Thứ tự xảy ra dưới mui xe:</strong>
 1. Call Stack nhận <code>console.log("1. Bắt đầu")</code>. Thi hành ngay lập tức. <strong>(In ra: 1)</strong>
 2. Sự kiện <code>setTimeout</code> bị đẩy qua Web APIs. Web APIs đếm ngược 0s và quăng ngay Callback vào hàng đợi Phổ Thông (<em>Macrotask Queue</em>). Call Stack dọn đường.
@@ -2834,12 +2834,12 @@ console.log(&quot;4. Kết thúc&quot;);
 5. Code chạy hết. <strong>Call Stack hiện tại đã trống!</strong>
 6. Đây là đất diễn của <strong>Event Loop</strong>. Nó phát hiện Call Stack trống và kiểm tra Queue. Do VIP được ưu tiên trước, Event Loop bốc tác vụ trong <em>Microtask</em> lên. <strong>(In ra: 3)</strong>.
 7. <em>Microtask Queue</em> đã rỗng. Event Loop chuyển hướng sang <em>Macrotask</em>, lôi thằng Timeout lên Call Stack. <strong>(In ra: 2)</strong>.</p>
-<p><strong>Kết quả màn hình sẽ hiển thị:</strong></p>
-<pre><code>1. Bắt đầu
+<p><strong>Kết quả màn hình sẽ hiển thị:</strong>
+<div class="highlight"><pre><span></span><code>1. Bắt đầu
 4. Kết thúc
 3. Promise Microtask
 2. Timeout Macrotask
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h2 id="ket-luan">Kết luận</h2>
 <p>Kiến thức về bộ ba: <strong>Call Stack</strong>, <strong>Event Loop</strong> và <strong>Task Queues</strong> là chìa khóa then chốt đưa bạn rời khỏi ngưỡng nghiệp dư của JS và bước bào đẳng cấp Master. Nếu bạn thấu hiểu cơ chế Single-thread hoạt động với Non-Blocking I/O này, bạn làm việc cực nhàn hạ với cơ chế Asynchronous (bất đồng bộ) của các framework hiện đại.</p>

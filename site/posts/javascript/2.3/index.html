@@ -1964,7 +1964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../antigravity/1.2.md" class="md-nav__link">
+      <a href="../../antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2792,30 +2792,30 @@
 <h2 id="1-vien-bao-tang-for-co-ien-va-bay-forin">1. Viện Bảo Tàng: <code>for</code> Cổ Điển và bẫy <code>for...in</code></h2>
 <h3 id="vong-lap-for-truyen-thong">Vòng lặp <code>for</code> truyền thống</h3>
 <p>Bạn nghĩ rằng nó vô hại cho đến khi gặp cảnh lặp lồng lặp, thao tác chỉ mục mệt nhoài và dễ sảy chân vào lỗi "Cộng dư 1" (Off-by-one errors). Thêm nữa, não bộ phải tự biên dịch xem <em>chúng ta đang lặp để làm gì</em>.</p>
-<pre><code class="language-javascript">const warriors = ['Goku', 'Itachi', 'Saitama'];
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">warriors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Goku&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Itachi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Saitama&#39;</span><span class="p">];</span>
 
-// Cách cổ điển - Đế chế tính toán cơ học (Imperative)
-for (let i = 0; i &lt; warriors.length; i++) {
-  console.__*/log(warriors[i] + ' ready to fight!');
-}
-</code></pre>
+<span class="c1">// Cách cổ điển - Đế chế tính toán cơ học (Imperative)</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">warriors</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">__</span><span class="o">*</span><span class="err">/log(warriors[i] + &#39; ready to fight!&#39;);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="cai-long-bay-mang-ten-forin">Cái lồng bẫy mang tên <code>for...in</code></h3>
 <p>Lỗi mà 9/10 Newbie gặp phải là lấy <code>for...in</code> mang đi duyệt mảng. Lệnh này được sinh ra để quét qua <strong>thuộc tính của một Object (Keys)</strong> (và vô tình quét qua cả Prototype chuỗi thừa hưởng bên ngoài). Sử dụng trên mảng (Arrays) không đảm bảo đúng thứ tự, và index trẻ lại dưới dạng String. </p>
-<pre><code class="language-javascript">// ĐỪNG GÕ THẾ NÀY CHO MẢNG
-for (let index in warriors) {
-    console.log(index); // &quot;0&quot;, &quot;1&quot;, &quot;2&quot; -&gt; Là String!
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// ĐỪNG GÕ THẾ NÀY CHO MẢNG</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">warriors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;0&quot;, &quot;1&quot;, &quot;2&quot; -&gt; Là String!</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="2-buoc-tien-bo-xai-forof">2. Bước Tiến Bộ: Xài <code>for...of</code></h2>
 <p>Sự thay thế hoàn hảo và thanh tú nhất mà ES6 đem lại cho vòng lặp thông thường chính là <code>for...of</code>.
 Nó duyệt qua "Giá trị (Value)" của các đối tượng có thể lặp (Iterables) như chuỗi <code>String</code>, <code>Array</code>, <code>Map</code>, <code>Set</code>.</p>
-<pre><code class="language-javascript">// Tư duy gọn gàng hơn
-for (const warrior of warriors) {
-  console.log(`${warrior} ready to fight!`);
-}
-</code></pre>
-<p><strong>Tại sao nên dùng?</strong>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Tư duy gọn gàng hơn</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">warrior</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">warriors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">warrior</span><span class="si">}</span><span class="sb"> ready to fight!`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Tại sao nên dùng?</strong>
 - <strong>Sạch sẽ:</strong> Không còn mớ <code>i = 0</code>, <code>i &lt; length</code> làm nhiễu mắt.
 - <strong>Có thể ngăn chặn đột ngột:</strong> Không giống các hàm phía dưới, <code>for...of</code> cho phép bạn gọi <code>break;</code> (ngắt) hoặc <code>continue;</code> (bỏ qua) tự do.
 - <strong>Xử lý Bất đồng bộ (Async/Await) ngon lành:</strong> (Xem phần 4).</p>
@@ -2825,31 +2825,31 @@ for (const warrior of warriors) {
 <p>Hầu hết thời gian vòng lặp của bạn nhằm mục đích: <strong>Biến đổi</strong> 1 mảng cũ thành mảng mới, <strong>Lọc</strong> phần tử, hay <strong>Tính tổng/Gộp chung</strong> một cái gì đó. Ba sát thủ của mảng đảm nhận trọng trách này:</p>
 <h3 id="arraymap-bien-oi-transformation">🧩 <code>Array.map()</code> - Biến đổi (Transformation)</h3>
 <p>Dùng khi bạn muốn trả về một mảng MỚI có độ dài y xì mảng cũ, nhưng giá trị bên trong đã được thao tác lại. Không làm bẩn (mutate) mảng ban đầu!</p>
-<pre><code class="language-javascript">const prices = [100, 200, 300];
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">];</span>
 
-// Xưa kia: tạo mảng rỗng [] -&gt; đẩy dần vào (push)
-// Hiện đại, tư duy hàm:
-const discountedPrices = prices.map(price =&gt; price * 0.9);
-// Result: [90, 180, 270] 
-</code></pre>
+<span class="c1">// Xưa kia: tạo mảng rỗng [] -&gt; đẩy dần vào (push)</span>
+<span class="c1">// Hiện đại, tư duy hàm:</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">discountedPrices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prices</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">price</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.9</span><span class="p">);</span>
+<span class="c1">// Result: [90, 180, 270] </span>
+</code></pre></div>
 <h3 id="arrayfilter-bo-loc-sang-loc-data">✂️ <code>Array.filter()</code> - Bộ lọc (Sàng lọc Data)</h3>
-<p>Nhặt những thứ mong muốn với một biểu thức <code>true/false</code>.</p>
-<pre><code class="language-javascript">const students = [
-  { name: 'A', pass: true },
-  { name: 'B', pass: false },
-  { name: 'C', pass: true }
-];
+<p>Nhặt những thứ mong muốn với một biểu thức <code>true/false</code>.
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">pass</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">pass</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">pass</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-const graduated = students.filter(student =&gt; student.pass);
-// Gọn gàng, dễ hiểu ngay lập tức so với if-else kết hợp push.
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">graduated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">students</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">student</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">pass</span><span class="p">);</span>
+<span class="c1">// Gọn gàng, dễ hiểu ngay lập tức so với if-else kết hợp push.</span>
+</code></pre></div></p>
 <h3 id="arrayreduce-nha-may-tong-hop">📦 <code>Array.reduce()</code> - Nhà máy tổng hợp</h3>
 <p>Con quái vật khó hiểu nhất nhưng quyền lực nhất của các lệnh lặp. Gom vạn vật thành một mối (tính tổng, đếm số lượng, quy đổi Array -&gt; Object).</p>
-<pre><code class="language-javascript">const cart = [10, 20, 30];
-// reduce(hàm_xử_lý, giá_trị_khởi_tạo)
-const total = cart.reduce((accumulator, item) =&gt; accumulator + item, 0); 
-// total = 60
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">cart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">];</span>
+<span class="c1">// reduce(hàm_xử_lý, giá_trị_khởi_tạo)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cart</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">accumulator</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">accumulator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span>
+<span class="c1">// total = 60</span>
+</code></pre></div>
 <blockquote>
 <p>[!CAUTION] Cảnh báo lạm dụng <code>.forEach()</code>
 Mọi người thích xài <code>.forEach()</code> để viết ngắn. Tuy nhiên <code>forEach</code> KHÔNG trả về thứ gì cả (<code>undefined</code>), và có chứa hàm sinh ra hiệu ứng phụ (Side-effects). Bạn không thể dùng từ khoá <code>break</code> hay <code>continue</code> để ngắt ngang <code>forEach</code>. <strong>Theo Clean code: Cố gắng dùng <code>map/filter/reduce</code> hoặc <code>for...of</code> thay vì <code>forEach</code></strong>.</p>
@@ -2857,29 +2857,29 @@ Mọi người thích xài <code>.forEach()</code> để viết ngắn. Tuy nhi�
 <hr />
 <h2 id="4-xu-ly-bat-ong-bo-trong-vong-lap">4. Xử lý "Bất đồng bộ" Trong Vòng lặp</h2>
 <p>Hổ mang cắn chết hàng loạt dev JS khi muốn kết hợp lặp mảng gọi API (bất đồng bộ).</p>
-<pre><code class="language-javascript">// ⚡ ĐOẠN CODE SAI LẦM PHỔ BIẾN
-const ids = [1, 2, 3];
+<div class="highlight"><pre><span></span><code><span class="c1">// ⚡ ĐOẠN CODE SAI LẦM PHỔ BIẾN</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
 
-ids.forEach(async (id) =&gt; {
-  const data = await fetchUserData(id); // await này vô nghĩa
-  console.log(data);
-});
-console.log(&quot;Xong!&quot;); 
-// Chữ &quot;Xong!&quot; sẽ in ra TRƯỚC CẢ khi cục fetch kia chạy xong. (Vì forEach không thèm đợi)
-</code></pre>
+<span class="nx">ids</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchUserData</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span><span class="w"> </span><span class="c1">// await này vô nghĩa</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Xong!&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="c1">// Chữ &quot;Xong!&quot; sẽ in ra TRƯỚC CẢ khi cục fetch kia chạy xong. (Vì forEach không thèm đợi)</span>
+</code></pre></div>
 <p><strong>✅ Giải pháp 1: Chạy song song tốn ít thời gian (Parallel) bằng <code>Promise.all</code> và <code>map</code></strong>
-Dùng khi thứ tự API tải về không bị ràng buộc phụ thuộc nhau. Nhanh nhất!</p>
-<pre><code class="language-javascript">const promises = ids.map(id =&gt; fetchUserData(id));
-const allData = await Promise.all(promises); 
-</code></pre>
+Dùng khi thứ tự API tải về không bị ràng buộc phụ thuộc nhau. Nhanh nhất!
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">promises</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ids</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">fetchUserData</span><span class="p">(</span><span class="nx">id</span><span class="p">));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">allData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">promises</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div></p>
 <p><strong>✅ Giải pháp 2: Chạy kiên nhẫn từng cái một (Sequential) bằng <code>for...of</code></strong>
-Dùng khi cái số <code>2</code> bẳt buộc đợi kết quả trả về của số <code>1</code>.</p>
-<pre><code class="language-javascript">for (const id of ids) {
-    const data = await fetchUserData(id);
-    console.log(&quot;Đã tải xong cái số&quot;, id);
-}
-console.log(&quot;Xong toàn bộ!&quot;);
-</code></pre>
+Dùng khi cái số <code>2</code> bẳt buộc đợi kết quả trả về của số <code>1</code>.
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">ids</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchUserData</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Đã tải xong cái số&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Xong toàn bộ!&quot;</span><span class="p">);</span>
+</code></pre></div></p>
 <hr />
 <h2 id="chot-luan-iem">Chốt Luận Điểm</h2>
 <p>Kỉ nguyên Code "Sạch" nói <em>KHÔNG</em> với cách điều hướng mã bằng logic cặn kẽ và <em>CÓ</em> với biểu đồ ngữ nghĩa. 

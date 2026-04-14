@@ -1908,7 +1908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../antigravity/1.2.md" class="md-nav__link">
+      <a href="../../antigravity/1.2/" class="md-nav__link">
         
   
   
@@ -2679,106 +2679,104 @@
 <hr />
 <h2 id="van-e-con-ac-mong-if-else-long-nhau">⛔ Vấn đề: Cơn ác mộng If-Else Lồng Nhau</h2>
 <p>Trông có quen không? Hãy cùng xem một ví dụ kiểm tra quyền truy cập dưới đây:</p>
-<pre><code class="language-javascript">function loginUser(user) {
-  if (user) {
-    if (user.isActive) {
-      if (user.role === 'admin') {
-        if (user.isEmailVerified) {
-          return &quot;Welcome Admin!&quot;;
-        } else {
-          return &quot;Please verify your email.&quot;;
-        }
-      } else {
-        return &quot;You must be an admin.&quot;;
-      }
-    } else {
-      return &quot;User is not active.&quot;;
-    }
-  } else {
-    return &quot;User not found.&quot;;
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">loginUser</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">isActive</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">role</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">isEmailVerified</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Welcome Admin!&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Please verify your email.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;You must be an admin.&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;User is not active.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;User not found.&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Kiểu viết này làm tăng độ hẹp và thụt lề liên tục vào trong. Đọc code là cả một cuộc "đánh vật" giữa não phải và não trái.</p>
 <hr />
 <h2 id="ky-thuat-1-guard-clauses-early-return-thoat-som">💡 Kỹ thuật 1: Guard Clauses &amp; Early Return (Thoát sớm)</h2>
 <p>Thay vì chui vào trong điều kiện "đúng" rồi thực hiện tiếp, hãy làm ngược lại: <strong>Phát hiện những trường hợp sai hoặc méo mó và Return/Throw Error ngay lập tức</strong>. Việc đẩy lỗi lên đầu hàm giúp mã xử lý chính được hoàn toàn phẳng phiu trôi xuống dưới.</p>
-<pre><code class="language-javascript">// Clean Code Version: Early Return
-function loginUser(user) {
-  if (!user) return &quot;User not found.&quot;;
-  if (!user.isActive) return &quot;User is not active.&quot;;
-  if (user.role !== 'admin') return &quot;You must be an admin.&quot;;
-  if (!user.isEmailVerified) return &quot;Please verify your email.&quot;;
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Clean Code Version: Early Return</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">loginUser</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;User not found.&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">.</span><span class="nx">isActive</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;User is not active.&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">role</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;You must be an admin.&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">.</span><span class="nx">isEmailVerified</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Please verify your email.&quot;</span><span class="p">;</span>
 
-  // Code chạy thẳng táp khi không dính chướng ngại vật nào
-  return &quot;Welcome Admin!&quot;;
-}
-</code></pre>
-<p><strong>Lợi ích ấn tượng:</strong> Bạn đọc code như đọc một bài văn (Linear flow). Xóa rào cản thụt lề, kiểm soát lỗi nhanh gọn lẹ.</p>
+<span class="w">  </span><span class="c1">// Code chạy thẳng táp khi không dính chướng ngại vật nào</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Welcome Admin!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Lợi ích ấn tượng:</strong> Bạn đọc code như đọc một bài văn (Linear flow). Xóa rào cản thụt lề, kiểm soát lỗi nhanh gọn lẹ.</p>
 <hr />
 <h2 id="ky-thuat-2-dictionary-pattern-dep-bo-if-else-switch-case-dai-dong">💡 Kỹ thuật 2: Dictionary Pattern (Dẹp bỏ if-else &amp; switch-case dài dòng)</h2>
 <p>Khi bạn có quá nhiều kết quả phụ thuộc vào 1 tham chiếu từ chuỗi hoặc số, nhiều người sẽ chuộng <code>switch-case</code> hoặc gõ một chuỗi <code>else if</code> không điểp kết.</p>
-<pre><code class="language-javascript">// Dirty Code
-function getPaymentStatus(status) {
-  if (status === 'SUCCESS') {
-    return &quot;Thanh toán thành công&quot;;
-  } else if (status === 'PENDING') {
-    return &quot;Đang chờ xử lý&quot;;
-  } else if (status === 'FAILED') {
-    return &quot;Thanh toán thất bại&quot;;
-  } else {
-    return &quot;Trạng thái không xác định&quot;;
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Dirty Code</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">getPaymentStatus</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;SUCCESS&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Thanh toán thành công&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;PENDING&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Đang chờ xử lý&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;FAILED&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Thanh toán thất bại&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Trạng thái không xác định&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Với <strong>Dictionary Pattern</strong>, chúng ta quy đổi luồng logic if-else dư thừa đó thành một phép kiểm tra thuộc tính của <strong>Object/Map</strong>.</p>
-<pre><code class="language-javascript">// Clean Code Version: Object Map
-function getPaymentStatus(status) {
-  const statusLabels = {
-    SUCCESS: &quot;Thanh toán thành công&quot;,
-    PENDING: &quot;Đang chờ xử lý&quot;,
-    FAILED: &quot;Thanh toán thất bại&quot;,
-  };
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Clean Code Version: Object Map</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">getPaymentStatus</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">statusLabels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">SUCCESS</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Thanh toán thành công&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">PENDING</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Đang chờ xử lý&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">FAILED</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Thanh toán thất bại&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">};</span>
 
-  return statusLabels[status] || &quot;Trạng thái không xác định&quot;;
-}
-</code></pre>
-<p><strong>Lợi ích ấn tượng:</strong> Thay vì xử lý rẽ nhánh, bộ não bạn chỉ xử lý việc truy xuất Data! Tốc độ chạy cũng tối ưu hơn, dễ bảo trì và dễ dàng trích xuất (export) <code>statusLabels</code> ra nơi khác.</p>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">statusLabels</span><span class="p">[</span><span class="nx">status</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;Trạng thái không xác định&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Lợi ích ấn tượng:</strong> Thay vì xử lý rẽ nhánh, bộ não bạn chỉ xử lý việc truy xuất Data! Tốc độ chạy cũng tối ưu hơn, dễ bảo trì và dễ dàng trích xuất (export) <code>statusLabels</code> ra nơi khác.</p>
 <hr />
 <h2 id="ky-thuat-3-array-includes-thay-cho-su-tra-tan-cua-dau">💡 Kỹ thuật 3: Array <code>includes</code> thay cho "Sự tra tấn của dấu '||'"</h2>
 <p>Khi bạn bắt gặp một biến thoả mạn một trong nhiều điều kiện (OR). Ví dụ:</p>
-<pre><code class="language-javascript">// Dirty Code
-if (fruit === 'apple' || fruit === 'banana' || fruit === 'cherry' || fruit === 'orange') {
-  console.log(&quot;Đây là trái cây quen thuộc!&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Dirty Code</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">fruit</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;apple&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;banana&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;cherry&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;orange&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Đây là trái cây quen thuộc!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Hãy mạnh dạng nhốt hết chúng vào một cái mảng và xài <code>includes</code>:</p>
-<pre><code class="language-javascript">// Clean Code Version: Array .includes
-const regularFruits = ['apple', 'banana', 'cherry', 'orange'];
+<div class="highlight"><pre><span></span><code><span class="c1">// Clean Code Version: Array .includes</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">regularFruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;banana&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cherry&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;orange&#39;</span><span class="p">];</span>
 
-if (regularFruits.includes(fruit)) {
-  console.log(&quot;Đây là trái cây quen thuộc!&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">regularFruits</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">fruit</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Đây là trái cây quen thuộc!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="ky-thuat-4-tan-goc-cac-optional-chaining-va-toan-tu-luoi">💡 Kỹ thuật 4: Tận Gốc các Optional Chaining và Toán tử "Lười"</h2>
 <p>Bạn còn xài đống code kiểu cũ này không? Lại là <code>if</code> kiểm tra property có tồn tại!</p>
-<pre><code class="language-javascript">// Dirty Code
-let city;
-if (user &amp;&amp; user.address &amp;&amp; user.address.city) {
-  city = user.address.city;
-} else {
-  city = &quot;Unknown&quot;;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Dirty Code</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">city</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">city</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">city</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>JS hiện đại mang đến 2 thứ vũ khí đẳng cấp: <strong><code>?.</code> (Optional Chaining)</strong> và <strong><code>??</code> (Nullish Coalescing)</strong>.</p>
-<pre><code class="language-javascript">// Clean Code Version
-const city = user?.address?.city ?? &quot;Unknown&quot;;
-</code></pre>
-<ul>
-<li><strong><code>user?.address</code></strong>: Nó sẽ kiểm tra user có rỗng không, nếu rỗng thì trả về <code>undefined</code> và dừng luôn.</li>
-<li><strong><code>?? "Unknown"</code></strong>: Nếu mớ bên trái là Null hoặc Undefined, nó lập tức gán chuỗi "Unknown" mặc định.</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Clean Code Version</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">address</span><span class="o">?</span><span class="p">.</span><span class="nx">city</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">&quot;Unknown&quot;</span><span class="p">;</span>
+</code></pre></div>
+- <strong><code>user?.address</code></strong>: Nó sẽ kiểm tra user có rỗng không, nếu rỗng thì trả về <code>undefined</code> và dừng luôn.
+- <strong><code>?? "Unknown"</code></strong>: Nếu mớ bên trái là Null hoặc Undefined, nó lập tức gán chuỗi "Unknown" mặc định.</p>
 <p><em>(Lưu ý: <code>??</code> nhận diện nghiêm ngặt NULL/UNDEFINED khác với toán tử <code>||</code> vì <code>||</code> sẽ bắt hụt nếu giá trị là <code>0</code> hoặc <code>""</code>).</em></p>
 <hr />
 <h2 id="tom-gon-hanh-trang-cua-js-warrior">Tóm gọn hành trang của JS Warrior</h2>
