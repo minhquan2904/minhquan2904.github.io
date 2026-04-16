@@ -188,4 +188,36 @@
          <loc>http://localhost:8000/posts/react/summary/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>
+    <url>
+         <loc>http://localhost:8000/posts/typescript/1/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/typescript/2/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/typescript/3/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/typescript/4/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/typescript/5/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/typescript/6/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/typescript/7/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>http://localhost:8000/posts/typescript/summary/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
 </urlset>
