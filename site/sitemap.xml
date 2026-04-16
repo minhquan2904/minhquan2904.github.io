@@ -181,6 +181,10 @@
          <lastmod>2026-04-16</lastmod>
     </url>
     <url>
+         <loc>http://localhost:8000/posts/react/2/</loc>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
          <loc>http://localhost:8000/posts/react/summary/</loc>
          <lastmod>2026-04-16</lastmod>
     </url>

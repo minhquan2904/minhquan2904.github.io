@@ -32,7 +32,8 @@ Công nghệ sử dụng xuyên suốt series:
 | Bài | Tên bài học | Tóm tắt nội dung |
 |:---:|-------------|------------------|
 | **01** | [:material-book-open-page-variant: React Router DOM](./1.md) | Kiến thức toàn tập về định tuyến SPA: Sự khác biệt giữa các Router, hook thiết yếu, Nested route, Bảo vệ route (Protected), Lazy loading và lý do **phải dùng `MemoryRouter`** trên Zalo. |
-| **02** | [:material-clock-outline: Đang cập nhật...](#) | *(Bài học tiếp theo)* |
+| **02** | [:material-atom: Jotai — Quản lý State theo kiểu Nguyên Tử](./2.md) | Atomic state là gì, tại sao tốt hơn Context/Redux, so sánh các giải pháp, và 5 patterns thực chiến: `atomFamily`, `atomWithReset`, `atomWithRefresh`, `loadable`. |
+| **03** | [:material-clock-outline: Đang cập nhật...](#) | *(Bài học tiếp theo)* |
 
 ---
 
@@ -40,7 +41,8 @@ Công nghệ sử dụng xuyên suốt series:
 
 Các chủ đề tiếp theo đang được chuẩn bị lên sóng:
 
-- [ ] Hiểu sâu về **Jotai** và Global State nguyên tử
+- [x] Định tuyến SPA với `react-router-dom` và `MemoryRouter` cho Zalo
+- [x] Quản lý State toàn cục với **Jotai** và atomic patterns
 - [ ] **React Query** — Quản lý Server State và Caching hiệu quả
 - [ ] Tối ưu hóa hiệu năng (Re-render, Memoization) trong React
 - [ ] Xây dựng Form chuẩn xác với **React Hook Form** & **Zod**
