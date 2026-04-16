@@ -65,6 +65,9 @@ nav:
           - "Tập 13: Sáng Chế Đặc Vụ Chuyên Môn Bằng Custom Skills": posts/antigravity/5.2.md
           - "Tập 14: Hệ Thống Cung Cấp Ngữ Cảnh Siêu Việt (MCP)": posts/antigravity/5.3.md
           - "Tập 15: Case Study Cuối Khóa - Xây Dựng Ứng Dụng Kiến Trúc Tự Động": posts/antigravity/5.4.md
+  - "React":
+      - "Tổng quan": posts/react/summary.md
+      - "Bài 1: Các kiến thức cơ bản": posts/react/1.md
 theme:
   name: material
   custom_dir: overrides
