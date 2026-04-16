@@ -1,0 +1,10 @@
+title: Mô hình và phương pháp tiếp cận ABAC
+nav:
+  - "Giới thiệu": intro.md
+  - "Kiến trúc và thành phần chức năng của ABAC": ArchitecturesandFunctionalComponents.md
+  - "Cách thức hoạt động": HowABACWork.md
+  - "Ví dụ thực tế": Using.md
+  - "So sánh ABAC và RBAC": ABACvsRBAC.md
+  - "Tìm hiểu về NGAC": NGAC.md
+  - "Các Yếu Tố Ảnh Hưởng Đến Thuộc Tính trong ABAC": AttributeInfluencingFactors.md
+  - "Logic-Formula và Liệt kê.": LogicalFormulaandEnumerated.md

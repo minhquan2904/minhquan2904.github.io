@@ -1,0 +1,10 @@
+title: TypeScript
+nav:
+  - "Tổng quan": summary.md
+  - "Module 01: Lò Phản Ứng & Phân Hệ Cốt Lõi": 1.md
+  - "Module 02: Khung Giáp Exosuit (OOP)": 2.md
+  - "Module 03: Hệ Điều Hành Trung Tâm (tsconfig)": 3.md
+  - "Module 04: Lò Rèn Kỹ Thuật (Functions)": 4.md
+  - "Module 05: Vũ Khí Lai (Unions & Narrowing)": 5.md
+  - "Module 06: Nội Chiến Kiến Trúc (Interface vs Type)": 6.md
+  - "Module 07: Hệ Gen Nhân Tạo (Generics)": 7.md

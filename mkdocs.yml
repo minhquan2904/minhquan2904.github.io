@@ -1,83 +1,7 @@
 site_name: quanbm
 site_url: http://localhost:8000/
 repo_url: https://github.com/minhquan2904/minhquan2904.github.io
-nav:
-  - Home: index.md
-  - Hello-word: posts/hello-world.md
-  - Docker:
-      - "Tổng quan": posts/Docker/summary.md
-      - "Bài 1: Giới thiệu về Docker": posts/Docker/docker-start.md
-  - Kafka:
-      - "So sánh Kafka và RabbitMQ": posts/Kafka/compare.md
-  - Thuật toán:
-      - "Quicksort": posts/alth/quicksort.md
-  - ABAC:
-      - "Kế hoạch học ABAC 30 ngày": posts/abac/plan.md
-      - Các mô hình và phương pháp kiểm soát truy cập:
-          - "Thuật ngữ": posts/abac/AC/Terminology.md
-          - "Access Control Models and Policies": posts/abac/AC/ModelsAndPolicies.md
-          - "Policy Enforcement": posts/abac/AC/PolicyEnforcement.md
-          - "Discretionary Access Control - DAC": posts/abac/AC/dac.md
-          - "Mandatory Access Control - MAC": posts/abac/AC/mac.md
-      - Mô hình và phương pháp tiếp cận ABAC:
-          - "Giới thiệu": posts/abac/ABAC/intro.md
-          - "Kiến trúc và thành phần chức năng của ABAC": posts/abac/ABAC/ArchitecturesandFunctionalComponents.md
-          - "Cách thức hoạt động": posts/abac/ABAC/HowABACWork.md
-          - "Ví dụ thực tế": posts/abac/ABAC/Using.md
-          - "So sánh ABAC và RBAC": posts/abac/ABAC/ABACvsRBAC.md
-          - "Tìm hiểu về NGAC": posts/abac/ABAC/NGAC.md
-          - "Các Yếu Tố Ảnh Hưởng Đến Thuộc Tính trong ABAC": posts/abac/ABAC/AttributeInfluencingFactors.md
-          - "Logic-Formula và Liệt kê.": posts/abac/ABAC/LogicalFormulaandEnumerated.md
-  - Javascript:
-      - "Overview": posts/javascript/index.md
-      - "1.1 var, let, const: Bí mật và Quy tắc": posts/javascript/1.1.md
-      - "1.2 const, let và sự thật về tính bất biến (Immutability)": posts/javascript/1.2.md
-      - "1.3 Bộ Nhớ JavaScript: Stack Tập trunng & Heap Mở rộng": posts/javascript/1.3.md
-      - "1.99 JavaScript Under The Hood: Khám phá Call Stack, Event Loop, và Execution Context.": posts/javascript/1.99.md
-      - "2.1 Clean code if-else style": posts/javascript/2.1.md
-      - "2.2 Cấu trúc Function và Scope": posts/javascript/2.2.md
-      - "2.3 Các lối tư duy mới về For loop": posts/javascript/2.3.md
-      - "3.1 DOM Performance Warfare": posts/javascript/3.1.md
-      - "4.1 JavaScript Asynchronous Quest": posts/javascript/4.1.md
-      - "4.2 RxJS: Làm Chủ Luồng Bất Đồng Bộ": posts/javascript/4.2.md
-      - "4.3 RxJS Map & Tap Mastery": posts/javascript/4.3.md
-      - "5.1 Modern JavaScript NgRx Angular": posts/javascript/5.1.md
-      - "5.2 Advanced aspects of JavaScript language": posts/javascript/5.2.md
-  - TypeScript:
-      - "Tổng quan": posts/typescript/summary.md
-      - "Module 01: Lò Phản Ứng & Phân Hệ Cốt Lõi": posts/typescript/1.md
-      - "Module 02: Khung Giáp Exosuit (OOP)": posts/typescript/2.md
-      - "Module 03: Hệ Điều Hành Trung Tâm (tsconfig)": posts/typescript/3.md
-      - "Module 04: Lò Rèn Kỹ Thuật (Functions)": posts/typescript/4.md
-      - "Module 05: Vũ Khí Lai (Unions & Narrowing)": posts/typescript/5.md
-      - "Module 06: Nội Chiến Kiến Trúc (Interface vs Type)": posts/typescript/6.md
-      - "Module 07: Hệ Gen Nhân Tạo (Generics)": posts/typescript/7.md
-  - Antigravity Kit:
-      - "Tổng quan": posts/antigravity/summary.md
-      - Học Phần 1 - Giao Thức Khởi Sinh Vĩ Mô:
-          - "Tập 1: Từ Gợi Ý Mã Nguồn Đến Quản Trị Tác Tử Tự Trị": posts/antigravity/1.1.md
-          - "Tập 2: Giải Phẫu Dự Án Antigravity Kit": posts/antigravity/1.2.md
-          - "Tập 3: Kiến Tạo Tri Thức Chuyên Ngành Bằng Hệ Thống Skills": posts/antigravity/1.3.md
-      - Học Phần 2 - Kiến Trúc Nhận Thức và Điều Hướng:
-          - "Tập 4: Giao Thức Cổng Socrates (Socratic Gate)": posts/antigravity/2.1.md
-          - "Tập 5: Ma Trận Định Tuyến Tác Tử Thông Minh": posts/antigravity/2.2.md
-          - "Tập 6: Điều Phối Đa Nhiệm Lớp Hệ Thống Với Tác Tử Orchestrator": posts/antigravity/2.3.md
-      - Học Phần 3 - Thống Trị Quy Trình Làm Việc:
-          - "Tập 7: Khởi Tạo Dự Án Với Bộ Lệnh Discovery & Bootstrap": posts/antigravity/3.1.md
-          - "Tập 8: Giải Mã Khủng Hoảng Với Nghệ Thuật Gỡ Lỗi": posts/antigravity/3.2.md
-          - "Tập 9: Thiết Kế Chuyên Sâu Cùng AI UI/UX Pro Max": posts/antigravity/3.3.md
-      - Học Phần 4 - Lớp Khảo Nghiệm Và Bảo Chứng Chất Lượng:
-          - "Tập 10: Quy Trình Thẩm Định Nhanh Bằng checklist.py": posts/antigravity/4.1.md
-          - "Tập 11: Cấu Trúc Kiểm Thử Cấp Sản Phẩm Bằng verify_all.py": posts/antigravity/4.2.md
-      - Học Phần 5 - Tối Ưu Hóa Ngữ Cảnh Và Biên Giới Kỹ Thuật:
-          - "Tập 12: Nghệ Thuật Quản Trị Token": posts/antigravity/5.1.md
-          - "Tập 13: Sáng Chế Đặc Vụ Chuyên Môn Bằng Custom Skills": posts/antigravity/5.2.md
-          - "Tập 14: Hệ Thống Cung Cấp Ngữ Cảnh Siêu Việt (MCP)": posts/antigravity/5.3.md
-          - "Tập 15: Case Study Cuối Khóa - Xây Dựng Ứng Dụng Kiến Trúc Tự Động": posts/antigravity/5.4.md
-  - "React":
-      - "Tổng quan": posts/react/summary.md
-      - "1. React Router DOM — Định tuyến cho React App": posts/react/1.md
-      - "2. Jotai — Quản lý State theo kiểu Nguyên Tử": posts/react/2.md
+
 theme:
   name: material
   custom_dir: overrides
@@ -92,6 +16,7 @@ theme:
 
 plugins:
   - search
+  - awesome-pages
 
 extra:
   social:

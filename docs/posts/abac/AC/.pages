@@ -1,0 +1,7 @@
+title: Các mô hình và phương pháp kiểm soát truy cập
+nav:
+  - "Thuật ngữ": Terminology.md
+  - "Access Control Models and Policies": ModelsAndPolicies.md
+  - "Policy Enforcement": PolicyEnforcement.md
+  - "Discretionary Access Control - DAC": dac.md
+  - "Mandatory Access Control - MAC": mac.md

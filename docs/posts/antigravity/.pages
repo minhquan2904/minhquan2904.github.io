@@ -1,0 +1,23 @@
+title: Antigravity Kit
+nav:
+  - "Tổng quan": summary.md
+  - Học Phần 1 - Giao Thức Khởi Sinh Vĩ Mô:
+      - "Tập 1: Từ Gợi Ý Mã Nguồn Đến Quản Trị Tác Tử Tự Trị": 1.1.md
+      - "Tập 2: Giải Phẫu Dự Án Antigravity Kit": 1.2.md
+      - "Tập 3: Kiến Tạo Tri Thức Chuyên Ngành Bằng Hệ Thống Skills": 1.3.md
+  - Học Phần 2 - Kiến Trúc Nhận Thức và Điều Hướng:
+      - "Tập 4: Giao Thức Cổng Socrates (Socratic Gate)": 2.1.md
+      - "Tập 5: Ma Trận Định Tuyến Tác Tử Thông Minh": 2.2.md
+      - "Tập 6: Điều Phối Đa Nhiệm Lớp Hệ Thống Với Tác Tử Orchestrator": 2.3.md
+  - Học Phần 3 - Thống Trị Quy Trình Làm Việc:
+      - "Tập 7: Khởi Tạo Dự Án Với Bộ Lệnh Discovery & Bootstrap": 3.1.md
+      - "Tập 8: Giải Mã Khủng Hoảng Với Nghệ Thuật Gỡ Lỗi": 3.2.md
+      - "Tập 9: Thiết Kế Chuyên Sâu Cùng AI UI/UX Pro Max": 3.3.md
+  - Học Phần 4 - Lớp Khảo Nghiệm Và Bảo Chứng Chất Lượng:
+      - "Tập 10: Quy Trình Thẩm Định Nhanh Bằng checklist.py": 4.1.md
+      - "Tập 11: Cấu Trúc Kiểm Thử Cấp Sản Phẩm Bằng verify_all.py": 4.2.md
+  - Học Phần 5 - Tối Ưu Hóa Ngữ Cảnh Và Biên Giới Kỹ Thuật:
+      - "Tập 12: Nghệ Thuật Quản Trị Token": 5.1.md
+      - "Tập 13: Sáng Chế Đặc Vụ Chuyên Môn Bằng Custom Skills": 5.2.md
+      - "Tập 14: Hệ Thống Cung Cấp Ngữ Cảnh Siêu Việt (MCP)": 5.3.md
+      - "Tập 15: Case Study Cuối Khóa - Xây Dựng Ứng Dụng Kiến Trúc Tự Động": 5.4.md
