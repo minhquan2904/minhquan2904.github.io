@@ -3038,38 +3038,38 @@ Junior Dev thường sẽ đáp: <em>"Dạ? Thì... nó vẫn chạy mà anh?"</
 <p>Vậy tại sao một từ khóa tưởng chừng vô hại như <code>var</code> (đã gắn bó với JS từ những ngày đầu) lại có thể gây ra những lỗi nghiêm trọng và khó lường? Dưới đây là 3 mối nguy hiểm lớn nhất:</p>
 <h3 id="moi-nguy-hiem-1-bong-ma-hoisting">⚠️ Mối nguy hiểm #1: "Bóng ma" Hoisting</h3>
 <p>Hoisting với <code>var</code> khiến việc khai báo biến được "nhấc" lên đầu scope, nhưng giá trị gắn cho nó thì lại <strong>không</strong>. Điều này dẫn đến một hành vi vô cùng khó hiểu: biến tồn tại với giá trị <code>undefined</code> trước cả khi dòng code khai báo nó được chạy.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Output: undefined (Không phải ReferenceError!)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myVar</span><span class="p">);</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">myVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 10</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Output: undefined (Không phải ReferenceError!)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myVar</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">myVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 10</span>
+</span></code></pre></div>
 <blockquote>
 <p><strong>Diễn giải:</strong> Biến <code>myVar</code> hành xử giống như một bóng ma: khai báo của nó ám ảnh khắp scope, nhưng giá trị thật sự chỉ xuất hiện sau này.</p>
 </blockquote>
 <h3 id="moi-nguy-hiem-2-ro-ri-scope-ngoai-tam-kiem-soat">⚠️ Mối nguy hiểm #2: Rò Rỉ Scope Ngoài Tầm Kiểm Soát</h3>
 <p><code>var</code> chỉ có khái niệm <strong>"function scope"</strong> hoặc <strong>"global scope"</strong>, hoàn toàn không hiểu khái niệm <strong>"block scope"</strong>. Điều này có nghĩa là biến <code>var</code> được khai báo bên trong một khối lệnh (<code>if</code>, <code>for</code>, <code>while</code>, <code>{...}</code>) sẽ "rò rỉ" ra ngoài khối lệnh đó.</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// ...</span>
-<span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// Vẫn truy cập được &#39;i&#39; ở đây! Output: 3</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">blockVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tôi đã thoát ra ngoài!&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blockVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: &quot;Tôi đã thoát ra ngoài!&quot;</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="c1">// ...</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// Vẫn truy cập được &#39;i&#39; ở đây! Output: 3</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">blockVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tôi đã thoát ra ngoài!&quot;</span><span class="p">;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blockVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: &quot;Tôi đã thoát ra ngoài!&quot;</span>
+</span></code></pre></div>
 <h3 id="moi-nguy-hiem-3-ghi-e-tham-lang">⚠️ Mối nguy hiểm #3: Ghi Đè Thầm Lặng</h3>
 <p><code>var</code> cho phép bạn khai báo lại cùng một biến trong cùng một scope mà trình duyệt <strong>không hề báo lỗi</strong>. Điều này vô tình ghi đè lên những biến quan trọng, gây ra hàng loạt bug logic tiềm tàng.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">;</span>
-
-<span class="c1">// ... hàng chục dòng code sau ...</span>
-
-<span class="c1">// Lập trình viên vô tình khai báo lại biến &#39;name&#39;</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">;</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: &quot;Bob&quot; -&gt; &quot;Alice&quot; đã biến mất mà không có cảnh báo nào!</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// ... hàng chục dòng code sau ...</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// Lập trình viên vô tình khai báo lại biến &#39;name&#39;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: &quot;Bob&quot; -&gt; &quot;Alice&quot; đã biến mất mà không có cảnh báo nào!</span>
+</span></code></pre></div>
 <p><strong>Châm ngôn:</strong> Không lỗi. Không cảnh báo. Chỉ có Bug tiềm tàng.</p>
 <hr />
 <h2 id="2-goc-re-van-e-the-gioi-noi-tam-javascript-execution-context">2. Gốc Rễ Vấn Đề: Thế Giới Nội Tâm JavaScript (Execution Context)</h2>
@@ -3107,14 +3107,14 @@ Junior Dev thường sẽ đáp: <em>"Dạ? Thì... nó vẫn chạy mà anh?"</
 </ul>
 <h4 id="luu-y-quan-trong-ve-tinh-bat-bien-cua-const">⚡ Lưu ý quan trọng về tính bất biến của <code>const</code>:</h4>
 <p><strong>Bí mật lớn nhất:</strong> <code>const</code> không tạo ra giá trị bất biến, mà nó tạo ra <strong>tham chiếu bất biến (constant binding)</strong>. Nghĩa là:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">apiUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/api/v1&quot;</span><span class="w"> </span><span class="p">};</span>
-
-<span class="c1">// HOÀN TOÀN HỢP LỆ! (Bạn đang đổi thuộc tính bên trong)</span>
-<span class="nx">CONFIG</span><span class="p">.</span><span class="nx">apiUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/api/v2&quot;</span><span class="p">;</span>
-
-<span class="c1">// LỖI (TypeError)! (Trực tiếp gán lại liên kết biến)</span>
-<span class="nx">CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">newUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/api/v3&quot;</span><span class="w"> </span><span class="p">};</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">apiUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/api/v1&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// HOÀN TOÀN HỢP LỆ! (Bạn đang đổi thuộc tính bên trong)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">apiUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/api/v2&quot;</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">// LỖI (TypeError)! (Trực tiếp gán lại liên kết biến)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nx">CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">newUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/api/v3&quot;</span><span class="w"> </span><span class="p">};</span>
+</span></code></pre></div>
 <p><em>Ghi nhớ: Value is mutable, but binding is constant.</em></p>
 <hr />
 <h2 id="4-vu-khi-bi-mat-vung-chet-tam-thoi-temporal-dead-zone-tdz">4. Vũ Khí Bí Mật: Vùng Chết Tạm Thời (Temporal Dead Zone - TDZ)</h2>

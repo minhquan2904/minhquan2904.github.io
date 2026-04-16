@@ -2902,71 +2902,71 @@
 <p>Đừng để định nghĩa phức tạp dọa bạn. RxJS vận hành giống hệt ngành sản xuất và phát sóng Youtube:</p>
 <h3 id="1-observable-kenh-phat-song-ke-tao-ra-gia-tri">1. Observable (Kênh phát sóng - Kẻ tạo ra giá trị)</h3>
 <p>Nó là hộp đen có khả năng nhả ra (emit) nhiều tín hiệu theo thời gian. Nhưng đặc tính của Kênh phát sóng này là tính <strong>Lười biếng (Lazy)</strong>: Chừng nào chưa có ai mở tivi coi, kênh nó sẽ không thèm quay hình.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Observable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
-
-<span class="c1">// Tạo ra một kênh phát sóng tin tức</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">newsChannel$</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Observable</span><span class="p">(</span><span class="nx">subscriber</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">subscriber</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;Bản tin sáng&quot;</span><span class="p">);</span>
-
-<span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">subscriber</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;Bản tin trưa&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
-
-<span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">subscriber</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hết sóng, ngưng truyền</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">4000</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="c1">// Chú ý kí tự $ đằng sau chữ newsChannel$, đây là convention ngầm của ae dev báo hiệu &quot;Thằng này là một Luồng (Stream)&quot;</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Observable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// Tạo ra một kênh phát sóng tin tức</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">newsChannel$</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Observable</span><span class="p">(</span><span class="nx">subscriber</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">subscriber</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;Bản tin sáng&quot;</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nx">subscriber</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;Bản tin trưa&quot;</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">subscriber</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hết sóng, ngưng truyền</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">4000</span><span class="p">);</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">});</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">// Chú ý kí tự $ đằng sau chữ newsChannel$, đây là convention ngầm của ae dev báo hiệu &quot;Thằng này là một Luồng (Stream)&quot;</span>
+</span></code></pre></div>
 <h3 id="2-observer-nguoi-xem-tivi">2. Observer (Người xem tivi)</h3>
 <p>Người xem tivi chỉ cầm trong tay một cái remote chứa 3 nút bấm tương ứng với 3 tín hiệu xảy ra khi xem kênh:
 - <code>next</code>: Nhận tin mới thành công -&gt; Tôi xem!
 - <code>error</code>: Trạm phát nổ, đứt anten -&gt; Tôi báo lỗi!
 - <code>complete</code>: Kênh phát xong chương trình, tắt sóng -&gt; Tôi đi ngủ!</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">meAsObserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">next</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">news</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;📺 Xem tới: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">news</span><span class="p">),</span>
-<span class="w">  </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Ngắt cáp: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">),</span>
-<span class="w">  </span><span class="nx">complete</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nhà đài tắt sóng ròi, ngủ thôi!&quot;</span><span class="p">)</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">meAsObserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">next</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">news</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;📺 Xem tới: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">news</span><span class="p">),</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Ngắt cáp: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">),</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">complete</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nhà đài tắt sóng ròi, ngủ thôi!&quot;</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">};</span>
+</span></code></pre></div>
 <h3 id="3-subscription-hop-ong-thue-bao-cap-tivi">3. Subscription (Hợp đồng thuê bao cáp tivi)</h3>
 <p>Sợi cáp nối Kênh phát (<code>Observable</code>) tới Người xem (<code>Observer</code>). Khi kí hợp đồng (<code>.subscribe()</code>), kênh phát chính thức hoạt động! Phép thuật cực mạnh là nếu chán, bạn có thể <strong>Xé bỏ hợp đồng (<code>unsubscribe</code>)</strong> ngay lập tức và dập máy kênh sóng. Điều Promise bó tay!</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// BẤM NÚT ĐĂNG KÍ</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">contract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">newsChannel$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">meAsObserver</span><span class="p">);</span>
-
-<span class="c1">// Ở Console sẽ thấy luồng thời gian:</span>
-<span class="c1">// (Giây 0) 📺 Xem tới: Bản tin sáng</span>
-<span class="c1">// (Giây 2) 📺 Xem tới: Bản tin trưa</span>
-<span class="c1">// (Giây 4) Nhà đài tắt sóng ròi, ngủ thôi!</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// BẤM NÚT ĐĂNG KÍ</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">contract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">newsChannel$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">meAsObserver</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// Ở Console sẽ thấy luồng thời gian:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// (Giây 0) 📺 Xem tới: Bản tin sáng</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">// (Giây 2) 📺 Xem tới: Bản tin trưa</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">// (Giây 4) Nhà đài tắt sóng ròi, ngủ thôi!</span>
+</span></code></pre></div>
 <p><strong>Cách hủy luồng ngang xương:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1">// Nếu ta ngứa tay huỷ hợp đồng lúc 1 giây thay vì đợi xem.</span>
-<span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">contract</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hủy đăng ký!</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tôi đã xé hợp đồng!&quot;</span><span class="p">);</span>
-<span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
-
-<span class="c1">// Kết quả Console: Kênh &quot;Bản tin trưa&quot; lúc 2 giây sẽ bị nghẹn vĩnh viễn không bao giờ xuất hiện!</span>
-</code></pre></div></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Nếu ta ngứa tay huỷ hợp đồng lúc 1 giây thay vì đợi xem.</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">contract</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hủy đăng ký!</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tôi đã xé hợp đồng!&quot;</span><span class="p">);</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1">// Kết quả Console: Kênh &quot;Bản tin trưa&quot; lúc 2 giây sẽ bị nghẹn vĩnh viễn không bao giờ xuất hiện!</span>
+</span></code></pre></div></p>
 <hr />
 <h2 id="subject-cau-truyen-hinh-truc-tiep-multicasting">🔥 Subject: Cầu truyền hình trực tiếp (Multicasting)</h2>
 <p>Có một ngoại lệ là <code>Observable</code> bình thường luôn mặc định sản xuất 1 kênh mới toanh (Cold) cho mỗi người xem. Giám đốc có bật TV và nhân viên bật TV thì 2 cái TV tự chạy từ đầu (Unicast). Tránh điều bất lội đó, người ta phát minh ra <strong>Subject</strong>.</p>
 <p><code>Subject</code> giống hệt một Livestream: Rất nhiều thằng đệ cùng cắm rễ vào <code>.subscribe()</code>, và một khi Master hét <code>subject.next("Hành động!")</code>, tất cả các thằng đệ đều đồng loạt nhận thông báo trong 1 phần ngàn giây chênh lệch (Multicast). Cổ phiếu, Chat Realtime, State thay đổi - Chỗ ứng dụng tuyệt luân của Subject!</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Subject</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">liveStream$</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Subject</span><span class="p">();</span>
-
-<span class="c1">// Mở TV để xem</span>
-<span class="nx">liveStream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User 1 nhận: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">data</span><span class="p">));</span>
-<span class="nx">liveStream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User 2 nhận: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">data</span><span class="p">));</span>
-
-<span class="c1">// Host bắt đầu phát sóng cho TẤT CẢ mọi TV đồng loạt</span>
-<span class="nx">liveStream$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;Trận bóng bắt đầu!&quot;</span><span class="p">);</span><span class="w"> </span>
-
-<span class="c1">// User 1 nhận: Trận bóng bắt đầu!</span>
-<span class="c1">// User 2 nhận: Trận bóng bắt đầu!</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Subject</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">liveStream$</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Subject</span><span class="p">();</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// Mở TV để xem</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nx">liveStream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User 1 nhận: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">data</span><span class="p">));</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nx">liveStream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User 2 nhận: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">data</span><span class="p">));</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1">// Host bắt đầu phát sóng cho TẤT CẢ mọi TV đồng loạt</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nx">liveStream$</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;Trận bóng bắt đầu!&quot;</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">// User 1 nhận: Trận bóng bắt đầu!</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1">// User 2 nhận: Trận bóng bắt đầu!</span>
+</span></code></pre></div>
 <hr />
 <h2 id="loi-ngo-giao-thoi">Lời Ngỏ Giao Thời</h2>
 <p>Đến lúc này, bạn đã thấy quyền lực khổng lồ của <strong>Observable</strong> khi nó vươn tay kiểm soát được Dòng Chảy Thời Gian - xử lý xuất sắc bài toán 1-N dữ liệu, lại còn Cancel được.

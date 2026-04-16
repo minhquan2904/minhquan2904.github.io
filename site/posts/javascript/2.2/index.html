@@ -3002,48 +3002,48 @@
 <p>Trong JS, có 3 cách khai báo hàm phổ biến, và chúng hoàn toàn cư xử khác nhau khi đối mặt với cơ chế <strong>Hoisting</strong> (như đã học ở bài 1.1).</p>
 <h3 id="1-function-declaration">1️⃣ Function Declaration</h3>
 <p>Là kiểu viết cổ điển, bắt đầu bằng từ khoá <code>function</code>. Hàm loại này sẽ được Hoisted hoàn toàn lên đầu bộ nhớ. Bạn có thể ung dung gọi chúng trước cả khi khai báo.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">sayHello</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hoàn toàn hợp lệ, in ra: &quot;Hello&quot;</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">sayHello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">sayHello</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hoàn toàn hợp lệ, in ra: &quot;Hello&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">sayHello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="2-function-expression">2️⃣ Function Expression</h3>
 <p>Gán một hàm vô danh (anonymous) vào họng một biến. Tuyệt chiêu này sẽ phải chịu quy định ngặt nghèo của <code>let</code>/<code>const</code> - nghĩa là nằm trong <strong>Temporal Dead Zone</strong>. Trái ngược với kiểu 1, Gọi trước khi khai báo -&gt; Chết!</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// sayHi(); // Lỗi: ReferenceError</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">sayHi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// sayHi(); // Lỗi: ReferenceError</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sayHi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="3-arrow-function-ham-mui-ten-es6">3️⃣ Arrow Function (Hàm Mũi tên - ES6)</h3>
 <p>Phiên bản rút gọn cực kì phổ biến hiện nay. Cũng vướng phải luật Hoisting y hệt <em>Function Expression</em>, nhưng nó mang một sức mạnh ẩn túy liên quan đến <code>this</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">sayBye</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bye&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sayBye</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bye&quot;</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <hr />
 <h2 id="2-ham-mui-ten-arrow-function-va-ngai-this">2. Hàm mũi tên (Arrow Function) và "Ngải" <code>this</code></h2>
 <p>Câu chuyện <code>this</code> trỏ về đâu là lí do gây ra 90% cơn đau đầu ở JavaScript.
 Quy tắc vàng:
 - Trừ ở chế độ strict mode, <strong>Regular Function</strong> gắn <code>this</code> với cái object (đối tượng) đang <strong>THỰC SỰ LÊN TIẾNG GỌI NÓ</strong>.
 - Ngược lại, <strong>Arrow Function</strong> thì CÔ LẬP <code>this</code>, nó không tự sinh ra <code>this</code> bằng cách gọi, mà nó ngước lên dòm xem <strong>môi trường cha khi nó được khai báo</strong> đang mang <code>this</code> là cái gì thì nó xài ké cái đó (Lexical <code>this</code>).</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Quan&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="c1">// Regular Function -&gt; Người gọi nó là &quot;user&quot;, this sẽ trỏ tới &quot;user&quot;</span>
-<span class="w">  </span><span class="nx">regularGreeting</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, my name is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span>
-<span class="w">  </span><span class="p">},</span>
-
-<span class="w">  </span><span class="c1">// Arrow function -&gt; Nó được viết bên trong object &quot;user&quot;, mà &quot;user&quot; đang nổi lềnh bềnh ở Global Scope. Vậy nên this === window </span>
-<span class="w">  </span><span class="nx">arrowGreeting</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, my name is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">};</span>
-
-<span class="nx">user</span><span class="p">.</span><span class="nx">regularGreeting</span><span class="p">();</span><span class="w"> </span><span class="c1">// In ra: &quot;Hello, my name is Quan&quot;</span>
-<span class="nx">user</span><span class="p">.</span><span class="nx">arrowGreeting</span><span class="p">();</span><span class="w">   </span><span class="c1">// In ra: &quot;Hello, my name is undefined&quot;</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Quan&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="c1">// Regular Function -&gt; Người gọi nó là &quot;user&quot;, this sẽ trỏ tới &quot;user&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nx">regularGreeting</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, my name is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="c1">// Arrow function -&gt; Nó được viết bên trong object &quot;user&quot;, mà &quot;user&quot; đang nổi lềnh bềnh ở Global Scope. Vậy nên this === window </span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nx">arrowGreeting</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, my name is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">};</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nx">user</span><span class="p">.</span><span class="nx">regularGreeting</span><span class="p">();</span><span class="w"> </span><span class="c1">// In ra: &quot;Hello, my name is Quan&quot;</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nx">user</span><span class="p">.</span><span class="nx">arrowGreeting</span><span class="p">();</span><span class="w">   </span><span class="c1">// In ra: &quot;Hello, my name is undefined&quot;</span>
+</span></code></pre></div>
 <blockquote>
 <p>[!TIP] Mẹo Clean Code
 Đừng cố dùng Arrow function làm <em>Method</em> bên trong một Object hay một class constructor. Hãy dành Arrow function cho các vị trí <em>Callbacks</em> (hàm truyền vào trong <code>.map()</code>, <code>setTimeout()</code>) để không lo mất this.</p>
@@ -3059,76 +3059,76 @@ Quy tắc vàng:
 </ol>
 <h3 id="ky-thuat-lexical-scope">Kỹ thuật Lexical Scope</h3>
 <p>JavaScript nhìn vào mã nguồn tại <strong>thời điểm Cú pháp (Syntax) đang được gõ</strong>. Con hàm bên trong nằm ở đâu thì nó có quyền truy cập tất thảy ra ngoài cấp độ cha của nó. Không cần biết lúc gọi hàm nó đang đứng ở đâu.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">globalVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tôi ở ngoài trời&quot;</span><span class="p">;</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">outer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">outerVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tôi ở trong nhà&quot;</span><span class="p">;</span>
-
-<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">inner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">innerVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tôi trốn trong tủ&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">// Mình &quot;inner&quot; có phép thuật lấy được hết đồ của bố và của trời</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerVar</span><span class="p">,</span><span class="w"> </span><span class="nx">outerVar</span><span class="p">,</span><span class="w"> </span><span class="nx">globalVar</span><span class="p">);</span><span class="w"> </span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="nx">inner</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">globalVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tôi ở ngoài trời&quot;</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">outer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">outerVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tôi ở trong nhà&quot;</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">inner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">innerVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tôi trốn trong tủ&quot;</span><span class="p">;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="c1">// Mình &quot;inner&quot; có phép thuật lấy được hết đồ của bố và của trời</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerVar</span><span class="p">,</span><span class="w"> </span><span class="nx">outerVar</span><span class="p">,</span><span class="w"> </span><span class="nx">globalVar</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="nx">inner</span><span class="p">();</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
+</span></code></pre></div>
 <hr />
 <h2 id="4-ton-giao-closure">4. Tôn giáo Closure</h2>
 <p>Từ <em>Lexical Scope</em> sinh ra một triết lí bất hủ: <strong>Closure</strong>.</p>
 <p>Một <strong>Closure</strong> xảy ra khi một Function <em>nhớ</em> được các biến từ scope cha của nó ngay cả khi scope cha đó đã đóng cửa ngừng chạy từ lâu.</p>
 <p>Vẫn khó hiểu? Cùng xem ví dụ:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">makeBank</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">_balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000</span><span class="p">;</span><span class="w"> </span><span class="c1">// Biến bí mật, người ngoài không sửa được!</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Số dư của ngài là: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">_balance</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">myAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">makeBank</span><span class="p">();</span><span class="w"> </span>
-<span class="c1">// Giờ phút này lệnh makeBank() đã chạy xong gòi, context bị hủy ở Call Stack.</span>
-<span class="c1">// Những tưởng tài sản _balance cũng chết theo.</span>
-
-<span class="nx">myAccount</span><span class="p">();</span><span class="w"> </span><span class="c1">// CHÀO CỜ! In ra 1000.</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">makeBank</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">_balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000</span><span class="p">;</span><span class="w"> </span><span class="c1">// Biến bí mật, người ngoài không sửa được!</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Số dư của ngài là: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">_balance</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">makeBank</span><span class="p">();</span><span class="w"> </span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1">// Giờ phút này lệnh makeBank() đã chạy xong gòi, context bị hủy ở Call Stack.</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">// Những tưởng tài sản _balance cũng chết theo.</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nx">myAccount</span><span class="p">();</span><span class="w"> </span><span class="c1">// CHÀO CỜ! In ra 1000.</span>
+</span></code></pre></div>
 <p>Ở đây hàm con được <code>return</code> ném ra ngoài, nhưng trước khi đi nó đã tiện tay thu thập và "bỏ túi" đem theo biến <code>_balance</code>. Và lúc ta bật mở <code>myAccount()</code> ở tương lai muôn thủa sau này, nó vẫn sẽ lôi ở túi ra con số 1000 đó. Nó chính là <strong>Closure</strong>.</p>
 <h3 id="ap-dung-clean-code-thuc-chien-data-privacy">Áp dụng Clean Code thực chiến: Data Privacy</h3>
 <p>Sử dụng hiệu ứng này để thay thế cho OOP khi bạn muốn bảo vệ những cái cần được đóng gói riêng tư, không cho ai chọc ngoáy.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">counterStore</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Đóng cửa khép kín</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">plus</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span><span class="o">++</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">minus</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span><span class="o">--</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">get</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counterStore</span><span class="p">();</span>
-<span class="nx">score</span><span class="p">.</span><span class="nx">plus</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">score</span><span class="p">.</span><span class="nx">get</span><span class="p">());</span><span class="w"> </span><span class="c1">// 1</span>
-<span class="nx">score</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">999</span><span class="p">;</span><span class="w"> </span><span class="c1">// Bất lực, không can thiệp được biến count thực ở trong tủ!</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">counterStore</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Đóng cửa khép kín</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nx">plus</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span><span class="o">++</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nx">minus</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span><span class="o">--</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nx">get</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counterStore</span><span class="p">();</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="nx">score</span><span class="p">.</span><span class="nx">plus</span><span class="p">();</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">score</span><span class="p">.</span><span class="nx">get</span><span class="p">());</span><span class="w"> </span><span class="c1">// 1</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nx">score</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">999</span><span class="p">;</span><span class="w"> </span><span class="c1">// Bất lực, không can thiệp được biến count thực ở trong tủ!</span>
+</span></code></pre></div>
 <hr />
 <h2 id="5-tham-so-thong-minh-smart-parameters">5. Tham số Thông Minh (Smart Parameters)</h2>
 <p>Thay vì đi kiểm tra tham số người dùng nhập có bị rỗng hay không bằng if-else truyền thống, cấu trúc hàm hiện tại ủng hộ phong cách dưới đây:</p>
 <h3 id="default-params">🌟 Default Params</h3>
-<div class="highlight"><pre><span></span><code><span class="c1">// Nhét luôn thông số dự bị thẳng lên cổng hàm</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">sayHello</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Guest&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Welcome &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">sayHello</span><span class="p">();</span><span class="w"> </span><span class="c1">// &quot;Welcome Guest&quot;</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Nhét luôn thông số dự bị thẳng lên cổng hàm</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">sayHello</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Guest&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Welcome &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nx">sayHello</span><span class="p">();</span><span class="w"> </span><span class="c1">// &quot;Welcome Guest&quot;</span>
+</span></code></pre></div>
 <h3 id="bo-rac-arguments-xai-rest">🌟 Bỏ rác <code>arguments</code>, xài <code>...rest</code></h3>
 <p>Ngày xưa người ta hay lấy biến ảo <code>arguments</code> (vốn là object dởm) để gom tất cả tham số ẩn truyền vào. Ngày nay, cứ xài <code>...</code> gom gọn nó tự túc đưa vào một cái Array thực thụ tinh khiết.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">sumAll</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// numbers nghiễm nhiên là 1 Array hịn, xài được luôn reduce </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">total</span><span class="p">,</span><span class="w"> </span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumAll</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// In ra: 10</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">sumAll</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="c1">// numbers nghiễm nhiên là 1 Array hịn, xài được luôn reduce </span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">total</span><span class="p">,</span><span class="w"> </span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumAll</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// In ra: 10</span>
+</span></code></pre></div>
 <hr />
 <p>Dẹp bỏ tư tưởng chỉ biết viết những hàm chằng chịt, qua bài này, bạn bắt đầu thấy được rằng viết Function cũng cấu trúc chặt chẽ như một công trình kiến trúc phân bổ cấp phép cho từng đồ vật. Sử dụng Arrow Function đúng vị trí, bảo vệ biến bằng Closure, và tối ưu Rest Parameters sẽ giải tỏa rất nhiều khối code thừa thãi của bạn.</p>
 
